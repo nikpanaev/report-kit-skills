@@ -1,6 +1,6 @@
 # Evidence Index — report-skills
 
-Current state2026-10-14: VERSION0.1.0-dev.3, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
+Current state2026-10-14: VERSION0.1.0-dev.4, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
 
 Process Profile and authority: [CHANGE-SPEC](CHANGE-SPEC.md). Baseline and scoped branch actual Git; package content identity/private exact run records retained locally. [Offline checks](evidence/offline-checks.json) contain only sanitized source/test identities, no donor paths or private data. [Source provenance](SOURCE-PROVENANCE.json), [selection](OPEN-SOURCE-SELECTION.md) and [license status](LICENSE-STATUS.md).
 
@@ -56,3 +56,11 @@ Plan progress: local roles/incident contract and readonly compatibility/rollback
 The unchanged full VK fixture with instrumentation and five fresh-process rate-limit probes passed locally. Original unexpected retry was not reproduced and its cause is unknown. Existing OPEN rate-limit finding remains; no production fix, threshold change or waiver. New source receipt retains unchanged capture/helper/oracle hashes.
 
 report-agent prepares a local draft with native Git archive from exact clean commits and checks all tar paths/content against committed PUBLIC-FILES. Seven synthetic packaging cases cover clean exact pair, deterministic archive bytes, private cache exclusion, changed/untracked/head drift, output preservation and archive path/content mutation. No GitHub draft/CI/automation/publication/installation has been activated. License, independent review, employee device and original rate-limit risk remain unresolved. Prior observations keep their own versions and gates.
+
+## Dependency metadata/provenance observation — dev.4
+
+Native read-only checks covered134/134 frozen npm exact versions, with identity/integrity match, and134 dependency snapshots/208 edges. Four observed Python versions matched exact primary metadata; initial extra probe not counted as installed. 18 exports across both repositories (16 source,2 agent) and current donors match recorded hashes. This clarifies the earlier aggregate18files wording: report-skills provenance alone has16 records. Effective Node>=20 comes through required MCP SDK/@hono chain; Python transitive requirements remain unfrozen, esbuild lifecycle/native binary not validated. License labels are metadata only; independent license/security/runtime review and owner distribution decision remain PENDING. Source/capture code and original tests unchanged. No client or installed-source changes, install, service account access or publication occurred.
+
+Owner follow-up2026-10-14: direct human response confirmed permission for the transferred own code and accepted the proposed MIT choice; naming still under discussion. No copyright identity guessed and no LICENSE/publication performed. Original metadata observations and earlier pending results preserved; license text/notice/independent controls not auto-approved.
+
+Owner naming follow-up: accepted public name Report Kit and report-kit prefix for future reporting agents. Existing client/installed copies excluded. Branding implementation is the next slice; this dev.4 dependency snapshot keeps its current package IDs. Copyright-holder name remains separate/pending.

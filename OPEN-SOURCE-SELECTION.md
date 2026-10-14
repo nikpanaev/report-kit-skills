@@ -12,3 +12,7 @@
 Canonical references: https://registry.npmjs.org/mcp-openapi/0.3.0 ; https://github.com/Docat0209/mcp-openapi ; https://api.livedune.com/docs/openapi.json . Recipe and lock provide identities, not permission to download or execute. Source cache is not a new verified installation.
 
 No standalone runtime, package manager wrapper, browser launcher or API bridge is implemented. Missing capabilities stop the relevant source step. Complete license/supply-chain review and independent security remain release requirements.
+
+## Current dependency observation
+
+[Metadata inventory](dependencies/REVIEW.json) covers134 npm exact versions and four observed Python distributions. [Findings/limits](THIRD-PARTY-DEPENDENCIES.md): effective Node>=20 for frozen LiveDune chain; Python transitive resolver not frozen; esbuild postinstall needs approved runtime validation. Source origins18/18 across the two packages match their recorded hashes. These results do not close ownership/license/security/host acceptance. No dependency installed, version changed or third-party code vendored.
