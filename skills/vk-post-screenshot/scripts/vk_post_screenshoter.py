@@ -167,7 +167,7 @@ async def find_post(page, post_id, timeout):
     return post
 
 
-async def capture_all_visuals(page, post_id, output, timeout):
+async def capture_all_visuals(page, post_id, output, timeout, *, limit_detected=None):
     post = await find_post(page, post_id, timeout)
     # Only real attachment roots; avatars, emoji, previews and comments are not materials.
     roots = post.locator(ATTACHMENT_ROOTS)
@@ -200,6 +200,8 @@ async def capture_all_visuals(page, post_id, output, timeout):
     items = []
     seen = set()
     for order, index in enumerate(indexes, 1):
+        if limit_detected is not None and await limit_detected():
+            break
         material = roots.nth(index)
         item = dict(order=order, type=None, material_id=None, ok=False, path=None)
         try:
@@ -258,7 +260,7 @@ async def capture_all_visuals(page, post_id, output, timeout):
     result = dict(expected_count=expected, obtained_count=obtained, materials=items,
                   ok=expected > 0 and expected == obtained == len(items))
     if not result['ok']:
-        result['error'] = f'Неполная выгрузка: получено {obtained} из {expected}; обнаружено {len(items)} материалов'
+        result['error'] = f'Неполная выгрузка: получено {obtained} из {expected}; проверено {len(items)} материалов'
     return result
 
 
@@ -485,7 +487,8 @@ async def run(args) -> int:
                         zoom_fallback = 'native_headless_100' if actual_zoom != args.zoom else None
                         stage = "capture"
                         if args.all_visuals:
-                            result = await capture_all_visuals(page, post_id, args.output, args.timeout)
+                            result = await capture_all_visuals(page, post_id, args.output, args.timeout,
+                                                               limit_detected=limit_detected)
                             limit_info = dict(rate_limited=True) if await limit_detected() else {}
                             emit(url=original, post_id=post_id, browser_zoom=actual_zoom,
                                  zoom_fallback=zoom_fallback, theme=getattr(page, '_vk_screenshot_theme', None),

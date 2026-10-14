@@ -1,7 +1,7 @@
 {
   "snapshot_date": "2026-10-14",
   "origin": "Owner-maintained source skills, read-only export; no source Git history or private evidence shipped",
-  "license_status": "Owner distribution license pending; no upstream binaries vendored",
+  "license_status": "Own code: MIT, copyright Report Kit; third-party notices/compatibility review pending; no upstream binaries vendored",
   "files": [
     {
       "sourceRelative": "_shared/ui_queue.py",
@@ -59,11 +59,12 @@
       "sourceRelative": "vk-post-screenshot/scripts/vk_post_screenshoter.py",
       "sourceSHA256": "4505aa02ee8ad001abbecf980e726bc23510e905285d2ed45c6e4af23fc82257",
       "destination": "skills/vk-post-screenshot/scripts/vk_post_screenshoter.py",
-      "outputSHA256": "a05f3f1c49781c031570c80433d4562b82ef9ddb825572cb5d7033d93cfaced2",
+      "outputSHA256": "3a2b3c6755f63a8bcec9be594fc2af81ba89ea713a0f192753b291cbd4c13122",
       "changes": [
         "Default session path outside package; illustrative ID replaced",
         "Relocate default runtime outputs and reject explicit in-package state paths; no capture/metrics oracle weakened",
-        "Retry stderr includes bounded phase/type only; no exception message, stdout schema, timing, capture or rate-limit guard change"
+        "Retry stderr includes bounded phase/type only; no exception message, stdout schema, timing, capture or rate-limit guard change",
+        "Use existing batch limit detector before each all-visuals material; preserve earlier PNGs and positional callers"
       ]
     },
     {

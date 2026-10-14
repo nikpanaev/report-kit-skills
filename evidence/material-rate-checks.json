@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "package": "report-kit-skills",
+  "version": "0.1.0-dev.8",
+  "status": "PASS_LIMITED",
+  "red_exit": 1,
+  "red_failures": 1,
+  "green_exit": 0,
+  "browser_cases": 3,
+  "all_network_intercepted": true,
+  "http429_after_observation_requests": 0,
+  "preserved_png_count": 1,
+  "non_rate_error_png_count": 2,
+  "complete_album_png_count": 3,
+  "original_browser_regression_exit": 0,
+  "comment_browser_regression_exit": 0,
+  "mock_diagnostic_cases": 5,
+  "mock_diagnostic_exit": 0,
+  "original_fixture_bytes_preserved": true,
+  "source_hashes": {
+    "skills/vk-post-screenshot/scripts/vk_post_screenshoter.py": "3a2b3c6755f63a8bcec9be594fc2af81ba89ea713a0f192753b291cbd4c13122",
+    "scripts/test_material_rate_limits.py": "4afd57039d438c6def2b3a316c618e7555c9b10d90e24ddd78ac620b3f4e2c4f",
+    "skills/vk-post-screenshot/scripts/test_screenshoter.py": "581b47c629615c7375160ff0383a429e7fdfe0bad6369ee9483c5a405b8190af"
+  },
+  "output_hashes": {
+    "red-corrected.stdout": "6a64bfefdbd0f2dbec68ac7889a9e6eec8984b7c22db56e8a68e0cc9fa75c085",
+    "red-corrected.stderr": "1f9a43a1cbbe4de3073ace6fdc85946bb895b8197d78526f655da09821a6c416",
+    "green.stdout": "07cc11cb1af08c1d9bde2acb6483b0d2ca66672647cd625fa1fe0ebb1dda857d",
+    "green.stderr": "1e550e1f1ad519ffe2b818521a1c5c184f5f0b3be4ee033582d634a78d14a5d7",
+    "browser-regression.stdout": "5ac3b08968e51db638ce5129d859eb3555246b51ec493d71fc4439ab00d89057",
+    "comment-regression.stdout": "eef1f8cc698e9330f76fbed6116518753af7376625435baeb511123191eee7ce",
+    "retry-regression.stderr": "38bf320bde0206302c1e57a1b42621b895232f0c74ebfec8c7b81ec6681fa5a0"
+  },
+  "limitations": "Local Chromium fixture only; no live VK or abort guarantee for already in-flight browser requests. Original cold failure remains OPEN_NOT_REPRODUCED; this distinct reproduced defect does not explain it. No employee install, independent review or release approval."
+}

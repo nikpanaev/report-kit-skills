@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "license": "MIT",
+  "copyright_holder": "Report Kit",
+  "year": 2026,
+  "source": "Direct repository-owner decision",
+  "own_code_rights_confirmed": true,
+  "canonical_reference": "https://opensource.org/license/mit",
+  "license_sha256": "d4a65ed2ae66d0be941fc9e7b40a1fa6d6e0eca3843f211f626560c780bf66be",
+  "publication_authorized": false,
+  "limitations": "Own-code license/name only; third-party notices/compatibility and independent release review remain pending."
+}
