@@ -1,6 +1,6 @@
 # Evidence Index — report-skills
 
-Current state2026-10-14: VERSION0.1.0-dev.1, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
+Current state2026-10-14: VERSION0.1.0-dev.3, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
 
 Process Profile and authority: [CHANGE-SPEC](CHANGE-SPEC.md). Baseline and scoped branch actual Git; package content identity/private exact run records retained locally. [Offline checks](evidence/offline-checks.json) contain only sanitized source/test identities, no donor paths or private data. [Source provenance](SOURCE-PROVENANCE.json), [selection](OPEN-SOURCE-SELECTION.md) and [license status](LICENSE-STATUS.md).
 
@@ -50,3 +50,9 @@ No accepted client pilot repeated. Original external source/installed/client rep
 Local candidate dev.2 adds versioned interface/permission declarations in both packages; capture/API implementations unchanged. report-agent adds readonly update/source/whole-client/preflight/refresh/rollback validation and employee documentation/help. Native source fetch/install/refresh/replay is not executed or implemented as a daemon; approved source URLs remain null. 20 synthetic update scenarios passed, including sealed full-client snapshot and exact chat binding. Historical module-absent baseline and one new fixture missing-import failure preserved privately; no assertions weakened. 22 maintenance cases,4 boundary tests and full native template selftest passed. 12 official SKILL validations and82 local Markdown link checks passed. Documentation comprehension on an employee device is NOT_RUN.
 
 Plan progress: local roles/incident contract and readonly compatibility/rollback record checks implemented; actual GitHub drafts/release pipeline, native install/refresh/rollback, target device/account control report, independent QA/security and distribution license still pending. Existing accepted client pilots are not repeated. Current IN_DEVELOPMENT does not accept prior claims or authorize a public release. Old evidence rows retain their original identity/scope.
+
+## Local draft packaging and rate-limit diagnosis — dev.3
+
+The unchanged full VK fixture with instrumentation and five fresh-process rate-limit probes passed locally. Original unexpected retry was not reproduced and its cause is unknown. Existing OPEN rate-limit finding remains; no production fix, threshold change or waiver. New source receipt retains unchanged capture/helper/oracle hashes.
+
+report-agent prepares a local draft with native Git archive from exact clean commits and checks all tar paths/content against committed PUBLIC-FILES. Seven synthetic packaging cases cover clean exact pair, deterministic archive bytes, private cache exclusion, changed/untracked/head drift, output preservation and archive path/content mutation. No GitHub draft/CI/automation/publication/installation has been activated. License, independent review, employee device and original rate-limit risk remain unresolved. Prior observations keep their own versions and gates.

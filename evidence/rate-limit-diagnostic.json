@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "status": "OPEN_NOT_REPRODUCED",
+  "original_failure_retained": true,
+  "full_instrumented_fixture_exit": 0,
+  "fresh_process_rate_probes": 5,
+  "fresh_probe_exits": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "source_hashes": {
+    "skills/vk-post-screenshot/scripts/test_screenshoter.py": "581b47c629615c7375160ff0383a429e7fdfe0bad6369ee9483c5a405b8190af",
+    "skills/vk-post-screenshot/scripts/vk_post_screenshoter.py": "5a1e6587b3dca7adab9ca4c0091a5525ee98857dc405f6b39550b1804b8b056e",
+    "skills/_shared/browser_zoom.py": "db62f38dc83e7c93efb2f37e7672f234f046b0798b469e632c9c55b8469258f7"
+  },
+  "assertions_timeouts_changed": false,
+  "conclusion": "No unexpected retry reproduced; cause unknown. Expected video/theme/missing-post negative cases are not the original flaky failure. No fix or risk waiver inferred.",
+  "limitations": "Existing Playwright1.63.0 local routed synthetic browsers/state; no live VK, user sessions or employee device."
+}
