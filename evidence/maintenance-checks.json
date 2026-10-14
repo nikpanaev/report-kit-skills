@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "candidate_version": "0.1.0-dev.1",
+  "scope": "Offline synthetic maintenance contracts; no old client data or real permissions/routes/messages, installs, APIs or captures",
+  "unit_runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "report-agent/scripts/test_maintenance.py"
+      ],
+      "exit": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e569eb95f8b0220046ff1b4c0580c4e66b129e00f72954fced04b606480b7637",
+      "inputSHA256": {
+        "report-agent/scripts/test_maintenance.py": "7718472073512cfc709a2c6c62a1c33681c0032552527a1eef484485a3b4a2ec",
+        "report-agent/scripts/maintenance.py": "c67ca6c1c5000a2a77a24ad6d4e44019e7e0e8d35eeb881054a647b9d01f5430",
+        "report-agent/scripts/check_workspace.py": "5e57bf3c3086e9a923b3e7fd7d2dba7bf2bbfabb1be0b1563084cdd7f5378073",
+        "report-agent/scripts/check_package.py": "1f8918f6e5ab429f66de23e7eef11389a1cd3719d9f05ae1c8292e8f1a6f745d",
+        "report-skills/capabilities.json": "8891bf5b61587fbd8ca45bb9fef37d7c8fc712a94de018e301b3de39d905eb80"
+      },
+      "limitation": "synthetic private workspaces only; no messaging/authority/service/install proof"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "report-agent/scripts/test_package_boundaries.py"
+      ],
+      "exit": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "24a50096f71824941465557aa13c2e1673f3c5c2daabb995c1d52b253ecf9c8b",
+      "inputSHA256": {
+        "report-agent/scripts/test_package_boundaries.py": "19eb9225824e97ec9bf08f6251db409dcec1fafbc40cf5ba89f592d1af341328",
+        "report-agent/scripts/maintenance.py": "c67ca6c1c5000a2a77a24ad6d4e44019e7e0e8d35eeb881054a647b9d01f5430",
+        "report-agent/scripts/check_workspace.py": "5e57bf3c3086e9a923b3e7fd7d2dba7bf2bbfabb1be0b1563084cdd7f5378073",
+        "report-agent/scripts/check_package.py": "1f8918f6e5ab429f66de23e7eef11389a1cd3719d9f05ae1c8292e8f1a6f745d",
+        "report-skills/capabilities.json": "8891bf5b61587fbd8ca45bb9fef37d7c8fc712a94de018e301b3de39d905eb80"
+      },
+      "limitation": "synthetic private workspaces only; no messaging/authority/service/install proof"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "report-agent/scripts/check_report_templates_selftest.py"
+      ],
+      "exit": 0,
+      "stdout_sha256": "c2f425951a468570a929058de8ab3e26b78dd6fba407e2debbf338aea78e42ba",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "inputSHA256": {
+        "report-agent/scripts/check_report_templates_selftest.py": "dbde613895c5360ece334f61e8d3cae3386d3d3bd5651c641f1ebb4c6393b480",
+        "report-agent/scripts/maintenance.py": "c67ca6c1c5000a2a77a24ad6d4e44019e7e0e8d35eeb881054a647b9d01f5430",
+        "report-agent/scripts/check_workspace.py": "5e57bf3c3086e9a923b3e7fd7d2dba7bf2bbfabb1be0b1563084cdd7f5378073",
+        "report-agent/scripts/check_package.py": "1f8918f6e5ab429f66de23e7eef11389a1cd3719d9f05ae1c8292e8f1a6f745d",
+        "report-skills/capabilities.json": "8891bf5b61587fbd8ca45bb9fef37d7c8fc712a94de018e301b3de39d905eb80"
+      },
+      "limitation": "synthetic private workspaces only; no messaging/authority/service/install proof"
+    }
+  ],
+  "skill_validations": [
+    {
+      "skill": "report-agent/skills/report-agent-update",
+      "exit": 0,
+      "SKILL_sha256": "99f0fb30454ee38a5b3a69f4eac410cee5bef7c43ae79ea64c44e70a45afb205"
+    },
+    {
+      "skill": "report-agent/skills/report-client-onboarding",
+      "exit": 0,
+      "SKILL_sha256": "eb6acf931ad2ec7b7dfb819d029bfc8c77d15eec6dd92427e835d2eb712a57f1"
+    },
+    {
+      "skill": "report-agent/skills/report-maintenance",
+      "exit": 0,
+      "SKILL_sha256": "3ae5cc8085c6b0e1cda6ca04ade4195c35edbfa4a79f94371099aa87db77003a"
+    },
+    {
+      "skill": "report-agent/skills/report-monthly",
+      "exit": 0,
+      "SKILL_sha256": "2b4e3c6c0921a42bd12487dd040a45deafa3aa032f9fa2d284cbf3c45fbdb7e5"
+    },
+    {
+      "skill": "report-agent/skills/report-quality-check",
+      "exit": 0,
+      "SKILL_sha256": "f9e129c6b36bd5f2c80c6b96c8b835437387b194c671ce758f34ba880c091e2d"
+    },
+    {
+      "skill": "report-agent/skills/report-setup",
+      "exit": 0,
+      "SKILL_sha256": "cf15d9cc008199f50365012b72879b6ca54f2c9d24798b4a3860716d701e9bcf"
+    },
+    {
+      "skill": "report-skills/skills/livedune",
+      "exit": 0,
+      "SKILL_sha256": "aa15cb07ae04a4db40b6888881ee14578943ca4f966437271d8557f67d5651a5"
+    },
+    {
+      "skill": "report-skills/skills/vk-comment-screenshot",
+      "exit": 0,
+      "SKILL_sha256": "c6d6c228298cca8ff84119004177d25b00bf1b08e4793602128af0209134d9c7"
+    },
+    {
+      "skill": "report-skills/skills/vk-message-screenshot",
+      "exit": 0,
+      "SKILL_sha256": "0095ca7a38295221378e2daaf513e06550c6aba6f8c1acc37e5d0da5069ff626"
+    },
+    {
+      "skill": "report-skills/skills/vk-post-screenshot",
+      "exit": 0,
+      "SKILL_sha256": "8be8a9396717517cec26f3b8022bc062fdf94a6a30ebbde413a91332bc7a202d"
+    },
+    {
+      "skill": "report-skills/skills/vk-stories-screenshot",
+      "exit": 0,
+      "SKILL_sha256": "1060ac61503f1e4cba2e4c1451becb600545bdf30ab2235f703a874b57e0eb3d"
+    }
+  ],
+  "observations": {
+    "maintenance_scenarios": 22,
+    "package_boundary_scenarios": 4,
+    "native_template_oracle": "PASS unchanged complete suite",
+    "initial_feature_baseline": "maintenance module absent; import failed. Feature oracle extended with receipt hashes/uncertain STARTED/human-vs-tool/current-pause/privacy cases; no assertion weakened.",
+    "privacy": "Explicit field and known-pattern/local-path checks; not exhaustive independent detection or OS enforcement.",
+    "runtime": "Source declarations in fixtures are synthetic, not proof of actual human authority, native messaging, installed identity or origin replay."
+  }
+}

@@ -14,3 +14,5 @@ Validate exact wall URL/post ID. По умолчанию full text; collapsed/vi
 Светлая тема target/final PNG и native75/100 fallback проверяются штатно. VK video guards: decoded, paused, inside duration, nonblack; short duration≤3 uses2s, ≤2 midpoint. SPA/legacy attachments проверяются одинаково. Ошибка/429 stops, no rate-limit retries or fake success. Полный текст/last rows/materials и source-to-PNG proof проверить visually.
 
 При missing dependency/access/theme прекратить dependent capture, выполнить предусмотренный manual handoff после освобождения own ticket. Existing borrowed ticket belongs to parent. Не обходить отказ другим capture engine; actual target-device behaviour ещё не подтверждено этим пакетом.
+
+При дефекте/изменении capability выполнять [maintenance](../_shared/MAINTENANCE.md): exact разрешённая роль, sealed incident, candidate и успешный origin replay. Не переносить чужие chat IDs/grants, не считать callback закрытием и не удалять нужные origin assets до получения/приёмки.

@@ -12,3 +12,5 @@ API: только ready backend mcp-openapi0.3.0 через scripts/mcp-run.mjs,
 Все cursors до окончания; raw replies/private hashes до preview/расчётов. HTTP/provider/schema/timeout/uncertain failures ненулевой exit; no blind retry/new run-dir bypass. Provider restriction/access error не0. Budget учитывает STARTED и сохраняется при restart; изменять только по отдельному разрешению внутри max200.
 
 Исторический принятый snapshot переиспользовать без новых запросов при соответствующем клиентском contract. Свежие счётчики не подгонять. Full coverage/identity/dates/formulas отдельно от transport exit0. Указать missing source и ограничения; не утверждать actual account/API readiness по offline tests.
+
+При дефекте/изменении capability выполнять [maintenance](../_shared/MAINTENANCE.md): exact разрешённая роль, sealed incident, candidate и успешный origin replay. Не переносить чужие chat IDs/grants, не считать callback закрытием и не удалять нужные origin assets до получения/приёмки.

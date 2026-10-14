@@ -12,3 +12,5 @@ description: "Снять доступные администратору пер�
 Loopback CDP либо разрешённый personal profile с channel; credentials только external private state, manual recovery сохраняет сессию. Admin inbox href validate before navigate; actual access/list completeness/response history confirm. Сохранять request/response observer identity/count/chronology и own staged screenshots до повторной валидации диалога. Quiet scroll не полнота.
 
 Если только observed DOM без server ID/period exhaustion, manifest complete=false и limitation; читаемый частичный PNG не full month success. Все required cases и ответы по профилю, light pixels/native zoom/long-message stitch проверяются. Полные screenshots may contain PII, recipient policy before sharing. Нет обхода denial или самостоятельной альтернативной съёмки.
+
+При дефекте/изменении capability выполнять [maintenance](../_shared/MAINTENANCE.md): exact разрешённая роль, sealed incident, candidate и успешный origin replay. Не переносить чужие chat IDs/grants, не считать callback закрытием и не удалять нужные origin assets до получения/приёмки.

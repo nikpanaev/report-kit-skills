@@ -1,5 +1,7 @@
 # report-skills
 
+Candidate0.1.0-dev.1 добавляет единый [порядок сопровождения](skills/_shared/MAINTENANCE.md). Адреса/разрешения выбирает сотрудник в private workspace; общий source packet не содержит личных чатов. Правила capture/transport не заменены; actual messaging/install/origin replay не проверены на устройстве сотрудника.
+
 Локальная подготовка переносимого комплекта для будущих отчётов. Версия: [VERSION](VERSION). Maturity: prototype; channel: development; stable release отсутствует.
 
 Публикация, установка и подключение аккаунтов не разрешены этим этапом. Существующие клиентские агенты и материалы не включены. Git remote: no remote. Лицензия распространения пока не выбрана владельцем.

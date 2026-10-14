@@ -14,3 +14,5 @@ description: "Снять каждую историю из доступного �
 Light UI native75, media RGB unchanged, actual paused story identity/date/media and final PNG checked. Missing avatar exception только explicit owner approval exact full story ID; записать limitation, не общий обход. Unsupported UI/spec/source refusal stops capture; inspect evidence private only. Capture end cleanup/ticket finally; metadata/exit0 не visual/full-period proof.
 
 При первом подключении inspect создаёт private evidence. Рабочий UI map в external state/vk/vk-ui.json требует настоящих observed_at и evidence locators после проверки; не заполнять их фиктивно по публичному recipe. Default map находится вне пакета.
+
+При дефекте/изменении capability выполнять [maintenance](../_shared/MAINTENANCE.md): exact разрешённая роль, sealed incident, candidate и успешный origin replay. Не переносить чужие chat IDs/grants, не считать callback закрытием и не удалять нужные origin assets до получения/приёмки.
