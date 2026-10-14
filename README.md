@@ -38,3 +38,5 @@ Candidate dev.2 adds [versioned compatibility declarations](contracts.json), che
 ## Report Kit naming and legacy compatibility
 
 New client chat: `Report Kit / <client name>`; new portable reporting agent identifier: `report-kit-<client_id>`. Workflow IDs also use report-kit-. Package IDs are report-kit-agent/report-kit-skills; workspace schema2 is required. Legacy configurations and installed copies are not silently switched by a display rename. VK/LiveDune source skill IDs, REPORT_SKILLS_STATE_DIR and existing queue/state path names remain stable; their old report-skills label does not identify a second package or store. Setup must check the actual selected bytes and one UI queue before installation.
+
+При доступном разрешённом Playwright SDK `python3 scripts/test_retry_diagnostics.py` проверяет только диагностические строки на макетах: браузер, сеть и снимки не создаются. Полная проверка Chromium остаётся отдельной.

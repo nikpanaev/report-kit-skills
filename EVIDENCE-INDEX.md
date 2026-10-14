@@ -1,6 +1,6 @@
 # Evidence Index — report-skills
 
-Current state2026-10-14: VERSION0.1.0-dev.6, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
+Current state2026-10-14: VERSION0.1.0-dev.7, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
 
 Process Profile and authority: [CHANGE-SPEC](CHANGE-SPEC.md). Baseline and scoped branch actual Git; package content identity/private exact run records retained locally. [Offline checks](evidence/offline-checks.json) contain only sanitized source/test identities, no donor paths or private data. [Source provenance](SOURCE-PROVENANCE.json), [selection](OPEN-SOURCE-SELECTION.md) and [license status](LICENSE-STATUS.md).
 
@@ -76,3 +76,7 @@ Source inventory expanded to12 capabilities at owner request. Required instructi
 ## Readable command metadata — 0.1.0-dev.6
 
 [Interface checks](evidence/interface-checks.json) record current declared UI text, standard YAML parsing and official skill validation.20 across the pair; IDs, unrelated metadata, SKILL bodies and executable bytes unchanged. Agent/source versions select an exact new pair for this metadata change; no installed copies/client agents affected. Source default-store doc now matches unchanged queue implementation. No native UI installation, employee comprehension, permissions, privacy/release acceptance inferred. Historical failures/controls preserved.
+
+## Bounded retry diagnostics — dev.7
+
+[Recorded checks](evidence/retry-diagnostics.json): three missing-diagnostic assertions failed before change; five mocked stage/type/no-message/rate-stop cases then passed, followed by unchanged real local Chromium fixture. Retry stderr adds only controlled phase and exception class; stdout capture rows and business parameters retained. All other capture functions and original test bytes preserved. This is observability, not diagnosis/closure of the original cold failure or all-log privacy acceptance. No source account, installed/client change or release approval.

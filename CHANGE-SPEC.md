@@ -39,3 +39,7 @@ Owner follow-up: all report source skills must be present; employee instructions
 ## Office-user interface metadata — 0.1.0-dev.6
 
 Owner novice requirement applies to visible commands too. Change display_name/short_description and plugin description only; preserve IDs, policy/dependencies/default prompts and every SKILL body/executable. Existing validator and YAML/source preservation observations; no new tests mirroring wording, dependency or GUI. Source DATA-BOUNDARY default corrected to existing report-skills store; no second queue/default migration. Source provenance output hashes reflect five copied YAML adaptations; origins unchanged. Target employee/native installation/usability and independent release controls remain open.
+
+## Retry observability — dev.7
+
+Source-only bounded diagnostic change authorized by ongoing portable maintenance preparation: stage enum and exception class in existing retry stderr, no exception message. No stdout schema, capture API, rate-stop/pacing/retry parameter, auth, installation or caller policy change. Original fixture unchanged; new five mock cases and original real Chromium regression. Existing original cold failure and independent/employee/lifecycle controls remain.

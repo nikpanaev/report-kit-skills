@@ -59,10 +59,11 @@
       "sourceRelative": "vk-post-screenshot/scripts/vk_post_screenshoter.py",
       "sourceSHA256": "4505aa02ee8ad001abbecf980e726bc23510e905285d2ed45c6e4af23fc82257",
       "destination": "skills/vk-post-screenshot/scripts/vk_post_screenshoter.py",
-      "outputSHA256": "5a1e6587b3dca7adab9ca4c0091a5525ee98857dc405f6b39550b1804b8b056e",
+      "outputSHA256": "a05f3f1c49781c031570c80433d4562b82ef9ddb825572cb5d7033d93cfaced2",
       "changes": [
         "Default session path outside package; illustrative ID replaced",
-        "Relocate default runtime outputs and reject explicit in-package state paths; no capture/metrics oracle weakened"
+        "Relocate default runtime outputs and reject explicit in-package state paths; no capture/metrics oracle weakened",
+        "Retry stderr includes bounded phase/type only; no exception message, stdout schema, timing, capture or rate-limit guard change"
       ]
     },
     {

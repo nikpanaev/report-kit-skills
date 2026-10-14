@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "package": "report-kit-skills",
+  "version": "0.1.0-dev.7",
+  "status": "PASS_LIMITED",
+  "red_mock_test_exit": 1,
+  "red_failures": 3,
+  "mock_tests": 5,
+  "mock_test_exit": 0,
+  "mock_stderr_sha256": "38bf320bde0206302c1e57a1b42621b895232f0c74ebfec8c7b81ec6681fa5a0",
+  "source_hashes": {
+    "skills/vk-post-screenshot/scripts/vk_post_screenshoter.py": "a05f3f1c49781c031570c80433d4562b82ef9ddb825572cb5d7033d93cfaced2",
+    "scripts/test_retry_diagnostics.py": "61dbaf1a44f21d3777711a0ce8d4efe972916bcb26867b8701fe215c39e5a293",
+    "skills/vk-post-screenshot/scripts/test_screenshoter.py": "581b47c629615c7375160ff0383a429e7fdfe0bad6369ee9483c5a405b8190af"
+  },
+  "browser_regression_exit": 0,
+  "other_functions_preserved": 10,
+  "original_fixture_bytes_preserved": true,
+  "limitations": "Five mocked diagnostic tests create no browser/network/session/PNG; full original local Chromium fixture also passed. Not original cold root-cause closure, real VK, all-log privacy, independent review, install or release approval."
+}

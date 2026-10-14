@@ -463,11 +463,13 @@ async def run(args) -> int:
                 prefix = "vk_comments" if args.comments_only else "vk_visual" if args.visual_only else "vk"
                 destination = args.output / f"{prefix}_{post_id}.png"
                 for attempt in range(args.retries):
+                    stage = "preflight"
                     try:
                         # Also space separate CLI launches, not only links within one batch.
                         await asyncio.sleep(NAVIGATION_DELAY)
                         if await limit_detected():
                             raise RuntimeError(RATE_LIMIT_MESSAGE)
+                        stage = "navigation"
                         response = await page.goto(url, wait_until="domcontentloaded",
                                                    timeout=args.timeout)
                         if await limit_detected():
@@ -475,11 +477,13 @@ async def run(args) -> int:
                         if response and response.status >= 400:
                             raise RuntimeError(f"VK вернул HTTP {response.status}. "
                                                "Попробуйте --headed или вход через --login")
+                        stage = "browser_setup"
                         if args.cdp:
                             await page.locator('[data-testid=header-profile-menu-button]').wait_for(
                                 state='visible', timeout=min(args.timeout, 10000))
                         actual_zoom = await verify_zoom(page, args.zoom, headless=not (args.headed or args.login or args.cdp))
                         zoom_fallback = 'native_headless_100' if actual_zoom != args.zoom else None
+                        stage = "capture"
                         if args.all_visuals:
                             result = await capture_all_visuals(page, post_id, args.output, args.timeout)
                             limit_info = dict(rate_limited=True) if await limit_detected() else {}
@@ -505,7 +509,8 @@ async def run(args) -> int:
                             failed = True
                             break
                         if attempt + 1 < args.retries:
-                            print(f"{post_id}: повтор {attempt + 2}/{args.retries}",
+                            print(f"{post_id}: повтор {attempt + 2}/{args.retries} "
+                                  f"(stage={stage}, error_type={type(error).__name__})",
                                   file=sys.stderr, flush=True)
                             await asyncio.sleep(2)
                         else:
