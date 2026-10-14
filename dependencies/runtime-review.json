@@ -1,0 +1,336 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-14",
+  "status": "OBSERVATIONS_ONLY",
+  "package_version": "0.1.0-dev.9",
+  "records": [
+    {
+      "name": "Pillow",
+      "version": "12.3.0",
+      "requires_python": ">=3.10",
+      "license_expression": "MIT-CMU",
+      "license_classifiers": [],
+      "source": "https://pypi.org/pypi/Pillow/12.3.0/json",
+      "metadata_sha256": "63159d6013cf20f98ff9caeb8b0b210b7f5877975587f4265397ffb0fd8c72a0",
+      "installed_license_expression": "MIT-CMU",
+      "scope": "Observed existing local Python runtime; not chosen/frozen employee environment",
+      "vendor_in_report_kit": false,
+      "license_files": [
+        {
+          "relative": "pillow-12.3.0.dist-info/licenses/LICENSE",
+          "sha256": "dda12a98c1979cf3d94df1cff45d27a4cb3f04a60c76f76902ac54cac03ec0ce",
+          "bytes": 70307,
+          "lines": 1574
+        }
+      ],
+      "notice_headers": {
+        "pillow-12.3.0.dist-info/licenses/LICENSE": []
+      }
+    },
+    {
+      "name": "numpy",
+      "version": "2.3.5",
+      "requires_python": ">=3.11",
+      "license_expression": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "source": "https://pypi.org/pypi/numpy/2.3.5/json",
+      "metadata_sha256": "b152ed47e23df7c54138ba3f4841ce36f7c607def65185e80de0367ad51f0c84",
+      "installed_license_expression": null,
+      "scope": "Observed existing local Python runtime; not chosen/frozen employee environment",
+      "vendor_in_report_kit": false,
+      "license_files": [
+        {
+          "relative": "numpy-2.3.5.dist-info/LICENSE.txt",
+          "sha256": "d84715000c6b3fd8719b2027238b6f6457cb853b2eb7023821a585949387f7bf",
+          "bytes": 47800,
+          "lines": 971
+        },
+        {
+          "relative": "numpy/_core/include/numpy/random/LICENSE.txt",
+          "sha256": "fbc539f47d0cf83bc61378080fb873d5c14630126cacbfe754035c3926daa5ec",
+          "bytes": 1018,
+          "lines": 21
+        },
+        {
+          "relative": "numpy/ma/LICENSE",
+          "sha256": "05f3b88351988ecfad10abe92c0c50e5875c6452d5009a0084cc291551ffcca6",
+          "bytes": 1593,
+          "lines": 24
+        },
+        {
+          "relative": "numpy/random/LICENSE.md",
+          "sha256": "103166b62b80443afb9eb3488e052ea06be0cff566b908f199e561fde49af19f",
+          "bytes": 3511,
+          "lines": 71
+        }
+      ],
+      "notice_headers": {
+        "numpy-2.3.5.dist-info/LICENSE.txt": [
+          "Name: lapack-lite",
+          "License: BSD-3-Clause",
+          "Name: dragon4",
+          "License: MIT",
+          "Name: libdivide",
+          "License: Zlib",
+          "Name: Meson",
+          "License: Apache 2.0",
+          "Name: spin",
+          "License: BSD-3",
+          "Name: tempita",
+          "License: MIT",
+          "Name: OpenBLAS",
+          "License: BSD-3-Clause",
+          "Name: LAPACK",
+          "License: BSD-3-Clause-Open-MPI",
+          "Name: GCC runtime library",
+          "License: GPL-3.0-or-later WITH GCC-exception-3.1",
+          "Name: libquadmath",
+          "License: LGPL-2.1-or-later"
+        ],
+        "numpy/_core/include/numpy/random/LICENSE.txt": [],
+        "numpy/ma/LICENSE": [],
+        "numpy/random/LICENSE.md": []
+      }
+    }
+  ],
+  "primary_identity_matches": 2,
+  "external_license_files_inventoried": 5,
+  "observed_source_exports": [
+    {
+      "package": "report-kit-agent",
+      "destination": "scripts/check_report_templates.py",
+      "output_sha256": "abc7e6807b49646e850e9989aec5a27ae75aee0ef3bce7d619f27b94c0d18652"
+    },
+    {
+      "package": "report-kit-agent",
+      "destination": "scripts/check_report_templates_selftest.py",
+      "output_sha256": "dbde613895c5360ece334f61e8d3cae3386d3d3bd5651c641f1ebb4c6393b480"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/_shared/ui_queue.py",
+      "output_sha256": "1253ac0ed30c130e2f902af89ccfcde3b6a905acaeca5f7290f1e389d8501c90"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/_shared/browser_zoom.py",
+      "output_sha256": "db62f38dc83e7c93efb2f37e7672f234f046b0798b469e632c9c55b8469258f7"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/_shared/test_ui_queue.py",
+      "output_sha256": "157c6908a2de27c0e99af3f1aec8c57fde220c5c32d7a5bd0f3b6dab23af093f"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/_shared/test_browser_zoom.py",
+      "output_sha256": "6d1a40e16f98e51105362cd34c11856d38287e6f3e86c17de4002c0d3ba92dff"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/livedune/scripts/mcp-run.mjs",
+      "output_sha256": "cffaa5ec49eaf77e5d7f92237acbf1d206e3fab9625bd1b8ce9a52725ae2cb0c"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/livedune/scripts/check.mjs",
+      "output_sha256": "c8889b75aa7716eb826bca8b58e15539ad24f60c7e5178920c8cf00c5d2db2cc"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/vk-post-screenshot/scripts/vk_post_screenshoter.py",
+      "output_sha256": "3a2b3c6755f63a8bcec9be594fc2af81ba89ea713a0f192753b291cbd4c13122"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/vk-post-screenshot/scripts/test_screenshoter.py",
+      "output_sha256": "581b47c629615c7375160ff0383a429e7fdfe0bad6369ee9483c5a405b8190af"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/vk-post-screenshot/scripts/requirements.txt",
+      "output_sha256": "852008c6c134845926625892a248563fe02a96a91e769e6735af1bad49ab2cef"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/vk-comment-screenshot/scripts/vk_comment_screenshoter.py",
+      "output_sha256": "37e4411f99d23fdb7df97fd48f7711ae1f057014e148e3ffd12920a507b584e7"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/vk-comment-screenshot/scripts/test_comment_screenshoter.py",
+      "output_sha256": "e8588fbe2b597bda4fe18367ddd32b75808429fe1de7ed68f129b34885230a0f"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/vk-message-screenshot/scripts/vk_messages.py",
+      "output_sha256": "a45a74d54e57ba3c91cee2e7b0517af70ca0ae7804fdbf03834037a3ae5d68c9"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/vk-message-screenshot/scripts/test_vk_messages.py",
+      "output_sha256": "8080ebdd0ce792abcc7540b1bcdd09b6281e0f6c7be33716da7c7cf5843ae62e"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/vk-stories-screenshot/scripts/vk_stories.py",
+      "output_sha256": "f526b2fd500373de21fe1db611144823890ccc17ea06e534e25c8e347b9785c6"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/vk-stories-screenshot/scripts/test_vk_stories.py",
+      "output_sha256": "922af1f43d27640b0c521f484d3db6647d8d9b4fb55c24c9c61f133de90e63ab"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/vk-stories-screenshot/references/vk-ui.example.json",
+      "output_sha256": "0847f1b080307ba165d8eaba02ec843b839eea1eb60a9e5e620c084279df0f1b"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/instagram-post-screenshot/SKILL.md",
+      "output_sha256": "296252c38ec5760212c3fb683bed895870f1b157004edc715b8afe4dfc01c876"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/instagram-post-screenshot/agents/openai.yaml",
+      "output_sha256": "28aff7e29b2892310eced2dc621a889a95faa6b87311256ea3a0cbdbfd99355c"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/instagram-post-screenshot/scripts/instagram_post_screenshot.py",
+      "output_sha256": "4796d17c086de906efc95e4957748ea05b8ac26c563a77592501477673b88626"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/instagram-post-screenshot/scripts/requirements.txt",
+      "output_sha256": "852008c6c134845926625892a248563fe02a96a91e769e6735af1bad49ab2cef"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/instagram-post-screenshot/scripts/test_screenshot.py",
+      "output_sha256": "8af92c9926d2c23a84e938882361ee2eb552407d727c59578871a06a7609d430"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/threads-post-screenshot/SKILL.md",
+      "output_sha256": "264ba71a1abd867d52eb41594f77d25ce03f03541f1be6c69a58a0364d3f7fa8"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/threads-post-screenshot/scripts/requirements.txt",
+      "output_sha256": "852008c6c134845926625892a248563fe02a96a91e769e6735af1bad49ab2cef"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/threads-post-screenshot/scripts/test_threads_post_screenshot.py",
+      "output_sha256": "1e723e4d5a589de84cfa2830bc8185cab287c8835b6a3662c2fc4ea2f892d5f4"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/threads-post-screenshot/scripts/threads_post_screenshot.py",
+      "output_sha256": "ef426cbf476f421639de500f922318d4589ff0e5abcab7f2b40e0d55c5f51df3"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/tiktok-post-screenshot/SKILL.md",
+      "output_sha256": "d1fe1eec16329b083744c7b0ed546c37345031f3c7ba0dfe894986fb0726060f"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/tiktok-post-screenshot/scripts/requirements.txt",
+      "output_sha256": "852008c6c134845926625892a248563fe02a96a91e769e6735af1bad49ab2cef"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/tiktok-post-screenshot/scripts/test_screenshoter.py",
+      "output_sha256": "09ba2ef962c7296da6ae15ec59fb05981999e0ab6925d05477050c85cdbc0afe"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/tiktok-post-screenshot/scripts/tiktok_post_screenshoter.py",
+      "output_sha256": "7ca01dbbb5d67b3fc57fd44d502b328153798d805616913aa02e0a13990c512b"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/telegram-post-screenshot/SKILL.md",
+      "output_sha256": "92c2b0ad1157a1de223997003fb161ae99c6db14ef7e00950911ccdf84ce7e27"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/telegram-post-screenshot/agents/openai.yaml",
+      "output_sha256": "8f1e2f1827aa0581c77924b330c6630c816a320ade7890ad2ec7c44e0fce21f9"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/telegram-post-screenshot/references/queue.md",
+      "output_sha256": "3e7370f2187111038bc0fcab8464981ee59d14731442fd71cb75fcfdd074277c"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/telegram-post-screenshot/scripts/telegram_queue.py",
+      "output_sha256": "8dedc71a0cbf4f20c9dcc7cae3dac0dcd71414303843b4d786c3f9b784347833"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/telegram-post-screenshot/scripts/test_telegram_queue.py",
+      "output_sha256": "98229fd31b9a2c44a69155e645d04e994d09b64c9be014bd425495eceab2aea0"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/telegram-comment-screenshot/SKILL.md",
+      "output_sha256": "e4200e545cf0a3f49015f9d37ec234a47f8c1c634d55974a665c481abb233854"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/telegram-comment-screenshot/agents/openai.yaml",
+      "output_sha256": "63257301df94174a51f40bf14823aaae1c3e76156b4e093a5c46d570abe87c76"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/max-post-screenshot/SKILL.md",
+      "output_sha256": "daa63d396b711ecd37932034e016e74999f2ac3ff33e7befdadd4e834e6ebe30"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/max-post-screenshot/agents/openai.yaml",
+      "output_sha256": "9b61705f51728b30fc41bc9e58f79be6f6a3a31cbb4ae39b621dfa1a12127ffb"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/max-post-screenshot/scripts/stitch_post_screenshots.py",
+      "output_sha256": "758e3938a0ff8c29e1939733aabbf88b39c58ee406df935a91d91bcdac189ff9"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/max-post-screenshot/scripts/test_stitch_post_screenshots.py",
+      "output_sha256": "f69d5c60451fba30c9b87c2189393fae7a3a08695a3a728c775a796d91102dbc"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/max-comment-screenshot/SKILL.md",
+      "output_sha256": "315e190a2ed126aa8aab440c86f5d9a99a283d0b57ab0687dc2a0a7200f2c012"
+    },
+    {
+      "package": "report-kit-skills",
+      "destination": "skills/max-comment-screenshot/agents/openai.yaml",
+      "output_sha256": "e5dd85c48b1321ac9d422c3a6bba24bc98ef484557e4775c453a677565188de1"
+    }
+  ],
+  "source_export_hash_matches": 44,
+  "license_semantic_review": {
+    "total_files": 5,
+    "inventoried": 5,
+    "full_semantically_reviewed": 0,
+    "review_basis": "Identity/hash and declared component header inventory only. A qualified independent license review has not been assigned; full text retained privately for that review.",
+    "legal_acceptance": false
+  },
+  "limits": [
+    "No dependency/code/browser download or installation; only exact PyPI metadata and existing license-file copies",
+    "Not full binary provenance/notices/legal review, redistribution approval or employee-device test",
+    "Root package license expression is not the complete license inventory of compiled components",
+    "Historical134 npm/four Python observations remain unchanged in REVIEW.json"
+  ]
+}

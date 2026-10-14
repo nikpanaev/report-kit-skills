@@ -23,7 +23,7 @@ esbuild0.27.7 declares postinstall. Frozen lock и ignore-scripts не дока�
 
 Публичные пакеты распространяют generic owner-maintained source, инструкции, lock/recipe и tests. Сторонние node_modules, Python distributions, Chromium/браузерные binaries, установленные plugins, credentials и raw service data не включены. Owner license на свой код не распространяется на downloaded runtimes/сервисы автоматически. При изменении поставки на bundling остановить выпуск и провести отдельную полную license/notice/supply-chain review.
 
-Владелец подтвердил право публикации перенесённого собственного кода и принял MIT. В LICENSE-STATUS остаётся согласование публичного имени правообладателя и текста LICENSE. Это не разрешение публиковать сейчас. Независимые QA/security и source-code license text review не выполнены этой задачей; accepted клиентские пилоты не заменяют их. Public spec URL LiveDune не является согласованием service/account/data-use условий сотрудника.
+Владелец подтвердил право публикации перенесённого собственного кода и принял MIT. [MIT](LICENSE) добавлена с правообладателем Report Kit; [решение](LICENSE-STATUS.md) относится к собственному коду. Это не разрешение публиковать сейчас. Независимые QA/security и source-code license text review не выполнены этой задачей; accepted клиентские пилоты не заменяют их. Public spec URL LiveDune не является согласованием service/account/data-use условий сотрудника.
 
 ## При обновлении
 
@@ -33,3 +33,11 @@ esbuild0.27.7 declares postinstall. Frozen lock и ignore-scripts не дока�
 ## Additional source capabilities in dev.5
 
 Instagram/Threads/TikTok reuse existing Playwright1.63.0/Chromium and shared FIFO/zoom; no new browser engine. Telegram/MAX use authorized native computer-use; their common stitch helper requires Pillow and NumPy in a selected external Python runtime. The local image-only fixture ran with Pillow12.3.0/NumPy2.3.5; browser fixtures used the existing Playwright1.63.0 runtime separately. This is not a combined employee environment validation or frozen Python distribution. Pillow/NumPy licensing, transitive/binary/runtime review and target-device checks remain pending. No dependency install or donor authorization import occurred.
+
+## Уточнение состава внешней среды — 14.10.2026
+
+Старая REVIEW.json сохраняет свой snapshot:134 npm и четыре Python distributions. [Дополнительный inventory](dependencies/runtime-review.json) фиксирует ещё две наблюдавшиеся библиотеки: Pillow12.3.0 (MIT-CMU, Python>=3.10) и NumPy2.3.5 (BSD classifier, Python>=3.11). Это точные наблюдения существующей среды, не разрешение установки и не выбор версий сотрудника. Для этого сочетания общий заявленный минимум Python — 3.11; совместимость конкретной ОС, архитектуры и остальных зависимостей проверяется отдельно. Первичные источники: [Pillow12.3.0](https://pypi.org/pypi/Pillow/12.3.0/json), [NumPy2.3.5](https://pypi.org/pypi/numpy/2.3.5/json).
+
+Инвентаризированы пять файлов лицензий существующих distributions, с хешами. У NumPy установленный LICENSE.txt содержит отдельные уведомления компонентов, включая GCC runtime exception и libquadmath; у Pillow установленный текст значительно шире одного названия MIT-CMU. Полная семантическая/юридическая проверка этих текстов не выполнена и требует назначенного независимого проверяющего; материалы сохранены приватно. Название корневой лицензии не заменяет inventory сборки. Если решено поставлять библиотеки/бинарные файлы вместе с продуктом, прежний вывод о составе поставки больше неприменим — нужна новая полная проверка.
+
+В текущем expanded source provenance42 записи, в agent — две: все44 current output hashes проверены. Исторические18/18 относятся к исходному срезу, не ко всем добавленным позже файлам. Это проверка идентичности, не независимый аудит унаследованного кода. Публичная пара поставляет только generic source, инструкции, metadata/recipes/tests; внешние runtime distributions и браузеры не входят в неё.
