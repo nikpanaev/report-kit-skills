@@ -1,0 +1,152 @@
+{
+  "scope": "LOCAL_PREPARATION; not release/installation/device/privacy acceptance",
+  "recorded_date": "2026-10-14",
+  "runs": [
+    {
+      "id": "test-01",
+      "script": "skills/_shared/test_ui_queue.py",
+      "exitCode": 0,
+      "stdoutSHA256": "418c3cb28cde264362129184bfc746fc032675b5cae74b996850e3699ce49ce7",
+      "stderrSHA256": "67c8528936dafd807f1610b5ba37b08eab5d55217ac05a6fc30e70fcd3ab95e1",
+      "scope": "Synthetic fixtures; no real account/credential/source capture; source import/path/helper checks on donor runtime",
+      "laterChanges": "Only documented synthetic fixture label or MCP version metadata changes require affected rerun; subsequent raw receipts kept outside public package",
+      "currentScriptSHA256": "157c6908a2de27c0e99af3f1aec8c57fde220c5c32d7a5bd0f3b6dab23af093f",
+      "identityLimitation": "Current script hash; first donor-run output separately recorded; affected reruns/immutable clone verification retained in private evidence"
+    },
+    {
+      "id": "test-02",
+      "script": "scripts/test_runtime_paths.py",
+      "exitCode": 0,
+      "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSHA256": "9c2dcdbed803180dd4999ac35e5b9b9f6dc50e14da044d05f59dac4152878a7a",
+      "scope": "Synthetic fixtures; no real account/credential/source capture; source import/path/helper checks on donor runtime",
+      "laterChanges": "Only documented synthetic fixture label or MCP version metadata changes require affected rerun; subsequent raw receipts kept outside public package",
+      "currentScriptSHA256": "fb6e1fdfa16f6160fd4689cd5ba257d4ec7540bdf35535547486722ea7f50806",
+      "identityLimitation": "Current script hash; first donor-run output separately recorded; affected reruns/immutable clone verification retained in private evidence"
+    },
+    {
+      "id": "test-03",
+      "script": "scripts/test_runtime_paths.mjs",
+      "exitCode": 0,
+      "stdoutSHA256": "76ce954595efa97119de6d3d7cb6272b8b50a3dc551e6435bf0a463b444bb6b8",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "Synthetic fixtures; no real account/credential/source capture; source import/path/helper checks on donor runtime",
+      "laterChanges": "Only documented synthetic fixture label or MCP version metadata changes require affected rerun; subsequent raw receipts kept outside public package",
+      "currentScriptSHA256": "f188e116fd48cefbf28aaa0d7dd554c72fc7d5de1e7e7e6d46fb4eac97c5ce58",
+      "identityLimitation": "Current script hash; first donor-run output separately recorded; affected reruns/immutable clone verification retained in private evidence"
+    },
+    {
+      "id": "test-04",
+      "script": "skills/livedune/scripts/check.mjs",
+      "exitCode": 0,
+      "stdoutSHA256": "80672ce10fbbc5c7e07061138bb3f8c89abf4115cfd26c89cc94b01a76d81874",
+      "stderrSHA256": "c3acc6ab2cccbd23be8cb2a8605619e825872366bd0649b78533046d51e81b94",
+      "scope": "Synthetic fixtures; no real account/credential/source capture; source import/path/helper checks on donor runtime",
+      "laterChanges": "Only documented synthetic fixture label or MCP version metadata changes require affected rerun; subsequent raw receipts kept outside public package",
+      "currentScriptSHA256": "c8889b75aa7716eb826bca8b58e15539ad24f60c7e5178920c8cf00c5d2db2cc",
+      "identityLimitation": "Current script hash; first donor-run output separately recorded; affected reruns/immutable clone verification retained in private evidence"
+    },
+    {
+      "id": "test-05",
+      "script": "skills/_shared/test_browser_zoom.py",
+      "exitCode": 0,
+      "stdoutSHA256": "b23841239e48dff4bce4f35d7b76fb4ae42b3d40789ba5911cea18af3d197220",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "Synthetic fixtures; no real account/credential/source capture; source import/path/helper checks on donor runtime",
+      "laterChanges": "Only documented synthetic fixture label or MCP version metadata changes require affected rerun; subsequent raw receipts kept outside public package",
+      "currentScriptSHA256": "6d1a40e16f98e51105362cd34c11856d38287e6f3e86c17de4002c0d3ba92dff",
+      "identityLimitation": "Current script hash; first donor-run output separately recorded; affected reruns/immutable clone verification retained in private evidence"
+    },
+    {
+      "id": "test-06",
+      "script": "skills/vk-comment-screenshot/scripts/test_comment_screenshoter.py",
+      "exitCode": 0,
+      "stdoutSHA256": "eef1f8cc698e9330f76fbed6116518753af7376625435baeb511123191eee7ce",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "Synthetic fixtures; no real account/credential/source capture; source import/path/helper checks on donor runtime",
+      "laterChanges": "Only documented synthetic fixture label or MCP version metadata changes require affected rerun; subsequent raw receipts kept outside public package",
+      "currentScriptSHA256": "e8588fbe2b597bda4fe18367ddd32b75808429fe1de7ed68f129b34885230a0f",
+      "identityLimitation": "Current script hash; first donor-run output separately recorded; affected reruns/immutable clone verification retained in private evidence"
+    },
+    {
+      "id": "test-07",
+      "script": "skills/vk-post-screenshot/scripts/test_screenshoter.py",
+      "exitCode": 0,
+      "stdoutSHA256": "db60109f7409a6df050583e1afd3b44e8cba9e923665172833e0d56333f7fb38",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "Synthetic fixtures; no real account/credential/source capture; source import/path/helper checks on donor runtime",
+      "laterChanges": "Only documented synthetic fixture label or MCP version metadata changes require affected rerun; subsequent raw receipts kept outside public package",
+      "currentScriptSHA256": "581b47c629615c7375160ff0383a429e7fdfe0bad6369ee9483c5a405b8190af",
+      "identityLimitation": "Current script hash; first donor-run output separately recorded; affected reruns/immutable clone verification retained in private evidence"
+    },
+    {
+      "id": "test-08",
+      "script": "skills/vk-stories-screenshot/scripts/test_vk_stories.py",
+      "exitCode": 0,
+      "stdoutSHA256": "7dcbe949b3f766835b2a2421d1a14f866f9519549f07ea27caa245d82cfc9bab",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "Synthetic fixtures; no real account/credential/source capture; source import/path/helper checks on donor runtime",
+      "laterChanges": "Only documented synthetic fixture label or MCP version metadata changes require affected rerun; subsequent raw receipts kept outside public package",
+      "currentScriptSHA256": "922af1f43d27640b0c521f484d3db6647d8d9b4fb55c24c9c61f133de90e63ab",
+      "identityLimitation": "Current script hash; first donor-run output separately recorded; affected reruns/immutable clone verification retained in private evidence"
+    },
+    {
+      "id": "test-09",
+      "script": "skills/vk-message-screenshot/scripts/test_vk_messages.py",
+      "exitCode": 0,
+      "stdoutSHA256": "389c2065e7b0a35d81eaf5bca5fea1cf8672ab67a24bfdba9edac319e7c412c0",
+      "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "Synthetic fixtures; no real account/credential/source capture; source import/path/helper checks on donor runtime",
+      "laterChanges": "Only documented synthetic fixture label or MCP version metadata changes require affected rerun; subsequent raw receipts kept outside public package",
+      "currentScriptSHA256": "8080ebdd0ce792abcc7540b1bcdd09b6281e0f6c7be33716da7c7cf5843ae62e",
+      "identityLimitation": "Current script hash; first donor-run output separately recorded; affected reruns/immutable clone verification retained in private evidence"
+    }
+  ],
+  "skillValidation": [
+    {
+      "skill": "report-skills/skills/livedune",
+      "exitCode": 0
+    },
+    {
+      "skill": "report-skills/skills/vk-comment-screenshot",
+      "exitCode": 0
+    },
+    {
+      "skill": "report-skills/skills/vk-message-screenshot",
+      "exitCode": 0
+    },
+    {
+      "skill": "report-skills/skills/vk-post-screenshot",
+      "exitCode": 0
+    },
+    {
+      "skill": "report-skills/skills/vk-stories-screenshot",
+      "exitCode": 0
+    }
+  ],
+  "originalFailures": [
+    {
+      "test": "VK post rate-limit fixture",
+      "status": "OPEN_FLAKY",
+      "observation": "First cold suite failed; isolated diagnostic and final full run passed without oracle relaxation; timing cause not fully proven"
+    }
+  ],
+  "limitations": [
+    "No target-device/account/OS or host install validation",
+    "No live Google/LiveDune/social access",
+    "No independent QA/security approval",
+    "License/release/publication pending",
+    "Raw donor paths and temporary screenshots deliberately excluded"
+  ],
+  "lifecycle": {
+    "result": "IN_DEVELOPMENT",
+    "exitCode": 0,
+    "framework": "v3.4.0",
+    "commit": "63f4faee40598bd3d6e75d49777fa00982c20811",
+    "scope": "Development identity/policy only, not gates/release"
+  },
+  "claimGate": {
+    "result": "FAIL",
+    "reason": "Material technical observations await real human acceptance; no schema/policy waiver or fake approval"
+  }
+}

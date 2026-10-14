@@ -1,0 +1,15 @@
+# API backend
+
+Canonical sources: https://api.livedune.com/docs/mcp.html ; https://api.livedune.com/docs/openapi.json ; https://registry.npmjs.org/mcp-openapi/0.3.0 ; https://github.com/Docat0209/mcp-openapi . Backend0.3.0 declares MIT; no backend/node_modules is vendored. Runtime lock and schema source/hash are prepared under dependencies/livedune in package root; the original public schema is not vendored; installation requires explicit authorization and license/integrity review, no @latest.
+
+Resolve scripts/mcp-run.mjs relative to skill. Pass --runtime with the employee's approved external installed runtime, --list true for tool inventory (no credential/HTTP). For actual calls pass --run-dir private external path, --calls private approved JSON, --cap budget. Do not execute examples with invented IDs. Script caps1–200/default200; default is ceiling, not task spend permission. One shared run-dir/lock/ledger for the same job, STARTED consumes even uncertain attempts; aggregate quota may be spent by other employees.
+
+Credential adapter: macOS generic password service livedune-api-key, account current OS USER, only at actual request. User enters secret outside chat/argv/package; missing/denied stops. Other OS adapter deferred. No alternative credential search or plaintext/env-token fallback.
+
+Ready backend performs HTTP; adapter bounds https://api.livedune.com GET endpoints/params and adds the credential immediately before actual fetch (backend query-auth mapping alone is insufficient). maxRetries0; redirect:error. Full raw JSON archived with0700dir/0600files before shortened tool preview. Do not enable paid response transforms or write an endpoint-specific client.
+
+Original spec1.0.10 hash checked by SPEC_HASH; mapping of selected post endpoint account/post path params corrected in memory. UUID account IDs remain strings. MAX mid.hex32 permitted only for posts ID; arbitrary encoded/traversal routes denied. Spec drift requires review before use.
+
+Paginate posts/history/stories/videos/audience with original after; terminate empty/0, fail repeated cursor/schema/provider error. Unknown body/HTML/scalar fails. FAILED_OR_UNCERTAIN is not retry authorization; inspect local ledger/outcome, then explicit decision. On cap no extra info request, report local STARTED/budget and ask for exact change; no bypass/new directory.
+
+Offline check: node scripts/check.mjs, optionally approved runtime arg for actual backend with synthetic transport and denied Keychain/network. This is not live account proof. Actual provider responses must be checked against requested account/network/period/population; source hash alone doesn't establish truth.

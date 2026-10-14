@@ -1,0 +1,85 @@
+{
+  "observed_at": "2026-10-07T14:40:51+03:00",
+  "auth": {
+    "url": "https://vk.ru",
+    "ready": "[data-testid=header-profile-menu-button]",
+    "required": "[data-testid=enter-another-way], [data-testid=placeholder_description]:text-is('User authorization failed')"
+  },
+  "community": {
+    "source": "archive_response_groups"
+  },
+  "archive": {
+    "api_path": "/method/stories.getArchive",
+    "ready": "[role=dialog][aria-label='Архив историй']",
+    "denied": "[role=dialog][aria-label='Архив историй'] [data-testid=placeholder_description]",
+    "cards": "[data-testid=story_archive_grid_item]",
+    "identity": {
+      "selector": "[role=button][data-testid]",
+      "attribute": "data-testid"
+    },
+    "date": {
+      "source": "archive_date",
+      "selector": "[role=button][data-testid]",
+      "attribute": "data-testid",
+      "format": "unix_s"
+    },
+    "preview_date": {
+      "selector": "[data-testid=date_badge]",
+      "timezone": "Europe/Moscow",
+      "months": {
+        "1": "янв",
+        "2": "фев",
+        "3": "мар",
+        "4": "апр",
+        "5": "мая",
+        "6": "июн",
+        "7": "июл",
+        "8": "авг",
+        "9": "сен",
+        "12": "дек"
+      }
+    },
+    "scroll": "[role=dialog][aria-label='Архив историй'] > div[style='height: 100%;']",
+    "descending_days": true
+  },
+  "viewer": {
+    "region": "[data-testid=stories-gallery-selected-item]",
+    "identity": {
+      "source": "active_story",
+      "selector": "[data-active-story-index]",
+      "field": "id"
+    },
+    "date": {
+      "source": "active_story",
+      "selector": "[data-active-story-index]",
+      "field": "date",
+      "format": "unix_s"
+    },
+    "visible_date": "[data-testid=stories_viewer_header_title]",
+    "author": "[data-testid=stories_viewer_header_meta]",
+    "media": {
+      "selector": "img:not([style*='ImageBase_object_filter: blur(']),video",
+      "min_width": 200,
+      "min_height": 300,
+      "min_natural_width": 200
+    },
+    "pause": [
+      {
+        "action": "press",
+        "selector": "[data-testid=stories-gallery-selected-item] [data-story-playing=true]",
+        "key": "Space",
+        "optional": false
+      }
+    ],
+    "paused": "[data-story-playing=false]",
+    "close": [
+      {
+        "action": "click",
+        "selector": "[data-testid=stories-gallery-close]"
+      }
+    ],
+    "screenshot_style": "[data-testid=stories_viewer_pause_button], [data-testid=stories_viewer_menu_dropdown], [data-testid=story-feedback-detailed], [data-testid=stories_viewer_footer_feedback], [data-testid=story_add_to_narrative], [data-testid=story_share_button] { visibility: hidden !important; }",
+    "author_avatar": "[data-testid=stories_viewer_avatar]"
+  },
+  "evidence_status": "Historical selector snapshot; private captures excluded; target-device/live UI not verified"
+}

@@ -1,0 +1,20 @@
+{
+  "backend": {
+    "package": "mcp-openapi",
+    "version": "0.3.0",
+    "declaredLicense": "MIT",
+    "source": "https://registry.npmjs.org/mcp-openapi/0.3.0",
+    "upstream": "https://github.com/Docat0209/mcp-openapi",
+    "lockSHA256": "9bf6dd11f140a43be54c1b27ad48db834daa35149205be4cb6fce8a078f62dcd",
+    "installedInThisRepository": false
+  },
+  "schema": {
+    "source": "https://api.livedune.com/docs/openapi.json",
+    "approvedVersion": "1.0.10",
+    "sha256": "3998516d4bcf19f5299763257e76b44830905066c61638e77f4e94e51ffc6b47",
+    "vendored": false,
+    "onDrift": "STOP_REVIEW_REQUIRED"
+  },
+  "installPolicy": "Explicit permission; external isolated runtime; frozen lock/ignore-scripts; do not install during offline preparation",
+  "platformCredential": "macOS Keychain only; other OS pending"
+}

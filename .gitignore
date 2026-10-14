@@ -12,3 +12,6 @@ private/
 .tmp/
 *.sqlite3
 *.sqlite3-*
+.token-optimizer/
+.coverage
+.pytest_cache/

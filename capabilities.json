@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "package_version": "0.1.0-dev.0",
+  "status": "LOCAL_PREPARATION_NOT_INSTALLED",
+  "capabilities": [
+    {
+      "name": "livedune",
+      "requires": [],
+      "external": [
+        "mcp-openapi@0.3.0"
+      ],
+      "credential_cli": "macOS Keychain; other OS NOT_SUPPORTED",
+      "live_status": "NOT_RUN"
+    },
+    {
+      "name": "vk-post-screenshot",
+      "requires": [],
+      "external": [
+        "playwright==1.63.0",
+        "Chromium"
+      ],
+      "live_status": "NOT_RUN"
+    },
+    {
+      "name": "vk-comment-screenshot",
+      "requires": [
+        "vk-post-screenshot"
+      ],
+      "external": [],
+      "live_status": "NOT_RUN"
+    },
+    {
+      "name": "vk-stories-screenshot",
+      "requires": [],
+      "external": [
+        "playwright==1.63.0",
+        "Chromium"
+      ],
+      "live_status": "NOT_RUN"
+    },
+    {
+      "name": "vk-message-screenshot",
+      "requires": [
+        "vk-stories-screenshot"
+      ],
+      "external": [
+        "playwright==1.63.0",
+        "Chromium"
+      ],
+      "live_status": "NOT_RUN"
+    }
+  ],
+  "shared": [
+    "skills/_shared/ui_queue.py",
+    "skills/_shared/browser_zoom.py",
+    "skills/_shared/private_paths.py"
+  ],
+  "not_included": [
+    "telegram-post-screenshot",
+    "telegram-comment-screenshot",
+    "max-post-screenshot",
+    "max-comment-screenshot",
+    "instagram-post-screenshot",
+    "threads-post-screenshot",
+    "tiktok-post-screenshot"
+  ],
+  "permissions": "API read-only; screenshots through employee-authorized local browser; no post/message sending",
+  "compatibility": "Target OS/account/runtime not yet selected; no cross-device support claim"
+}
