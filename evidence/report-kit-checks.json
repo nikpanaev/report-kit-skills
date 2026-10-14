@@ -1,0 +1,148 @@
+{
+  "candidate_version": "0.1.0-dev.5",
+  "employee_entrypoints": "Package-local instructions; no parent/developer framework required",
+  "skills": {
+    "agent": 8,
+    "source": 12
+  },
+  "synthetic_runs": [
+    {
+      "script": "test_updates.py",
+      "sha256": "1f42ca082f22d5a3e7135b594e0461ed3847fd68f324d89b4029f81ad6cf54a4",
+      "exit_code": 0
+    },
+    {
+      "script": "test_maintenance.py",
+      "sha256": "258b1baf7a31478c538e68725d66f8b0d223bbe67b1bfc1234982452749bdb0e",
+      "exit_code": 0
+    },
+    {
+      "script": "test_package_boundaries.py",
+      "sha256": "836b0616efc02eea4c5c3cbba3a48c26fa0f371a0e6cfcf94bbd4dfe4a7dfc2c",
+      "exit_code": 0
+    },
+    {
+      "script": "test_prepare_release.py",
+      "sha256": "3b534843166174eb903970f4f816064fb505a25ab2becc96641683e0ff243f84",
+      "exit_code": 0
+    },
+    {
+      "script": "check_report_templates_selftest.py",
+      "sha256": "dbde613895c5360ece334f61e8d3cae3386d3d3bd5651c641f1ebb4c6393b480",
+      "exit_code": 0
+    },
+    {
+      "script": "test_runtime_paths.py",
+      "sha256": "fb6e1fdfa16f6160fd4689cd5ba257d4ec7540bdf35535547486722ea7f50806",
+      "exit_code": 0
+    },
+    {
+      "script": "test_runtime_paths.mjs",
+      "sha256": "f188e116fd48cefbf28aaa0d7dd554c72fc7d5de1e7e7e6d46fb4eac97c5ce58",
+      "exit_code": 0
+    },
+    {
+      "script": "check.mjs",
+      "sha256": "c8889b75aa7716eb826bca8b58e15539ad24f60c7e5178920c8cf00c5d2db2cc",
+      "exit_code": 0
+    }
+  ],
+  "standalone_runs": [
+    {
+      "command_tail": [
+        "-B",
+        "-m",
+        "unittest",
+        "test_extended_paths.RuntimePaths.test_instagram_rejects_package_session_before_login",
+        "test_extended_paths.RuntimePaths.test_instagram_defaults_use_external_selected_state",
+        "test_extended_paths.RuntimePaths.test_post_capture_rejects_package_output_before_navigation"
+      ],
+      "exit_code": 1
+    },
+    {
+      "command_tail": [
+        "-B",
+        "-m",
+        "unittest",
+        "test_extended_paths.RuntimePaths.test_stitch_rejects_output_before_opening_images"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command_tail": [
+        "-B",
+        "scripts/test_threads_post_screenshot.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command_tail": [
+        "-B",
+        "scripts/test_screenshoter.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command_tail": [
+        "-B",
+        "scripts/test_screenshot.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command_tail": [
+        "-B",
+        "scripts/test_stitch_post_screenshots.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command_tail": [
+        "-B",
+        "scripts/test_telegram_queue.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command_tail": [
+        "-B",
+        "scripts/test_updates.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command_tail": [
+        "-B",
+        "scripts/test_maintenance.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "guard_recheck": [
+    {
+      "command_tail": [
+        "-B",
+        "-m",
+        "unittest",
+        "test_extended_paths.RuntimePaths.test_instagram_rejects_package_session_before_login",
+        "test_extended_paths.RuntimePaths.test_instagram_defaults_use_external_selected_state",
+        "test_extended_paths.RuntimePaths.test_post_capture_rejects_package_output_before_navigation"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command_tail": [
+        "-B",
+        "-m",
+        "unittest",
+        "test_extended_paths.RuntimePaths.test_stitch_rejects_output_before_opening_images"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "original_failure": "Lexical /var versus resolved /private/var fixture expectation; corrected assertion uses resolve, original failed receipt retained privately",
+  "live_services": "NOT_RUN",
+  "installed_rollout": "NOT_RUN",
+  "original_rate_limit_finding": "OPEN_NOT_REPRODUCED",
+  "limits": "Synthetic source/import/path checks only; no independent audit, employee install, grants, native activation, live capture, public release or legal clearance"
+}

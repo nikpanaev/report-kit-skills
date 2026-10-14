@@ -1,0 +1,3 @@
+interface:
+  display_name: "Report Kit / telegram-post-screenshot"
+  short_description: "Посты Telegram из приложения или веб-клиента"

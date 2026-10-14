@@ -1,4 +1,4 @@
-# report-skills
+# report-kit-skills
 
 Candidate0.1.0-dev.1 добавляет единый [порядок сопровождения](skills/_shared/MAINTENANCE.md). Адреса/разрешения выбирает сотрудник в private workspace; общий source packet не содержит личных чатов. Правила capture/transport не заменены; actual messaging/install/origin replay не проверены на устройстве сотрудника.
 
@@ -8,7 +8,7 @@ Candidate0.1.0-dev.1 добавляет единый [порядок сопро�
 
 ## Начальный набор
 
-Пять source skills: LiveDune, VK posts, comments, messages, stories. [Каталог](capabilities.json) фиксирует required transitive skills и NOT_INCLUDED для остальных площадок. Comments reuse posts; messages reuse stories. Общие очередь/zoom/private path guard — skills/_shared, не отдельный capture engine.
+Двенадцать source skills: LiveDune; VK posts/comments/messages/stories; Instagram, Threads и TikTok posts; Telegram и MAX posts/comments. [Каталог](capabilities.json) фиксирует все включённые capabilities, внешние инструменты и transitive skills. Comments reuse posts; messages reuse stories. Общие очередь/zoom/private path guard — skills/_shared, не отдельный capture engine.
 
 [Scope/платформенные ограничения](CHANGE-SPEC.md), [provenance](SOURCE-PROVENANCE.json), [проверки](EVIDENCE-INDEX.md). Наличие SKILL.md не доказывает installation/invocation/live readiness. Employee data находится вне package: REPORT_SKILLS_STATE_DIR; каждый task output в его private run. Явные in-package data paths отвергаются.
 
@@ -16,7 +16,7 @@ OpenAPI сохраняется как source/hash в dependencies/livedune/recip
 
 Public historical VK UI recipe не live evidence. Working observed map private; default CLI требует его после actual observation, см. skills/vk-stories-screenshot/references/ui.md. Не добавлять фиктивные evidence locators ради PASS.
 
-Локальные тесты: `python3 scripts/test_runtime_paths.py`, `node scripts/test_runtime_paths.mjs`, `node skills/livedune/scripts/check.mjs`. Полные VK/zoom fixture checks требуют заранее разрешённого Playwright1.63.0/browser runtime; такие checks могут использовать task-owned окна только synthetic fixture, не user session. Общий read-only package checker хранится в report-agent/scripts/check_package.py и может проверять этот репозиторий без исполнения его файлов.
+Локальные тесты: `python3 scripts/test_runtime_paths.py`, `node scripts/test_runtime_paths.mjs`, `node skills/livedune/scripts/check.mjs`. Полные VK/zoom fixture checks требуют заранее разрешённого Playwright1.63.0/browser runtime; такие checks могут использовать task-owned окна только synthetic fixture, не user session. Общий read-only package checker хранится в report-kit-agent/scripts/check_package.py и может проверять этот репозиторий без исполнения его файлов.
 
 Никаких keys/session/profile/account/client data в public files/Git. License и independent review pending. Known cold rate-limit fixture failure сохранён в evidence и не скрыт isolated pass.
 
@@ -32,4 +32,9 @@ Public historical VK UI recipe не live evidence. Working observed map private;
 
 VERSION is the sole development-version source; plugin manifest is a checked mirror. Package content identity and private workspace schema are separate. Public GitHub release/URLs require later explicit authority.
 
-Candidate dev.2 adds [versioned compatibility declarations](contracts.json), checked with the agent's update preflight. Source behaviour is unchanged; declarations and synthetic checks are not a new-device support promise. Employee user guidance/help ships in report-agent, keeping one source of truth.
+Candidate dev.2 adds [versioned compatibility declarations](contracts.json), checked with the agent's update preflight. Source behaviour is unchanged; declarations and synthetic checks are not a new-device support promise. Employee user guidance/help ships in report-kit-agent, keeping one source of truth.
+
+
+## Report Kit naming and legacy compatibility
+
+New client chat: `Report Kit / <client name>`; new portable reporting agent identifier: `report-kit-<client_id>`. Workflow IDs also use report-kit-. Package IDs are report-kit-agent/report-kit-skills; workspace schema2 is required. Legacy configurations and installed copies are not silently switched by a display rename. VK/LiveDune source skill IDs, REPORT_SKILLS_STATE_DIR and existing queue/state path names remain stable; their old report-skills label does not identify a second package or store. Setup must check the actual selected bytes and one UI queue before installation.

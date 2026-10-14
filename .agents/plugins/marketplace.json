@@ -1,8 +1,8 @@
 {
-  "name": "report-skills-local",
+  "name": "report-kit-skills-local",
   "plugins": [
     {
-      "name": "report-skills",
+      "name": "report-kit-skills",
       "source": {
         "source": "local",
         "path": "./"

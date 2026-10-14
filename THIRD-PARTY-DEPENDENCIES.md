@@ -27,4 +27,9 @@ esbuild0.27.7 declares postinstall. Frozen lock и ignore-scripts не дока�
 
 ## При обновлении
 
-Если package.json/lock/requirements/recipe, platform или binary delivery меняются, пересобрать inventory и повторить exact registry/integrity/engine/notice review. Не считать старые metadata hashes текущими версиями и не скачивать latest вместо pinned package. Raw metadata receipts и вспомогательный fetch script остаются вне Git-пакета. Процесс подготовки парного выпуска находится в report-agent/references/releases.md; при раздельной установке читать выбранную копию этого пакета, не угадывать sibling path.
+Если package.json/lock/requirements/recipe, platform или binary delivery меняются, пересобрать inventory и повторить exact registry/integrity/engine/notice review. Не считать старые metadata hashes текущими версиями и не скачивать latest вместо pinned package. Raw metadata receipts и вспомогательный fetch script остаются вне Git-пакета. Процесс подготовки парного выпуска находится в report-kit-agent/references/releases.md; при раздельной установке читать выбранную копию этого пакета, не угадывать sibling path.
+
+
+## Additional source capabilities in dev.5
+
+Instagram/Threads/TikTok reuse existing Playwright1.63.0/Chromium and shared FIFO/zoom; no new browser engine. Telegram/MAX use authorized native computer-use; their common stitch helper requires Pillow and NumPy in a selected external Python runtime. The local image-only fixture ran with Pillow12.3.0/NumPy2.3.5; browser fixtures used the existing Playwright1.63.0 runtime separately. This is not a combined employee environment validation or frozen Python distribution. Pillow/NumPy licensing, transitive/binary/runtime review and target-device checks remain pending. No dependency install or donor authorization import occurred.

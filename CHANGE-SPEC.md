@@ -27,3 +27,11 @@ Compatibility slice dev.2: declare source/shared interface and per-capability pe
 Release observations slice: current unchanged rate-limit fixture full diagnostic and five fresh-process probes passed; original failure not reproduced, cause unknown. OPEN remains, not a fix/waiver. No capture/API code or assertion/timeouts changed. Add sanitized receipt/changelog and advance candidate declaration mirrors; native packaging belongs to report-agent, no duplicated builder.
 
 Dependency evidence slice: read-only exact primary metadata for all134 frozen npm versions and four observed Python distributions;18 recorded owner-source exports checked across both repos. No tarballs/code/install/auth requested. Capture/API implementations and requirement pins unchanged. Add sanitized inventory and guidance for effective Node>=20, Python resolver/binary/lifecycle-script limits; owner rights/license and independent reviews remain unresolved. No legal clearance inferred from registry license labels.
+
+
+## Report Kit naming slice — 2026-10-14
+
+Owner accepted Report Kit and report-kit naming. Portable package IDs/folders become report-kit-agent and report-kit-skills; eight agent workflow IDs use report-kit-. Workspace schema/interface2 records the new package keys and rejects legacy inputs; no private workspace is rewritten or installed. Source capability IDs, environment names and existing external state/queue paths stay stable to avoid a second queue or lost sessions. This naming operation is distinct from activating a new package on an existing client. Existing client/maintainer chat display names and local development-folder rename are separately authorized; client rules, bindings, reports and installed source code remain unchanged.
+
+
+Owner follow-up: all report source skills must be present; employee instructions must work independently of the developer framework. Add seven source capabilities plus existing shared stitch/queue dependencies, external state/output guards and synthetic regression. Public AGENTS now route only to shipped workflow/source instructions; developer lifecycle remains in the local project and is not an employee prerequisite. No install, live login or target-device support inferred from this export.

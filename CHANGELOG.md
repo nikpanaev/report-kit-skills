@@ -25,3 +25,11 @@
 ## 0.1.0-dev.0
 
 Первоначальная локальная подготовка двух пакетов для будущих клиентов; чужие аккаунты, сессии и готовые отчёты исключены.
+
+
+## 0.1.0-dev.5 — Report Kit
+
+Package IDs and portable agent workflow names now use report-kit-. Workspace schema2 rejects old package keys; setup must review a separately prepared configuration, never silently migrate existing data. Source skill IDs and state/queue paths are unchanged. No installed/client rollout, live report or public release implied.
+
+
+The same uncommitted dev.5 naming slice now includes all12 report source skills and self-contained employee entrypoints. Rules/helpers for template QA, updates, rollback, cleanup and source FIFO are shipped locally; external capabilities still require employee setup. Seven new source exports have no donor sessions/private pilot history.

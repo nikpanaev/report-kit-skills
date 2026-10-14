@@ -1,6 +1,6 @@
 # Evidence Index — report-skills
 
-Current state2026-10-14: VERSION0.1.0-dev.4, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
+Current state2026-10-14: VERSION0.1.0-dev.5, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
 
 Process Profile and authority: [CHANGE-SPEC](CHANGE-SPEC.md). Baseline and scoped branch actual Git; package content identity/private exact run records retained locally. [Offline checks](evidence/offline-checks.json) contain only sanitized source/test identities, no donor paths or private data. [Source provenance](SOURCE-PROVENANCE.json), [selection](OPEN-SOURCE-SELECTION.md) and [license status](LICENSE-STATUS.md).
 
@@ -64,3 +64,11 @@ Native read-only checks covered134/134 frozen npm exact versions, with identity/
 Owner follow-up2026-10-14: direct human response confirmed permission for the transferred own code and accepted the proposed MIT choice; naming still under discussion. No copyright identity guessed and no LICENSE/publication performed. Original metadata observations and earlier pending results preserved; license text/notice/independent controls not auto-approved.
 
 Owner naming follow-up: accepted public name Report Kit and report-kit prefix for future reporting agents. Existing client/installed copies excluded. Branding implementation is the next slice; this dev.4 dependency snapshot keeps its current package IDs. Copyright-holder name remains separate/pending.
+
+
+## Current naming slice — dev.5
+
+Owner approved Report Kit and existing-chat/local-folder naming. Current package IDs report-kit-agent/report-kit-skills and eight portable workflow IDs are namespaced; workspace interface/schema2 rejects legacy input. Historical evidence above retains exact original names/versions/hashes and is not dev.5 approval. Existing installed code/source capability IDs and external state paths remain unchanged; display naming is not activation or release. Checks for this candidate are recorded separately after execution.
+
+
+Source inventory expanded to12 capabilities at owner request. Required instructions/modified CLI paths/shared dependencies reviewed; original capture logic is inherited and has not received a new independent full audit. Isolated copies contained no parent AGENTS or developer framework:20 update and22 maintenance cases plus source URL/caption/PNG/stitch/FIFO checks passed. New external path guards exercised before session/navigation/image access. A synthetic default-path assertion initially compared lexical /var with canonical /private/var on macOS; original failed receipt retained, expected path corrected to resolve(). Target employee installation/permission/live capture remains NOT_RUN. Independent QA/security/license and earlier original rate-limit cause remain open.

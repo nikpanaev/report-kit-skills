@@ -147,6 +147,234 @@
         "Remove all private/client evidence paths; keep selectors and explicit historical status",
         "Public recipe is explicitly unobserved; actual UI map external and must pass unchanged observation guard"
       ]
+    },
+    {
+      "sourceRelative": "instagram-post-screenshot/SKILL.md",
+      "sourceSHA256": "19525da09d4181f214cb959dfb0f862e9500cb36e584589c4da097eae9f905f1",
+      "destination": "skills/instagram-post-screenshot/SKILL.md",
+      "outputSHA256": "296252c38ec5760212c3fb683bed895870f1b157004edc715b8afe4dfc01c876",
+      "changes": [
+        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained"
+      ]
+    },
+    {
+      "sourceRelative": "instagram-post-screenshot/agents/openai.yaml",
+      "sourceSHA256": "c1c66158855a00f6dec36d0e11bd0bd0f965c8f5c20bdc50d61a96cd15494cbb",
+      "destination": "skills/instagram-post-screenshot/agents/openai.yaml",
+      "outputSHA256": "9f1b7b891b2631fa1a82474781c1d46c32c6b20e8865bcfc9e939a137c6b8995",
+      "changes": [
+        "Report Kit display label; preserve invocation policy/default prompt"
+      ]
+    },
+    {
+      "sourceRelative": "instagram-post-screenshot/scripts/instagram_post_screenshot.py",
+      "sourceSHA256": "f87cc1c1af0f8cc2484e401ad82df4d64533ea47368277c05e4ed00fe2cfb308",
+      "destination": "skills/instagram-post-screenshot/scripts/instagram_post_screenshot.py",
+      "outputSHA256": "4796d17c086de906efc95e4957748ea05b8ac26c563a77592501477673b88626",
+      "changes": [
+        "Reject package/ancestor/symlink runtime output/state paths with existing shared guard; external defaults; capture algorithm unchanged"
+      ]
+    },
+    {
+      "sourceRelative": "instagram-post-screenshot/scripts/requirements.txt",
+      "sourceSHA256": "852008c6c134845926625892a248563fe02a96a91e769e6735af1bad49ab2cef",
+      "destination": "skills/instagram-post-screenshot/scripts/requirements.txt",
+      "outputSHA256": "852008c6c134845926625892a248563fe02a96a91e769e6735af1bad49ab2cef",
+      "changes": []
+    },
+    {
+      "sourceRelative": "instagram-post-screenshot/scripts/test_screenshot.py",
+      "sourceSHA256": "0814792a64e14edef3f1d2a2b03ab08cec1145b744bdda56eb0db427aa25a2fd",
+      "destination": "skills/instagram-post-screenshot/scripts/test_screenshot.py",
+      "outputSHA256": "8af92c9926d2c23a84e938882361ee2eb552407d727c59578871a06a7609d430",
+      "changes": [
+        "Construct synthetic URL-userinfo negative fixtures from parts to avoid literal email in public source; same runtime test value/assertions",
+        "Synthetic userinfo fixture assembly and compact temporary-file receipt; assertions unchanged"
+      ]
+    },
+    {
+      "sourceRelative": "threads-post-screenshot/SKILL.md",
+      "sourceSHA256": "48aedc470949e377a3c2f842df5b21f5f1359d98a21d4e46ff8d976f67eee612",
+      "destination": "skills/threads-post-screenshot/SKILL.md",
+      "outputSHA256": "264ba71a1abd867d52eb41594f77d25ce03f03541f1be6c69a58a0364d3f7fa8",
+      "changes": [
+        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained"
+      ]
+    },
+    {
+      "sourceRelative": "threads-post-screenshot/scripts/requirements.txt",
+      "sourceSHA256": "852008c6c134845926625892a248563fe02a96a91e769e6735af1bad49ab2cef",
+      "destination": "skills/threads-post-screenshot/scripts/requirements.txt",
+      "outputSHA256": "852008c6c134845926625892a248563fe02a96a91e769e6735af1bad49ab2cef",
+      "changes": []
+    },
+    {
+      "sourceRelative": "threads-post-screenshot/scripts/test_threads_post_screenshot.py",
+      "sourceSHA256": "35cd5a441a1877ad7e6648f9d64bc3cdebbc4bf0838133098876e40bc89bfa59",
+      "destination": "skills/threads-post-screenshot/scripts/test_threads_post_screenshot.py",
+      "outputSHA256": "1e723e4d5a589de84cfa2830bc8185cab287c8835b6a3662c2fc4ea2f892d5f4",
+      "changes": [
+        "Synthetic public URL fixtures; unchanged assertions"
+      ]
+    },
+    {
+      "sourceRelative": "threads-post-screenshot/scripts/threads_post_screenshot.py",
+      "sourceSHA256": "d019e5381a1dc3a8e19433d4727f6c82486ec5a6a641e84b5b5aac3fe82ddd5c",
+      "destination": "skills/threads-post-screenshot/scripts/threads_post_screenshot.py",
+      "outputSHA256": "ef426cbf476f421639de500f922318d4589ff0e5abcab7f2b40e0d55c5f51df3",
+      "changes": [
+        "Reject package/ancestor/symlink runtime output/state paths with existing shared guard; external defaults; capture algorithm unchanged"
+      ]
+    },
+    {
+      "sourceRelative": "tiktok-post-screenshot/SKILL.md",
+      "sourceSHA256": "557c5dd26f9f7ea34c5b30149bf77bcc822666834a3b4dd3080cebaaa7e23e0e",
+      "destination": "skills/tiktok-post-screenshot/SKILL.md",
+      "outputSHA256": "d1fe1eec16329b083744c7b0ed546c37345031f3c7ba0dfe894986fb0726060f",
+      "changes": [
+        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained"
+      ]
+    },
+    {
+      "sourceRelative": "tiktok-post-screenshot/scripts/requirements.txt",
+      "sourceSHA256": "852008c6c134845926625892a248563fe02a96a91e769e6735af1bad49ab2cef",
+      "destination": "skills/tiktok-post-screenshot/scripts/requirements.txt",
+      "outputSHA256": "852008c6c134845926625892a248563fe02a96a91e769e6735af1bad49ab2cef",
+      "changes": []
+    },
+    {
+      "sourceRelative": "tiktok-post-screenshot/scripts/test_screenshoter.py",
+      "sourceSHA256": "ef607ced6f9d6737ce8502833f64944440f6334539cdb007a08e46eb46fdb232",
+      "destination": "skills/tiktok-post-screenshot/scripts/test_screenshoter.py",
+      "outputSHA256": "09ba2ef962c7296da6ae15ec59fb05981999e0ab6925d05477050c85cdbc0afe",
+      "changes": [
+        "Synthetic userinfo fixture assembly and compact temporary-file receipt; assertions unchanged"
+      ]
+    },
+    {
+      "sourceRelative": "tiktok-post-screenshot/scripts/tiktok_post_screenshoter.py",
+      "sourceSHA256": "8f890076fcebb41793b8471a4470ccb6cd8679ce5d79e1f3f736f52b03b86278",
+      "destination": "skills/tiktok-post-screenshot/scripts/tiktok_post_screenshoter.py",
+      "outputSHA256": "7ca01dbbb5d67b3fc57fd44d502b328153798d805616913aa02e0a13990c512b",
+      "changes": [
+        "Reject package/ancestor/symlink runtime output/state paths with existing shared guard; external defaults; capture algorithm unchanged"
+      ]
+    },
+    {
+      "sourceRelative": "telegram-post-screenshot/SKILL.md",
+      "sourceSHA256": "a8bd4658b3a1e0ad0dd6a3a0d2e4d26af9f3bf14eaf5a13f53480719891c606e",
+      "destination": "skills/telegram-post-screenshot/SKILL.md",
+      "outputSHA256": "92c2b0ad1157a1de223997003fb161ae99c6db14ef7e00950911ccdf84ce7e27",
+      "changes": [
+        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
+        "Describe rendered image path without a fake local link placeholder"
+      ]
+    },
+    {
+      "sourceRelative": "telegram-post-screenshot/agents/openai.yaml",
+      "sourceSHA256": "b22793d1c46fb5b34170cc4d1e0162c2b0b3a8cb1b99e31d4c7e1602eb7e8f65",
+      "destination": "skills/telegram-post-screenshot/agents/openai.yaml",
+      "outputSHA256": "5a61cbd4ab7e6ed04443b0657f8699d057b54979e7dcbac3305cb4c4b93b112c",
+      "changes": [
+        "Report Kit display label; preserve invocation policy/default prompt"
+      ]
+    },
+    {
+      "sourceRelative": "telegram-post-screenshot/references/queue.md",
+      "sourceSHA256": "f37fe8414a7d657e07a0f2d184ba3bd94f99d230b00e04941d6325835780fb7f",
+      "destination": "skills/telegram-post-screenshot/references/queue.md",
+      "outputSHA256": "3e7370f2187111038bc0fcab8464981ee59d14731442fd71cb75fcfdd074277c",
+      "changes": [
+        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
+        "Resolve maintenance link from references directory"
+      ]
+    },
+    {
+      "sourceRelative": "telegram-post-screenshot/scripts/telegram_queue.py",
+      "sourceSHA256": "8dedc71a0cbf4f20c9dcc7cae3dac0dcd71414303843b4d786c3f9b784347833",
+      "destination": "skills/telegram-post-screenshot/scripts/telegram_queue.py",
+      "outputSHA256": "8dedc71a0cbf4f20c9dcc7cae3dac0dcd71414303843b4d786c3f9b784347833",
+      "changes": []
+    },
+    {
+      "sourceRelative": "telegram-post-screenshot/scripts/test_telegram_queue.py",
+      "sourceSHA256": "98229fd31b9a2c44a69155e645d04e994d09b64c9be014bd425495eceab2aea0",
+      "destination": "skills/telegram-post-screenshot/scripts/test_telegram_queue.py",
+      "outputSHA256": "98229fd31b9a2c44a69155e645d04e994d09b64c9be014bd425495eceab2aea0",
+      "changes": []
+    },
+    {
+      "sourceRelative": "telegram-comment-screenshot/SKILL.md",
+      "sourceSHA256": "2a2df083448ceef3faf0333f56af76876756ba3fe29ce1b31269b7e4e5712b41",
+      "destination": "skills/telegram-comment-screenshot/SKILL.md",
+      "outputSHA256": "e4200e545cf0a3f49015f9d37ec234a47f8c1c634d55974a665c481abb233854",
+      "changes": [
+        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
+        "Describe rendered image path without a fake local link placeholder"
+      ]
+    },
+    {
+      "sourceRelative": "telegram-comment-screenshot/agents/openai.yaml",
+      "sourceSHA256": "e039e25be17bab641234768a8d84d277e8fe5b9f147e32824623159fb4d5639f",
+      "destination": "skills/telegram-comment-screenshot/agents/openai.yaml",
+      "outputSHA256": "6bc8569e86dbfd331ce09f08a44c282febbe2bb706b5345ceb724dbfe9e0f9f8",
+      "changes": [
+        "Report Kit display label; preserve invocation policy/default prompt"
+      ]
+    },
+    {
+      "sourceRelative": "max-post-screenshot/SKILL.md",
+      "sourceSHA256": "28ac176c3c9a796dce944ed2c566e15be65deec3e86e561a858a5a601ec2166c",
+      "destination": "skills/max-post-screenshot/SKILL.md",
+      "outputSHA256": "daa63d396b711ecd37932034e016e74999f2ac3ff33e7befdadd4e834e6ebe30",
+      "changes": [
+        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
+        "Describe rendered image path without a fake local link placeholder"
+      ]
+    },
+    {
+      "sourceRelative": "max-post-screenshot/agents/openai.yaml",
+      "sourceSHA256": "60926cee9bef039698a17ee23cb6aaf011f670bdc0b7b8eda9154208a7b2692f",
+      "destination": "skills/max-post-screenshot/agents/openai.yaml",
+      "outputSHA256": "dcd53888ea46f75b2b979a9dd3160ffa3367282c22b25a154b3fd744030dda65",
+      "changes": [
+        "Report Kit display label; preserve invocation policy/default prompt"
+      ]
+    },
+    {
+      "sourceRelative": "max-post-screenshot/scripts/stitch_post_screenshots.py",
+      "sourceSHA256": "28f6fd46633c2dd404c710886d382a34c54108358733d54e951dcbe2486b4948",
+      "destination": "skills/max-post-screenshot/scripts/stitch_post_screenshots.py",
+      "outputSHA256": "758e3938a0ff8c29e1939733aabbf88b39c58ee406df935a91d91bcdac189ff9",
+      "changes": [
+        "Reject package/ancestor/symlink runtime output/state paths with existing shared guard; external defaults; capture algorithm unchanged"
+      ]
+    },
+    {
+      "sourceRelative": "max-post-screenshot/scripts/test_stitch_post_screenshots.py",
+      "sourceSHA256": "f69d5c60451fba30c9b87c2189393fae7a3a08695a3a728c775a796d91102dbc",
+      "destination": "skills/max-post-screenshot/scripts/test_stitch_post_screenshots.py",
+      "outputSHA256": "f69d5c60451fba30c9b87c2189393fae7a3a08695a3a728c775a796d91102dbc",
+      "changes": []
+    },
+    {
+      "sourceRelative": "max-comment-screenshot/SKILL.md",
+      "sourceSHA256": "c8f3f563e257e2dff6b98899b00a2134b5b3215298f0bbd836c2348ad3c7135e",
+      "destination": "skills/max-comment-screenshot/SKILL.md",
+      "outputSHA256": "315e190a2ed126aa8aab440c86f5d9a99a283d0b57ab0687dc2a0a7200f2c012",
+      "changes": [
+        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
+        "Describe rendered image path without a fake local link placeholder"
+      ]
+    },
+    {
+      "sourceRelative": "max-comment-screenshot/agents/openai.yaml",
+      "sourceSHA256": "dc7456bede0ba9e6c744dc9c1f37272b201014e5e1b08acdc17591e78b7cc4b8",
+      "destination": "skills/max-comment-screenshot/agents/openai.yaml",
+      "outputSHA256": "c900b07734e7ff9695e69dc83680563fe4b126b295ea7f86c853be831157f450",
+      "changes": [
+        "Report Kit display label; preserve invocation policy/default prompt"
+      ]
     }
   ]
 }
