@@ -21,6 +21,7 @@
     "dependencies/livedune/package.json",
     "dependencies/livedune/pnpm-lock.yaml",
     "dependencies/livedune/recipe.json",
+    "evidence/interface-checks.json",
     "evidence/maintenance-checks.json",
     "evidence/offline-checks.json",
     "evidence/rate-limit-diagnostic.json",

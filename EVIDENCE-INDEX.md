@@ -1,6 +1,6 @@
 # Evidence Index — report-skills
 
-Current state2026-10-14: VERSION0.1.0-dev.5, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
+Current state2026-10-14: VERSION0.1.0-dev.6, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
 
 Process Profile and authority: [CHANGE-SPEC](CHANGE-SPEC.md). Baseline and scoped branch actual Git; package content identity/private exact run records retained locally. [Offline checks](evidence/offline-checks.json) contain only sanitized source/test identities, no donor paths or private data. [Source provenance](SOURCE-PROVENANCE.json), [selection](OPEN-SOURCE-SELECTION.md) and [license status](LICENSE-STATUS.md).
 
@@ -72,3 +72,7 @@ Owner approved Report Kit and existing-chat/local-folder naming. Current package
 
 
 Source inventory expanded to12 capabilities at owner request. Required instructions/modified CLI paths/shared dependencies reviewed; original capture logic is inherited and has not received a new independent full audit. Isolated copies contained no parent AGENTS or developer framework:20 update and22 maintenance cases plus source URL/caption/PNG/stitch/FIFO checks passed. New external path guards exercised before session/navigation/image access. A synthetic default-path assertion initially compared lexical /var with canonical /private/var on macOS; original failed receipt retained, expected path corrected to resolve(). Target employee installation/permission/live capture remains NOT_RUN. Independent QA/security/license and earlier original rate-limit cause remain open.
+
+## Readable command metadata — 0.1.0-dev.6
+
+[Interface checks](evidence/interface-checks.json) record current declared UI text, standard YAML parsing and official skill validation.20 across the pair; IDs, unrelated metadata, SKILL bodies and executable bytes unchanged. Agent/source versions select an exact new pair for this metadata change; no installed copies/client agents affected. Source default-store doc now matches unchanged queue implementation. No native UI installation, employee comprehension, permissions, privacy/release acceptance inferred. Historical failures/controls preserved.

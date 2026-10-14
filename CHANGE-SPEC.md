@@ -35,3 +35,7 @@ Owner accepted Report Kit and report-kit naming. Portable package IDs/folders be
 
 
 Owner follow-up: all report source skills must be present; employee instructions must work independently of the developer framework. Add seven source capabilities plus existing shared stitch/queue dependencies, external state/output guards and synthetic regression. Public AGENTS now route only to shipped workflow/source instructions; developer lifecycle remains in the local project and is not an employee prerequisite. No install, live login or target-device support inferred from this export.
+
+## Office-user interface metadata — 0.1.0-dev.6
+
+Owner novice requirement applies to visible commands too. Change display_name/short_description and plugin description only; preserve IDs, policy/dependencies/default prompts and every SKILL body/executable. Existing validator and YAML/source preservation observations; no new tests mirroring wording, dependency or GUI. Source DATA-BOUNDARY default corrected to existing report-skills store; no second queue/default migration. Source provenance output hashes reflect five copied YAML adaptations; origins unchanged. Target employee/native installation/usability and independent release controls remain open.

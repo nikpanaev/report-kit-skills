@@ -1,4 +1,4 @@
 interface:
-  display_name: "Report Kit / instagram-post-screenshot"
-  short_description: "Мобильные снимки постов, каруселей и Reels"
+  display_name: "Report Kit / Публикации Instagram"
+  short_description: "Снимки постов, каруселей и видеороликов Instagram"
   default_prompt: "Используй $instagram-post-screenshot, чтобы снять посты Instagram по моим ссылкам."

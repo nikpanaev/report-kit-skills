@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "package": "report-kit-skills",
+  "version": "0.1.0-dev.6",
+  "status": "PASS_LIMITED",
+  "checks": [
+    {
+      "package": "report-kit-skills",
+      "path": "skills/instagram-post-screenshot/agents/openai.yaml",
+      "sha256": "28aff7e29b2892310eced2dc621a889a95faa6b87311256ea3a0cbdbfd99355c",
+      "display_name": "Report Kit / Публикации Instagram",
+      "description": "Снимки постов, каруселей и видеороликов Instagram",
+      "unrelated_yaml_and_skill_body_preserved": true,
+      "official_skill_validation_exit": 0
+    },
+    {
+      "package": "report-kit-skills",
+      "path": "skills/livedune/agents/openai.yaml",
+      "sha256": "c683184c506ea20138c1c3e17a57cf78e8616dd8c9a8e4d895f6a7642f235ddb",
+      "display_name": "Report Kit / Данные LiveDune",
+      "description": "Статистика LiveDune, выгрузки и снимки для отчёта",
+      "unrelated_yaml_and_skill_body_preserved": true,
+      "official_skill_validation_exit": 0
+    },
+    {
+      "package": "report-kit-skills",
+      "path": "skills/max-comment-screenshot/agents/openai.yaml",
+      "sha256": "e5dd85c48b1321ac9d422c3a6bba24bc98ef484557e4775c453a677565188de1",
+      "display_name": "Report Kit / Комментарии MAX",
+      "description": "Снимки комментариев и ответов к публикации канала MAX",
+      "unrelated_yaml_and_skill_body_preserved": true,
+      "official_skill_validation_exit": 0
+    },
+    {
+      "package": "report-kit-skills",
+      "path": "skills/max-post-screenshot/agents/openai.yaml",
+      "sha256": "9b61705f51728b30fc41bc9e58f79be6f6a3a31cbb4ae39b621dfa1a12127ffb",
+      "display_name": "Report Kit / Публикации MAX",
+      "description": "Снимки публикаций каналов MAX целиком или их материалов",
+      "unrelated_yaml_and_skill_body_preserved": true,
+      "official_skill_validation_exit": 0
+    },
+    {
+      "package": "report-kit-skills",
+      "path": "skills/telegram-comment-screenshot/agents/openai.yaml",
+      "sha256": "63257301df94174a51f40bf14823aaae1c3e76156b4e093a5c46d570abe87c76",
+      "display_name": "Report Kit / Комментарии Telegram",
+      "description": "Снимки комментариев и ответов к публикации Telegram",
+      "unrelated_yaml_and_skill_body_preserved": true,
+      "official_skill_validation_exit": 0
+    },
+    {
+      "package": "report-kit-skills",
+      "path": "skills/telegram-post-screenshot/agents/openai.yaml",
+      "sha256": "8f1e2f1827aa0581c77924b330c6630c816a320ade7890ad2ec7c44e0fce21f9",
+      "display_name": "Report Kit / Публикации Telegram",
+      "description": "Снимки публикаций Telegram целиком или их материалов",
+      "unrelated_yaml_and_skill_body_preserved": true,
+      "official_skill_validation_exit": 0
+    },
+    {
+      "package": "report-kit-skills",
+      "path": "skills/threads-post-screenshot/agents/openai.yaml",
+      "sha256": "cb2d21233d0c3d01a537d78f38562fda9a1a5c10524449791880bfe30097179b",
+      "display_name": "Report Kit / Публикации Threads",
+      "description": "Снимки публикаций Threads по предоставленным ссылкам",
+      "unrelated_yaml_and_skill_body_preserved": true,
+      "official_skill_validation_exit": 0
+    },
+    {
+      "package": "report-kit-skills",
+      "path": "skills/tiktok-post-screenshot/agents/openai.yaml",
+      "sha256": "5ef13b9df3572b1c6eb79f56acefdc1b0511346eb1be902c74a21134929e60e4",
+      "display_name": "Report Kit / Публикации TikTok",
+      "description": "Снимки видеопубликаций TikTok по выбранным ссылкам",
+      "unrelated_yaml_and_skill_body_preserved": true,
+      "official_skill_validation_exit": 0
+    },
+    {
+      "package": "report-kit-skills",
+      "path": "skills/vk-comment-screenshot/agents/openai.yaml",
+      "sha256": "50b7eca5ad8fce1c311b3cf872e841d4a786027c887e7254d9b8ef3168d25993",
+      "display_name": "Report Kit / Комментарии VK",
+      "description": "Снимки комментариев VK и ответов под публикацией",
+      "unrelated_yaml_and_skill_body_preserved": true,
+      "official_skill_validation_exit": 0
+    },
+    {
+      "package": "report-kit-skills",
+      "path": "skills/vk-message-screenshot/agents/openai.yaml",
+      "sha256": "c5f81d23807eea620e05c729c4f9c6c41c853bcc6f9cde91a2933992baa45c9b",
+      "display_name": "Report Kit / Личные сообщения VK",
+      "description": "Снимки переписки сообщества VK за выбранный период",
+      "unrelated_yaml_and_skill_body_preserved": true,
+      "official_skill_validation_exit": 0
+    },
+    {
+      "package": "report-kit-skills",
+      "path": "skills/vk-post-screenshot/agents/openai.yaml",
+      "sha256": "f97b0cda92b65eb91ef24c354c33c2c9e026e1789eebb102ab3dcd9e85740d1e",
+      "display_name": "Report Kit / Публикации VK",
+      "description": "Снимки публикаций VK целиком или только их материалов",
+      "unrelated_yaml_and_skill_body_preserved": true,
+      "official_skill_validation_exit": 0
+    },
+    {
+      "package": "report-kit-skills",
+      "path": "skills/vk-stories-screenshot/agents/openai.yaml",
+      "sha256": "96c4a71ca4dabaadf271d349c4c6a444297767453d24251aa0fbc1cab6536696",
+      "display_name": "Report Kit / Истории VK",
+      "description": "Снимки всех доступных историй VK за выбранный месяц",
+      "unrelated_yaml_and_skill_body_preserved": true,
+      "official_skill_validation_exit": 0
+    }
+  ],
+  "execution_code_unchanged": true,
+  "limits": "Readable declared labels only; no model/user understanding, native installed UI, permissions or release proof."
+}

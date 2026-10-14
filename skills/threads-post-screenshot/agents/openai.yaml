@@ -1,3 +1,3 @@
 interface:
-  display_name: "Report Kit / threads-post-screenshot"
-  short_description: "Скриншоты публикаций выбранной платформы"
+  display_name: "Report Kit / Публикации Threads"
+  short_description: "Снимки публикаций Threads по предоставленным ссылкам"

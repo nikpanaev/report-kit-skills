@@ -1,4 +1,4 @@
 interface:
-  display_name: "Report Kit / max-comment-screenshot"
-  short_description: "Комментарии и ответы к постам MAX"
+  display_name: "Report Kit / Комментарии MAX"
+  short_description: "Снимки комментариев и ответов к публикации канала MAX"
   default_prompt: "Используй $max-comment-screenshot, чтобы снять комментарии и ответы к указанному посту MAX в светлой теме."

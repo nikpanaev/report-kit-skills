@@ -1,4 +1,4 @@
 interface:
-  display_name: "Report Kit / telegram-comment-screenshot"
-  short_description: "Комментарии и ответы к постам Telegram"
+  display_name: "Report Kit / Комментарии Telegram"
+  short_description: "Снимки комментариев и ответов к публикации Telegram"
   default_prompt: "Используй $telegram-comment-screenshot, чтобы снять комментарии и ответы к указанному посту Telegram в светлой теме."

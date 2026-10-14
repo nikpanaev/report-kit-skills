@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "report-kit-skills",
-  "version": "0.1.0-dev.5",
-  "description": "Reusable LiveDune and VK source capabilities"
+  "version": "0.1.0-dev.6",
+  "description": "Данные и снимки для отчётов: LiveDune и социальные сети"
 }

@@ -161,9 +161,10 @@
       "sourceRelative": "instagram-post-screenshot/agents/openai.yaml",
       "sourceSHA256": "c1c66158855a00f6dec36d0e11bd0bd0f965c8f5c20bdc50d61a96cd15494cbb",
       "destination": "skills/instagram-post-screenshot/agents/openai.yaml",
-      "outputSHA256": "9f1b7b891b2631fa1a82474781c1d46c32c6b20e8865bcfc9e939a137c6b8995",
+      "outputSHA256": "28aff7e29b2892310eced2dc621a889a95faa6b87311256ea3a0cbdbfd99355c",
       "changes": [
-        "Report Kit display label; preserve invocation policy/default prompt"
+        "Report Kit display label; preserve invocation policy/default prompt",
+        "Russian office-user display text only; stable skill ID and invocation policy preserved"
       ]
     },
     {
@@ -274,9 +275,10 @@
       "sourceRelative": "telegram-post-screenshot/agents/openai.yaml",
       "sourceSHA256": "b22793d1c46fb5b34170cc4d1e0162c2b0b3a8cb1b99e31d4c7e1602eb7e8f65",
       "destination": "skills/telegram-post-screenshot/agents/openai.yaml",
-      "outputSHA256": "5a61cbd4ab7e6ed04443b0657f8699d057b54979e7dcbac3305cb4c4b93b112c",
+      "outputSHA256": "8f1e2f1827aa0581c77924b330c6630c816a320ade7890ad2ec7c44e0fce21f9",
       "changes": [
-        "Report Kit display label; preserve invocation policy/default prompt"
+        "Report Kit display label; preserve invocation policy/default prompt",
+        "Russian office-user display text only; stable skill ID and invocation policy preserved"
       ]
     },
     {
@@ -317,9 +319,10 @@
       "sourceRelative": "telegram-comment-screenshot/agents/openai.yaml",
       "sourceSHA256": "e039e25be17bab641234768a8d84d277e8fe5b9f147e32824623159fb4d5639f",
       "destination": "skills/telegram-comment-screenshot/agents/openai.yaml",
-      "outputSHA256": "6bc8569e86dbfd331ce09f08a44c282febbe2bb706b5345ceb724dbfe9e0f9f8",
+      "outputSHA256": "63257301df94174a51f40bf14823aaae1c3e76156b4e093a5c46d570abe87c76",
       "changes": [
-        "Report Kit display label; preserve invocation policy/default prompt"
+        "Report Kit display label; preserve invocation policy/default prompt",
+        "Russian office-user display text only; stable skill ID and invocation policy preserved"
       ]
     },
     {
@@ -336,9 +339,10 @@
       "sourceRelative": "max-post-screenshot/agents/openai.yaml",
       "sourceSHA256": "60926cee9bef039698a17ee23cb6aaf011f670bdc0b7b8eda9154208a7b2692f",
       "destination": "skills/max-post-screenshot/agents/openai.yaml",
-      "outputSHA256": "dcd53888ea46f75b2b979a9dd3160ffa3367282c22b25a154b3fd744030dda65",
+      "outputSHA256": "9b61705f51728b30fc41bc9e58f79be6f6a3a31cbb4ae39b621dfa1a12127ffb",
       "changes": [
-        "Report Kit display label; preserve invocation policy/default prompt"
+        "Report Kit display label; preserve invocation policy/default prompt",
+        "Russian office-user display text only; stable skill ID and invocation policy preserved"
       ]
     },
     {
@@ -371,9 +375,10 @@
       "sourceRelative": "max-comment-screenshot/agents/openai.yaml",
       "sourceSHA256": "dc7456bede0ba9e6c744dc9c1f37272b201014e5e1b08acdc17591e78b7cc4b8",
       "destination": "skills/max-comment-screenshot/agents/openai.yaml",
-      "outputSHA256": "c900b07734e7ff9695e69dc83680563fe4b126b295ea7f86c853be831157f450",
+      "outputSHA256": "e5dd85c48b1321ac9d422c3a6bba24bc98ef484557e4775c453a677565188de1",
       "changes": [
-        "Report Kit display label; preserve invocation policy/default prompt"
+        "Report Kit display label; preserve invocation policy/default prompt",
+        "Russian office-user display text only; stable skill ID and invocation policy preserved"
       ]
     }
   ]
