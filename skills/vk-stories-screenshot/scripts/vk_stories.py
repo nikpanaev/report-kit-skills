@@ -472,6 +472,7 @@ def capture(page, card, ui, destination, tz, approved_missing_avatars=()):
         if kind == 'video' and abs(media.evaluate('e=>e.currentTime') - before) > .03:
             raise Failure('Video frame changed during screenshot')
         destination.write_bytes(png)
+        destination.chmod(0o600)
         return 'video_frame' if kind == 'video' else 'image'
     finally:
         if held:
@@ -683,6 +684,7 @@ def resolve_ui(ui, url):
 
 
 def run(args):
+    private_dir(AUTH.parent)
     if args.command == 'credentials':
         if not sys.stdin.isatty():
             raise Failure('Run credentials in a local interactive terminal; never send password in chat')
@@ -698,7 +700,7 @@ def run(args):
         if args.command == 'capture':
             month_bounds(args.month, args.timezone)
             args.output = (args.output or AUTH.parent / 'outputs' / 'vk-stories' / args.month).resolve()
-            args.output.mkdir(parents=True, exist_ok=True)
+            private_dir(args.output)
             path = args.output / ('manifest-' + time.strftime('%Y%m%d-%H%M%S') + '-'
                                   + os.urandom(3).hex() + '.json')
             manifest = {'source': args.url, 'month': args.month, 'timezone': args.timezone,

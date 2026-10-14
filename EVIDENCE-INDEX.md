@@ -1,6 +1,6 @@
 # Evidence Index — report-skills
 
-Current state2026-10-14: VERSION0.1.0-dev.9, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
+Current state2026-10-14: VERSION0.1.0-dev.10, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
 
 Process Profile and authority: [CHANGE-SPEC](CHANGE-SPEC.md). Baseline and scoped branch actual Git; package content identity/private exact run records retained locally. [Offline checks](evidence/offline-checks.json) contain only sanitized source/test identities, no donor paths or private data. [Source provenance](SOURCE-PROVENANCE.json), [selection](OPEN-SOURCE-SELECTION.md) and [license status](LICENSE-STATUS.md).
 
@@ -88,3 +88,10 @@ Owner selected **Report Kit** for the MIT copyright line; [LICENSE](LICENSE) now
 ## External image runtime inventory — 2026-10-14
 
 Exact existing Pillow12.3.0/NumPy2.3.5 primary metadata and five local license files are inventoried in the selected source package dependencies/runtime-review.json. Pillow declares Python>=3.10 and MIT-CMU; NumPy declares Python>=3.11, a BSD classifier and composite component notices in the observed installed distribution. All44 current exported file hashes across the pair match provenance; this is identity, not new full semantic review. Runtime code and employee version selection unchanged. Qualified semantic/legal review of these five texts remains NOT_RUN; no binary bundle or license clearance implied.
+
+
+## Private runtime repair — 0.1.0-dev.10
+
+[Recorded checks](evidence/private-output-checks.json): two new test methods/four privacy scenarios failed before the fix and passed after it; unchanged original story fixture passed with13 PNGs0600; unchanged messages checks/browser_checks passed separately with8 PNGs0600. Three protected fixture hashes and25 other production definitions preserved. Selected state/output directories0700 and PNG0600; no recursive change of unrelated folders.
+
+A preceding current-source technical audit reviewed98 tracked dev.9 files and found the conditional local privacy issue. Its exact pre-fix report remains immutable privately; this scoped repair does not reclassify that report or prove an independent full audit of every new candidate byte. Separate AI fix review reported no blocking source finding. No real accounts, employeeOS ACL, installation, publication or independent non-AI acceptance inferred. Original cold failure remains OPEN_NOT_REPRODUCED.

@@ -122,11 +122,12 @@
       "sourceRelative": "vk-stories-screenshot/scripts/vk_stories.py",
       "sourceSHA256": "e87b8f9812dd1ff5896cac98e56525f71e5dc403d5c91eb223dc5df00ada4d16",
       "destination": "skills/vk-stories-screenshot/scripts/vk_stories.py",
-      "outputSHA256": "f526b2fd500373de21fe1db611144823890ccc17ea06e534e25c8e347b9785c6",
+      "outputSHA256": "f60044cdf90aebc117320a25488a0f94f147fa18b5023e682b46ad4b2e5583e4",
       "changes": [
         "Move credential/profile default outside package; no credential copied or read",
         "Default working UI map relocated to external private state; public recipe never trusted as employee observation",
-        "Relocate default runtime outputs and reject explicit in-package state paths; no capture/metrics oracle weakened"
+        "Relocate default runtime outputs and reject explicit in-package state paths; no capture/metrics oracle weakened",
+        "Harden designated private state before enrollment/queue; close capture output leaf and set PNG0600; no capture/auth/identity/oracle changes"
       ]
     },
     {

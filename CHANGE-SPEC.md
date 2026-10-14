@@ -43,3 +43,8 @@ Owner novice requirement applies to visible commands too. Change display_name/sh
 ## Retry observability — dev.7
 
 Source-only bounded diagnostic change authorized by ongoing portable maintenance preparation: stage enum and exception class in existing retry stderr, no exception message. No stdout schema, capture API, rate-stop/pacing/retry parameter, auth, installation or caller policy change. Original fixture unchanged; new five mock cases and original real Chromium regression. Existing original cold failure and independent/employee/lifecycle controls remain.
+
+
+## Private runtime initialization — dev.10
+
+Ongoing portable preparation fixes the source-backed credentials-first0755 state ancestor with three existing permission operations only: private_dir(AUTH.parent), private_dir(capture output), PNG0600. No new API, credential mechanism, queue/store, interface/schema or permission expansion. Selected owned state/output directories are private runtime resources; no recursive chmod of unrelated ancestors/siblings. Original source/installed/client code and protected fixtures remain read-only. Local source-only regression/native fixtures and a separate AI source review are bounded technical evidence, not independent non-AI security/privacy/release acceptance. WindowsACL and actual employee support remain unvalidated.

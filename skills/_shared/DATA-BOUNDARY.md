@@ -9,3 +9,5 @@ Private state находится вне package. Setup выбирает папк
 Сначала клиент/период/source authority, потом доступ. UI screenshots могут содержать персональные данные: аудитория итогового файла/маскирование определяются владельцем до sharing. Скрипт не выдаёт права самостоятельно. Техническое присутствие папки/очереди не enforced isolation.
 
 Cleanup: сохранить exact path/hash/result receipt перед удалением известных task temporaries. Не удалять originals/finals/accepted histories/needed recovery evidence или чужую папку целиком. Auth/state не временный PNG; удаление/отзыв отдельно согласовать с владельцем. No source/package writes during report work.
+
+VK stories initialization closes the selected owned state root before enrollment/queue, and capture closes the selected output leaf before artifacts; final PNG is0600. These are designated private runtime directories, not shared document folders. Unrelated ancestors/siblings are not recursively chmodded; POSIX observations do not establish WindowsACL or target employee permissions.

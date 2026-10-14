@@ -1,0 +1,67 @@
+{
+  "status": "PASS_LOCAL_REPAIR_NOT_RELEASE_APPROVAL",
+  "source_version": "0.1.0-dev.10",
+  "production": {
+    "path": "skills/vk-stories-screenshot/scripts/vk_stories.py",
+    "sha256": "f60044cdf90aebc117320a25488a0f94f147fa18b5023e682b46ad4b2e5583e4",
+    "changed_functions": [
+      "capture",
+      "run"
+    ],
+    "other_top_level_definitions_preserved": 25,
+    "change": "Reuse existing private_dir for designated state/output; chmod final PNG0600"
+  },
+  "regression": {
+    "test": "scripts/test_private_vk_outputs.py",
+    "test_sha256": "074c39d610f88dd404bccf2cd1bf67f5c71e7b29f6ac9c827b567769ffe7bd42",
+    "red": {
+      "test_methods": 2,
+      "failed_scenarios": 4,
+      "failure": "0755 instead of0700; no environment/import errors"
+    },
+    "green": {
+      "test_methods": 2,
+      "scenarios": [
+        "credentials-first",
+        "queue-first",
+        "existing-owned-state-root",
+        "explicit-output-before-UI-failure"
+      ],
+      "exit_code": 0,
+      "no_browser_or_real_credentials": true
+    },
+    "native_stories": {
+      "original_test_sha256": "922af1f43d27640b0c521f484d3db6647d8d9b4fb55c24c9c61f133de90e63ab",
+      "exit_code": 0,
+      "pngs": 13,
+      "all_png_modes": "0600",
+      "fixture_files_removed": 18
+    },
+    "native_messages": {
+      "original_test_sha256": "8080ebdd0ce792abcc7540b1bcdd09b6281e0f6c7be33716da7c7cf5843ae62e",
+      "checks_exit_code": 0,
+      "browser_checks_exit_code": 0,
+      "pngs": 8,
+      "all_png_modes": "0600",
+      "fixture_files_removed": 8,
+      "scope": "Original checks and browser_checks invoked separately; original assertions unchanged"
+    }
+  },
+  "review": {
+    "result": "NO_BLOCKING_FINDING_SOURCE_REVIEW",
+    "mode": "Separate fresh AI source review; not independent non-AI acceptance",
+    "limits": "Execution results verified by parent, not worker"
+  },
+  "preservation": {
+    "protected_original_fixtures": 3,
+    "interfaces_and_permissions_unchanged": true,
+    "installed_and_client_changes": false,
+    "original_cold_failure": "OPEN_NOT_REPRODUCED"
+  },
+  "limitations": [
+    "POSIX modes and isolated local browser fixtures only; no actual other-user read, WindowsACL or employee-device/account test",
+    "Selected owned state/output roots become0700; unrelated ancestors/siblings are not recursively changed",
+    "Existing unsafe writable/symlink roots still require operator review",
+    "No publication, installation, client report, independent non-AI privacy/security acceptance or full product approval"
+  ]
+}
