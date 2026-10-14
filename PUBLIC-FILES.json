@@ -14,6 +14,7 @@
     "SOURCE-PROVENANCE.json",
     "VERSION",
     "capabilities.json",
+    "contracts.json",
     "dependencies/livedune/package.json",
     "dependencies/livedune/pnpm-lock.yaml",
     "dependencies/livedune/recipe.json",

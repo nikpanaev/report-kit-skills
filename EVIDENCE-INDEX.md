@@ -44,3 +44,9 @@ Owner continuation authorized local implementation of HANDOVER. Candidate0.1.0-d
 | Whole independent QA/security/license | PENDING; unchanged gates |
 
 No accepted client pilot repeated. Original external source/installed/client repositories remain read-only. Version/hash/content changes require a newly reviewed package pair; old evidence continues to identify its original run, not current release approval.
+
+## Update compatibility and user help — dev.2, 2026-10-14
+
+Local candidate dev.2 adds versioned interface/permission declarations in both packages; capture/API implementations unchanged. report-agent adds readonly update/source/whole-client/preflight/refresh/rollback validation and employee documentation/help. Native source fetch/install/refresh/replay is not executed or implemented as a daemon; approved source URLs remain null. 20 synthetic update scenarios passed, including sealed full-client snapshot and exact chat binding. Historical module-absent baseline and one new fixture missing-import failure preserved privately; no assertions weakened. 22 maintenance cases,4 boundary tests and full native template selftest passed. 12 official SKILL validations and82 local Markdown link checks passed. Documentation comprehension on an employee device is NOT_RUN.
+
+Plan progress: local roles/incident contract and readonly compatibility/rollback record checks implemented; actual GitHub drafts/release pipeline, native install/refresh/rollback, target device/account control report, independent QA/security and distribution license still pending. Existing accepted client pilots are not repeated. Current IN_DEVELOPMENT does not accept prior claims or authorize a public release. Old evidence rows retain their original identity/scope.

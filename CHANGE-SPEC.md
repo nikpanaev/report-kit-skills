@@ -21,3 +21,5 @@ Recovery/privacy: packages read-only during use; source skill state in external 
 Next: complete local package/provenance/relocation checks, then target device and authorization probe after owner inputs. No release/G5/G6 acceptance inferred from tests.
 
 Continuation2026-10-14 authorizes local HANDOVER implementation. Candidate dev.1 adds shared generic maintenance instructions and five entrypoint links only; capture/API/queue implementations unchanged. New contracts live in report-agent; no donor chat IDs/grants/history or private corpus exported. Source/installed/client counterparts not modified, actual new-device messaging/install/replay NOT_RUN.
+
+Compatibility slice dev.2: declare source/shared interface and per-capability permission versions in contracts.json; catalog/plugin mirror VERSION. Declarations do not prove current host/provider compatibility or grant permissions. No source capture/API implementation changed. Use report-agent readonly update preflight for the exact reviewed pair; native loaded identity, source provenance and permission checks remain required.

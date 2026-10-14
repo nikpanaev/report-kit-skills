@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "package": "report-skills",
+  "package_version": "0.1.0-dev.2",
+  "interfaces": {
+    "source:livedune": 1,
+    "source:vk-post-screenshot": 1,
+    "source:vk-comment-screenshot": 1,
+    "source:vk-stories-screenshot": 1,
+    "source:vk-message-screenshot": 1,
+    "shared:ui_queue": 1,
+    "shared:browser_zoom": 1,
+    "shared:private_paths": 1
+  },
+  "host_capabilities": [],
+  "permissions": {
+    "livedune": [
+      "livedune.read"
+    ],
+    "vk-post-screenshot": [
+      "vk.read"
+    ],
+    "vk-comment-screenshot": [
+      "vk.read"
+    ],
+    "vk-stories-screenshot": [
+      "vk.read"
+    ],
+    "vk-message-screenshot": [
+      "vk.read"
+    ]
+  }
+}

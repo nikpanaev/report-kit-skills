@@ -31,3 +31,5 @@ Public historical VK UI recipe не live evidence. Working observed map private;
 - **External AI/model API:** not applicable; no new model API client or SDK/key provisioning; employee Codex provider/data-use terms must be checked before live work
 
 VERSION is the sole development-version source; plugin manifest is a checked mirror. Package content identity and private workspace schema are separate. Public GitHub release/URLs require later explicit authority.
+
+Candidate dev.2 adds [versioned compatibility declarations](contracts.json), checked with the agent's update preflight. Source behaviour is unchanged; declarations and synthetic checks are not a new-device support promise. Employee user guidance/help ships in report-agent, keeping one source of truth.
