@@ -112,7 +112,7 @@ def owned_files(root, folder):
     return [p for p in (root/folder).iterdir() if pattern.fullmatch(p.name) and not p.is_symlink() and p.is_file()]
 
 
-def prune(root, now=None):
+def prune(root, now=None, preserve=None):
     now = now or datetime.now(timezone.utc)
     for folder, days, count, size in [('events',POLICY['retention_days'],POLICY['event_limit'],POLICY['event_bytes_limit']),
                                     ('bundles',POLICY['bundle_days'],POLICY['bundle_limit'],POLICY['bundle_limit']*POLICY['bundle_max_bytes'])]:
@@ -120,7 +120,7 @@ def prune(root, now=None):
         for path in owned_files(root,folder):
             try: paths.append((path,path.stat()))
             except FileNotFoundError: pass
-        paths.sort(key=lambda item:item[1].st_mtime,reverse=True)
+        paths.sort(key=lambda item:(item[0] == preserve, item[1].st_mtime),reverse=True)
         used = 0
         for index, (path,stat) in enumerate(paths):
             used += stat.st_size
@@ -243,7 +243,7 @@ def bundle(state_dir=None, now=None):
     except Exception:
         if created: path.unlink(missing_ok=True)
         raise
-    prune(root,now)
+    prune(root,now,preserve=path)
     return path
 
 
@@ -283,17 +283,17 @@ chcp 65001 >nul
 cd /d "%~dp0"
 if not exist "%~dp0runtime-python.txt" goto system
 set /p RK_SUPPORT_PYTHON=<"%~dp0runtime-python.txt"
-"%RK_SUPPORT_PYTHON%" -B "%~dp0scripts\\support_bundle.py" --saved-state --open-folder
+"%RK_SUPPORT_PYTHON%" -I -B "%~dp0scripts\\support_bundle.py" --saved-state --open-folder
 goto end
 :system
 where py >nul 2>nul
 if errorlevel 1 goto python
-py -3 "%~dp0scripts\\support_bundle.py" --saved-state --open-folder
+py -3 -I -B "%~dp0scripts\\support_bundle.py" --saved-state --open-folder
 goto end
 :python
 where python >nul 2>nul
 if errorlevel 1 goto missing
-python "%~dp0scripts\\support_bundle.py" --saved-state --open-folder
+python -I -B "%~dp0scripts\\support_bundle.py" --saved-state --open-folder
 goto end
 :missing
 echo Не найден компонент для сбора файла. Сообщите поддержке код SUPPORT_PYTHON_MISSING. Ничего не отправлено.
@@ -304,9 +304,9 @@ MAC_LAUNCHER = '''#!/bin/sh
 cd -- "$(dirname -- "$0")" || exit 1
 if [ -f ./runtime-python.txt ]; then
   IFS= read -r rk_support_python < ./runtime-python.txt
-  "$rk_support_python" -B ./scripts/support_bundle.py --saved-state --open-folder
+  "$rk_support_python" -I -B ./scripts/support_bundle.py --saved-state --open-folder
 elif command -v python3 >/dev/null 2>&1; then
-  python3 ./scripts/support_bundle.py --saved-state --open-folder
+  python3 -I -B ./scripts/support_bundle.py --saved-state --open-folder
 else
   printf '%s\\n' 'Не найден компонент для сбора файла. Сообщите поддержке код SUPPORT_PYTHON_MISSING. Ничего не отправлено.'
 fi

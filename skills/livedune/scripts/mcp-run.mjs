@@ -62,7 +62,8 @@ export function makeGuard({runDir,cap,credential,fetcher=fetch}) {
       const artifact=path.join(runDir,id+'.json');
       fs.writeFileSync(artifact,raw,{flag:'wx',mode:0o600});
       let b;try{b=JSON.parse(raw);}catch{}
-      last={...rec,status:'RECEIVED',http:res.status,artifact,bytes:raw.length,sha256:createHash('sha256').update(raw).digest('hex'),count:b?.count,rows:Array.isArray(b?.response)?b.response.length:null,after:b?.after ?? null,providerError:b?.error ?? null,schemaError:!b || typeof b!=='object' || Array.isArray(b)};
+      const tags=u.pathname==='/accounts/tags';
+      last={...rec,status:'RECEIVED',http:res.status,artifact,bytes:raw.length,sha256:createHash('sha256').update(raw).digest('hex'),count:b?.count,rows:tags&&Array.isArray(b)?b.length:Array.isArray(b?.response)?b.response.length:null,after:b?.after ?? null,providerError:b?.error ?? null,schemaError:!b || typeof b!=='object' || Array.isArray(b)!==tags};
       append(last);
       supportEvent('api','finished',res.status===200&&!last.providerError&&!last.schemaError?'success':'failure',
         res.status===429?'RATE_LIMIT':last.providerError?'PROVIDER_ERROR':last.schemaError?'CORRUPT_DATA':res.status===200?'NONE':'PROVIDER_ERROR',

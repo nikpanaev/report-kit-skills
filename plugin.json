@@ -1,7 +1,19 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "report-kit-skills",
-  "version": "0.1.0-dev.17",
+  "version": "0.1.0-dev.18",
   "description": "Данные и снимки для отчётов: LiveDune и социальные сети",
-  "license": "MIT"
+  "license": "MIT",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Report Kit — источники",
+        "shortDescription": "Данные и снимки для отчётов: LiveDune и социальные сети",
+        "developerName": "Report Kit",
+        "category": "Productivity",
+        "logo": "./assets/report-kit.svg",
+        "composerIcon": "./assets/report-kit.svg"
+      }
+    }
+  }
 }

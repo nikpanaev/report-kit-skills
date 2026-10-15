@@ -1,0 +1,72 @@
+{
+  "status": "LOCAL_FULL_AUDIT_FIXES_PASS_LIMITED",
+  "versions": {
+    "report-kit-agent": "0.1.0-dev.27",
+    "report-kit-skills": "0.1.0-dev.18"
+  },
+  "baseline_versions": {
+    "report-kit-agent": "0.1.0-dev.26",
+    "report-kit-skills": "0.1.0-dev.17"
+  },
+  "baseline_tracked_files_inventoried": 227,
+  "scope": "Whole pair inventory, prior exact documentation review reused where unchanged, deep review of setup/update/runtime/packaging/support/queue/credential/API boundaries; capture algorithms and dependencies inspected by selected paths and full existing local fixtures, not an exhaustive line-by-line independent security audit.",
+  "findings": {
+    "reproduced_code_errors_fixed": 6,
+    "documented_native_metadata_gap_fixed": 1
+  },
+  "agent_tests": {
+    "exit": 0,
+    "summary": [
+      "Ran 169 tests in 12.744s",
+      "OK"
+    ]
+  },
+  "source_python_scripts": {
+    "count": 19,
+    "failed": 0,
+    "external_network_denied": true
+  },
+  "node_scripts": {
+    "count": 4,
+    "failed": 0,
+    "fake_http_only": true,
+    "response_shape_cases": 8
+  },
+  "runtime_probe": {
+    "status": "LOCAL_RUNTIME_PROBE_PASS",
+    "python": "3.12.15",
+    "modules": [
+      "PIL",
+      "greenlet",
+      "numpy",
+      "playwright",
+      "pyee",
+      "typing_extensions",
+      "tzdata"
+    ],
+    "versions": {
+      "Pillow": "12.3.0",
+      "greenlet": "3.5.6",
+      "numpy": "2.3.5",
+      "playwright": "1.63.0",
+      "pyee": "13.0.1",
+      "typing_extensions": "4.16.0",
+      "tzdata": "2026.5"
+    },
+    "node": "24.21.0",
+    "native_windows": false
+  },
+  "new_dependencies": 0,
+  "runtime_archives_changed": false,
+  "installed_skills_changed": false,
+  "client_agents_changed": false,
+  "installation_performed": false,
+  "publication_performed": false,
+  "limits": [
+    "Windows not executed; employee check required",
+    "Native Codex install/schema validation and actual GitHub download/update/rollback not run",
+    "Public release sources unconfigured",
+    "Independent QA/security/license and redistributed binary notice acceptance pending",
+    "Full native skill validator unavailable: PyYAML absent; no dependency installed to run it"
+  ]
+}

@@ -34,6 +34,19 @@ try{
   for(const token of [forbidden,'private-account','PRIVATE_CURSOR','test-only-credential',base,os.hostname(),os.userInfo().username])
     if(token.length>2)assert(!text.includes(token));
   assert.equal(fs.readFileSync(path.join(run,'requests.jsonl'),'utf8'),ledger);
+  // Exact OpenAPI1.0.10 declares a root array only for /accounts/tags.
+  const shapes=[['/accounts/tags',[],false],['/accounts/tags',[{id:1}],false],
+    ['/accounts/tags',{},true],['/accounts/tags',null,true],['/info',[],true],
+    ['/info',{total:0},false],['/search?url=https%3A%2F%2Fvk.ru%2Fexample',{id:1},false],['/projects',{response:[]},false]];
+  for(const [index,[endpoint,body,rejected]] of shapes.entries()){
+    const folder=path.join(base,'shape-'+index);fs.mkdirSync(folder);
+    const candidate=makeGuard({runDir:folder,cap:1,credential:()=>Buffer.from('test-only-credential'),
+      fetcher:async()=>new Response(JSON.stringify(body))});
+    await candidate.fetch('https://api.livedune.com'+endpoint);
+    assert.equal(candidate.last.schemaError,rejected,endpoint);assert.equal(candidate.used,1);
+    if(endpoint==='/accounts/tags'&&!rejected)assert.equal(candidate.last.rows,body.length);
+    await assert.rejects(()=>candidate.fetch('https://api.livedune.com/info'),/PILOT_CAP_REACHED/);
+  }
   const startup=spawnSync(process.execPath,['skills/livedune/scripts/mcp-run.mjs','--runtime',path.join(base,'missing-runtime')],{encoding:'utf8',env:process.env});
   assert.equal(startup.status,1);
   const startupRows=fs.readdirSync(events).map(f=>JSON.parse(fs.readFileSync(path.join(events,f),'utf8')));

@@ -48,13 +48,14 @@
       "sourceRelative": "livedune/scripts/mcp-run.mjs",
       "sourceSHA256": "7c1cc821660741e0724435ce759b2dfcb0c527a323570ff6a348a02d725d5859",
       "destination": "skills/livedune/scripts/mcp-run.mjs",
-      "outputSHA256": "139141bf8a6294a45000875438ad173cb02102097b392f3a3e0178170fcdcfe7",
+      "outputSHA256": "de53e8e0ff6aa26404883e305284324038468807aadcd59da7391d0f5bc5ef42",
       "changes": [
         "Reject run-dir/calls inside package or its ancestor, including resolved symlink targets, before writing data/reading credentials",
         "MCP client identity reads new package VERSION; list-only still returns before state/credentials",
         "Windows preparation: platform credential/private-directory helper; existing macOS route/GET/cap guards preserved",
         "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged",
-        "Add only allowlisted support projection of existing lifecycle; source donor and installed copies unchanged"
+        "Add only allowlisted support projection of existing lifecycle; source donor and installed copies unchanged",
+        "Full portable audit: bounded dependency/runtime checks, support recovery and exact LiveDune response contract; donor and installed copies unchanged"
       ]
     },
     {

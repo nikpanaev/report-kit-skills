@@ -1,5 +1,7 @@
 # Безопасные сведения для поддержки
 
+При очистке сохраняется только что подготовленный ZIP; посторонняя будущая дата старых файлов его не вытесняет. Сроки, пределы и защита чужих файлов прежние. Запасной collector запускается с -I -B через выбранный Python; обычному сотруднику ничего настраивать в Python не нужно. Настоящий Windows launcher ещё проверяет сотрудник.
+
 Прежние request/retry/maintenance logs не отправляются как есть. Они могут содержать ссылки, provider error body, личные пути и клиентские ID. Request ledger, budget, queue и recovery inputs сохраняют своё назначение и не очищаются по policy диагностики.
 
 Минимальная safe-проекция событий описана в `support-policy.json`; Python реализация — `support_events.py`, Node writer — `support-events.mjs`. По просьбе пользователя применяется collector выбранного report-kit-agent (его точная копия того же кода). Standalone вариант: Python `support_events.py --state-dir <chosen external state>`. Ничего не отправляется. Эта техническая команда предназначена агенту, не сотруднику.
