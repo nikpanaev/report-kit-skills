@@ -14,7 +14,7 @@ VERSION0.1.0-dev.1 is sole version source; plugin.json mirrors and checks reject
 
 Execution: only this repository/new report-agent package and task-owned evidence. Original source/installed/client/runtime read-only. No Keychain reads, auth/session import, service calls, social captures, global config, dependency installation, remote, push or publication. Tests allowed only synthetic/local pages with external networking denied and task-owned state. High-risk source changes outside portability stop for decision.
 
-Platform limits: retained UI FIFO uses POSIX cancellation/select; no Windows compatibility claim. Current LiveDune CLI Keychain adapter is macOS only; no plaintext fallback invented. CDP is loopback-only; own tab cleanup not user browser teardown. Coexistence with already installed legacy queues is unverified and must use one agreed store before UI. Default relocated queue is for a clean target, never migrates current owner's store.
+Platform limits: retained UI FIFO uses POSIX cancellation/select; no Windows compatibility claim. LiveDune CLI uses macOS Keychain; the Windows Credential Manager candidate requires user verification (USER_CHECK_REQUIRED), with no plaintext fallback. CDP is loopback-only; own tab cleanup not user browser teardown. Coexistence with already installed legacy queues is unverified and must use one agreed store before UI. Default relocated queue is for a clean target, never migrates current owner's store.
 
 Recovery/privacy: packages read-only during use; source skill state in external per-user private storage selected by setup. Package Git is not data backup. Remove only task-owned temporary outputs after compact receipts. Missing/denied credentials stop; no alternate key search. Uncertain external outcome consumes STARTED attempt and no blind retry. License/no-secrets scan is preparation evidence, not independent security acceptance.
 
@@ -48,3 +48,8 @@ Source-only bounded diagnostic change authorized by ongoing portable maintenance
 ## Private runtime initialization — dev.10
 
 Ongoing portable preparation fixes the source-backed credentials-first0755 state ancestor with three existing permission operations only: private_dir(AUTH.parent), private_dir(capture output), PNG0600. No new API, credential mechanism, queue/store, interface/schema or permission expansion. Selected owned state/output directories are private runtime resources; no recursive chmod of unrelated ancestors/siblings. Original source/installed/client code and protected fixtures remain read-only. Local source-only regression/native fixtures and a separate AI source review are bounded technical evidence, not independent non-AI security/privacy/release acceptance. WindowsACL and actual employee support remain unvalidated.
+
+
+## Принятый срез: семь замечаний аудита 15.10.2026
+
+Владелец поручил исправить все семь замечаний, проверить исправления и подготовить новую пару пакетов для тестового релиза. Разрешены только переносимые исходники, их тесты/документы, локальные task-коммиты и архивы. Установка, публикация, live-сбор, изменение установленных скиллов и клиентских агентов запрещены. Защищённые исходные snapshots/старые результаты сохраняются. Новые проверки покрывают архив вне Git, -O, другую локальную кодировку, запрет записи пароля, смену ID Threads и аварийное восстановление с сохранением живого заимствующего процесса/журнала. Новая auxiliary owner table остаётся в едином UI store; legacy/manual билеты без доказуемого владельца не снимаются автоматически. Windows требует настоящей проверки пользователем.

@@ -27,7 +27,7 @@ def wait_for(predicate):
 def worker(database, name, mode, directory):
     database, directory = Path(database), Path(directory)
     with access(name, database=database) as lease:
-        (directory / (name + '.active')).write_text(lease.token)
+        (directory / (name + '.active')).write_text(lease.token, encoding="utf-8")
         if mode == 'nested':
             with access('nested-skill', database=database) as nested:
                 assert nested is lease
@@ -84,7 +84,7 @@ def checks():
             assert [row['owner'] for row in tickets()] == ['VK', 'Telegram', 'LiveDune']
             assert [row['state'] for row in tickets()] == ['active', 'waiting', 'waiting']
             # Delayed holders are never expired by age or repeated claims.
-            token = (directory / 'VK.active').read_text()
+            token = (directory / 'VK.active').read_text(encoding="utf-8")
             for _ in range(3):
                 assert operate(database, 'check', token=token)['state'] == 'active'
             (directory / 'VK.finish').touch(); done(first)

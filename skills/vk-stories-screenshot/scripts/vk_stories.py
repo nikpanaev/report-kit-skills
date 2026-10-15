@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 """VK stories via external Playwright browser. stdout is JSON Lines."""
 import argparse
-import getpass
 import json
 import os
 import re
 import select
-import stat
 import sys
 import tempfile
 import time
@@ -62,23 +60,6 @@ def save_json(path, data, private=False):
     finally:
         if os.path.exists(tmp):
             os.unlink(tmp)
-
-
-def credentials(path):
-    login, password = os.environ.get('VK_LOGIN'), os.environ.get('VK_PASSWORD')
-    if login or password:
-        if not login or not password:
-            raise Failure('Set both VK_LOGIN and VK_PASSWORD')
-        return {'login': login, 'password': password}
-    if not path.exists():
-        return None
-    st = path.lstat()
-    if not stat.S_ISREG(st.st_mode) or st.st_uid != os.getuid() or st.st_mode & 0o077:
-        raise Failure('Credentials require owner-only permissions (chmod 600)')
-    data = json.loads(path.read_text())
-    if not all(isinstance(data.get(k), str) and data[k] for k in ('login', 'password')):
-        raise Failure('Credentials file requires login and password')
-    return {k: data[k] for k in ('login', 'password')}
 
 
 def source_url(value):
@@ -287,7 +268,7 @@ def visible(root, selector):
     return bool(selector) and any(loc.is_visible() for loc in root.locator(selector).all())
 
 
-def actions(page, recipe, secrets=None):
+def actions(page, recipe):
     for step in recipe:
         frame = page.frame_locator(step['frame']) if step.get('frame') else page
         target = frame.locator(step['selector'])
@@ -295,14 +276,6 @@ def actions(page, recipe, secrets=None):
             continue
         if step['action'] == 'click':
             target.click()
-        elif step['action'] == 'fill':
-            if not secrets or step.get('credential') not in ('login', 'password'):
-                raise Failure('Login recipe must use credential references')
-            # Prevent accidentally sending credentials to unrelated origins.
-            url = target.evaluate('e => e.ownerDocument.location.href')
-            if urlsplit(url).hostname not in ('vk.ru', 'vk.com', 'id.vk.ru', 'id.vk.com'):
-                raise Failure('Credential field is outside VK')
-            target.fill(secrets[step['credential']])
         elif step['action'] == 'hover':
             target.hover()
         elif step['action'] == 'hold':
@@ -323,17 +296,9 @@ def authenticate(page, args, ui, force=False):
             return
         except PlaywrightTimeout:
             pass
-    creds = credentials(args.credentials)
     for attempt in range(2):
         if auth.get('url'):
             page.goto(source_url(auth['url']), wait_until='domcontentloaded')
-        if creds and auth.get('steps'):
-            try:
-                actions(page, auth['steps'], creds)
-            except Failure:
-                raise
-            except Exception:
-                print('Автовход остановлен: интерфейс изменился или нужна проверка.', file=sys.stderr)
         if auth.get('ready') and visible(page, auth['ready']):
             return
         if not sys.stdin.isatty():
@@ -666,7 +631,7 @@ def safe_error(error):
 def load_ui(path):
     if not path or not path.exists():
         raise Failure('Archive UI not yet observed: run inspect, then supply --ui (see references/ui.md)')
-    ui = json.loads(path.read_text())
+    ui = json.loads(path.read_text(encoding="utf-8"))
     if not ui.get('observed_at') or not ui.get('evidence'):
         raise Failure('UI map requires observation date and local evidence paths')
     return ui
@@ -684,17 +649,9 @@ def resolve_ui(ui, url):
 
 
 def run(args):
-    private_dir(AUTH.parent)
     if args.command == 'credentials':
-        if not sys.stdin.isatty():
-            raise Failure('Run credentials in a local interactive terminal; never send password in chat')
-        login = input('VK login: ').strip()
-        password = getpass.getpass('VK password (hidden): ')
-        if not login or not password:
-            raise Failure('Empty credentials')
-        save_json(args.credentials, {'login': login, 'password': password}, private=True)
-        emit(ok=True, kind='credentials_saved')
-        return 0
+        raise Failure('Запись пароля в файл отключена; войдите вручную в браузере')
+    private_dir(AUTH.parent)
     with access('vk-stories-screenshot'):
         source_url(args.url)
         if args.command == 'capture':
@@ -763,7 +720,7 @@ def positive(value):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['credentials', 'inspect', 'login', 'capture'])
+    parser.add_argument('command', choices=['inspect', 'login', 'capture'])
     parser.add_argument('url', nargs='?', default='https://vk.ru')
     parser.add_argument('--month')
     parser.add_argument('--timezone', default='Europe/Moscow')
@@ -774,7 +731,6 @@ def main():
     connection.add_argument('--cdp')
     connection.add_argument('--profile', type=Path)
     parser.add_argument('--channel', default='chrome', choices=['chrome', 'chromium', 'msedge'])
-    parser.add_argument('--credentials', type=Path, default=AUTH / 'credentials.json')
     parser.add_argument('--ui', type=Path, default=AUTH / 'vk-ui.json')
     parser.add_argument('--timeout', type=positive, default=30000)
     parser.add_argument('--login-wait', type=positive, default=120)
@@ -794,7 +750,6 @@ def main():
     if not 0 <= args.wait <= 120 or args.login_wait > 300 or args.stall_checks < 4:
         parser.error('wait must be 0..120, login-wait <=300, stall-checks >=4')
     try:
-        outside_package(args.credentials)
         outside_package(args.ui)
         if args.profile:
             outside_package(args.profile)

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "package_version": "0.1.0-dev.13",
+  "package_version": "0.1.0-dev.14",
   "status": "LOCAL_PREPARATION_NOT_INSTALLED",
   "capabilities": [
     {
@@ -9,7 +9,7 @@
       "external": [
         "mcp-openapi@0.3.0"
       ],
-      "credential_cli": "macOS Keychain; other OS NOT_SUPPORTED",
+      "credential_cli": "macOS Keychain; Windows Credential Manager candidate USER_CHECK_REQUIRED; other OS NOT_SUPPORTED",
       "live_status": "NOT_RUN"
     },
     {

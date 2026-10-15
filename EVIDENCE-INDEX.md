@@ -1,5 +1,9 @@
 # Evidence Index — report-skills
 
+## Текущий срез: исправления аудита
+
+Версия 0.1.0-dev.14. [Локальные результаты и границы](evidence/audit-fix-checks.json): скачанный архив проверяется без Git, исходная история проверяется при упаковке; обязательные проверки не отключаются; файлы UTF-8; пароль VK не сохраняется; очередь и LiveDune восстанавливаются только при доказуемом завершении владельца; ID Threads проверяется. shared:ui_queue=2 блокирует автоматический переход старых клиентских требований. Это source/synthetic evidence, не установка, независимая приёмка или работа на настоящем Windows. Старые записи ниже относятся к своим exact версиям и не переписываются.
+
 Current state2026-10-15: VERSION0.1.0-dev.13, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
 
 Process Profile and authority: [CHANGE-SPEC](CHANGE-SPEC.md). Baseline and scoped branch actual Git; package content identity/private exact run records retained locally. [Offline checks](evidence/offline-checks.json) contain only sanitized source/test identities, no donor paths or private data. [Source provenance](SOURCE-PROVENANCE.json), [selection](OPEN-SOURCE-SELECTION.md) and [license status](LICENSE-STATUS.md).

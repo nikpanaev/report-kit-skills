@@ -41,6 +41,10 @@ async def capture(page, url: str, output: Path, *, zoom=None, headless=False) ->
     match = re.fullmatch(r"/@[A-Za-z0-9_.]+/post/([A-Za-z0-9_-]+)/?", final.path)
     if not response or not response.ok or final.hostname not in {"threads.com", "www.threads.com"} or not match:
         raise RuntimeError("Пост Threads не открылся")
+    requested = re.fullmatch(r"/@[A-Za-z0-9_.]+/post/([A-Za-z0-9_-]+)/?", urlsplit(url).path)
+    if requested and requested.group(1) != match.group(1):
+        raise RuntimeError("Threads открыл другой пост; снимок не сохранён")
+    page._threads_resolved_url = 'https://' + final.hostname + final.path
     if zoom is not None:
         await verify_zoom(page, zoom, headless=headless)
 
@@ -91,6 +95,7 @@ async def main() -> int:
                     path = await capture(page, url, args.output, zoom=args.zoom, headless=not args.headed)
                     actual_zoom = await verify_zoom(page,args.zoom,headless=not args.headed)
                     print(json.dumps({"ok": True, "url": url, "path": str(path),
+                                      "resolved_url": page._threads_resolved_url,
                                       "browser_zoom": actual_zoom,
                                       "zoom_fallback":'native_headless_100' if actual_zoom != args.zoom else None}, ensure_ascii=False))
                 except Exception as error:

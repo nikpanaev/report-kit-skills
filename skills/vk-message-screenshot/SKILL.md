@@ -9,7 +9,7 @@ description: "Снять доступные администратору пер�
 
 Уточни community source/access, explicit peers или all, year/date range/timezone. list-only даёт candidates, не capture/полный месяц. Право читать DM должно быть подтверждено; display-name не identity. Не отправлять сообщения или менять переписку.
 
-Loopback CDP либо разрешённый personal profile с channel; credentials только external private state, manual recovery сохраняет сессию. Admin inbox href validate before navigate; actual access/list completeness/response history confirm. Сохранять request/response observer identity/count/chronology и own staged screenshots до повторной валидации диалога. Quiet scroll не полнота.
+Loopback CDP либо разрешённый personal profile с channel; пароль не сохранять и не читать из JSON/переменных среды; manual recovery сохраняет разрешённую сессию. Старые файлы паролей автоматически не читать и не удалять. Admin inbox href validate before navigate; actual access/list completeness/response history confirm. Сохранять request/response observer identity/count/chronology и own staged screenshots до повторной валидации диалога. Quiet scroll не полнота.
 
 Если только observed DOM без server ID/period exhaustion, manifest complete=false и limitation; читаемый частичный PNG не full month success. Все required cases и ответы по профилю, light pixels/native zoom/long-message stitch проверяются. Полные screenshots may contain PII, recipient policy before sharing. Нет обхода denial или самостоятельной альтернативной съёмки.
 

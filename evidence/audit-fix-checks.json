@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "package": "report-kit-skills",
+  "package_version": "0.1.0-dev.14",
+  "status": "LOCAL_SOURCE_REGRESSION_PASSED_NOT_RELEASE",
+  "tests": {
+    "credential_and_threads_and_windows_process_mock_methods": 3,
+    "process_crash_recovery": "PASS; borrowed live child and missing/unknown ownership preserved",
+    "live_run_lock": "PASS; no replay/reset",
+    "browser_fixtures": "VK posts/comments/stories/messages, Instagram, TikTok, Threads URL, browser zoom; synthetic routed pages; no external network",
+    "image_fixture": "MAX stitch with existing Pillow12.3.0/NumPy2.3.5"
+  },
+  "source_files": {
+    "scripts/test_private_vk_outputs.py": "1c07453012bbe7a0e96253125f122bd9e685edc30385557928e15406420466a7",
+    "skills/_shared/browser_zoom.py": "8cfe8db46cf682b9ab295a589a48fac162b09b7a689cd10e881003b5550427c2",
+    "skills/_shared/test_ui_queue.py": "5a4e66ea01998e373ce8712ffc1b583517ba562878154552d381b25519f76ebd",
+    "skills/_shared/ui_queue.py": "d334475a5e92d91d89c48cf70427b81e47b73e2753a14184f9a5504df4d439d3",
+    "skills/livedune/scripts/mcp-run.mjs": "f1926751bad829d64413cc901a629bb866f0f81d6b3e5f009b325c80fe9371ec",
+    "skills/threads-post-screenshot/scripts/threads_post_screenshot.py": "f99590f47d4bdd14c8f82deade125febe4b951c8e11b95321bf3bca3558365c5",
+    "skills/vk-message-screenshot/scripts/vk_messages.py": "7013ea03bbd8891186d99f282f5282b1fb9d91108c5d93f8a0a001a8cc9b9fb6",
+    "skills/vk-stories-screenshot/scripts/test_vk_stories.py": "7f77339b3a4ba22336370a778b57cd1f1f738bea894018fcebb752bddcdd8c7f",
+    "skills/vk-stories-screenshot/scripts/vk_stories.py": "75854640a4ee1a7fe08f613610c87340e30b7153d6e7071dd5ac5f62f20be7d4"
+  },
+  "native_windows": "NOT_RUN; assigned to user after separately authorized test release download",
+  "publication": false,
+  "installation": false,
+  "client_agents_changed": false,
+  "limitations": [
+    "Synthetic/source checks do not prove employee permissions or live services",
+    "Historical raw test and environment failures retained privately; no assertion thresholds weakened",
+    "shared:ui_queue=2 requires client compatibility review; no automatic profile migration"
+  ]
+}

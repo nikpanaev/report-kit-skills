@@ -3,7 +3,8 @@ import { createRequire } from 'node:module';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import fs from 'node:fs';
 import path from 'node:path';
-import { createHash } from 'node:crypto';
+import os from 'node:os';
+import { createHash, randomUUID } from 'node:crypto';
 import {readCredential,preparePrivateDirectory,verifyPrivateFile} from './platform-access.mjs';
 
 export const SPEC_HASH = '3998516d4bcf19f5299763257e76b44830905066c61638e77f4e94e51ffc6b47';
@@ -80,9 +81,53 @@ export function outsidePackage(value) {
   return resolved;
 }
 
+export function acquireRunLock(runDir) {
+  const directory=path.join(runDir,'.lock');
+  fs.mkdirSync(directory,{mode:0o700});
+  const owner={pid:process.pid,host:os.hostname(),nonce:randomUUID()};
+  fs.writeFileSync(path.join(directory,'owner.json'),JSON.stringify(owner),{flag:'wx',mode:0o600});
+  return owner;
+}
+
+export function recoverRunLock(runDir) {
+  const directory=path.join(runDir,'.lock'),file=path.join(directory,'owner.json');
+  if(!fs.lstatSync(directory).isDirectory() || fs.lstatSync(directory).isSymbolicLink()
+      || !fs.lstatSync(file).isFile() || fs.lstatSync(file).isSymbolicLink()
+      || JSON.stringify(fs.readdirSync(directory).sort())!==JSON.stringify(['owner.json'])) throw Error('LOCK_OWNER_UNCONFIRMED');
+  const raw=fs.readFileSync(file,'utf8'),owner=JSON.parse(raw);
+  if(!Number.isInteger(owner.pid) || owner.pid<=0 || owner.pid>0xffffffff || owner.host!==os.hostname()
+      || typeof owner.nonce!=='string' || !/^[0-9a-f-]{36}$/.test(owner.nonce)) throw Error('LOCK_OWNER_UNCONFIRMED');
+  let dead=false;
+  try {process.kill(owner.pid,0);} catch(error) {if(error.code==='ESRCH') dead=true;}
+  if(!dead) throw Error('LOCK_OWNER_LIVE_OR_UNKNOWN');
+  // Recovery only releases the dead owner's lock; request history/budget remain untouched.
+  const marker=path.join(directory,'recovering');
+  const descriptor=fs.openSync(marker,'wx',0o600);fs.closeSync(descriptor);
+  let recovered=false;
+  try {
+    if(fs.readFileSync(file,'utf8')!==raw) throw Error('LOCK_OWNER_CHANGED');
+    fs.unlinkSync(file);recovered=true;
+  } finally {fs.unlinkSync(marker);}
+  if(recovered) fs.rmdirSync(directory);
+  return {recovered:true,requests_replayed:false,review_ledger_before_resume:true};
+}
+
+function releaseRunLock(runDir,owner) {
+  const directory=path.join(runDir,'.lock'),file=path.join(directory,'owner.json');
+  if(JSON.stringify(JSON.parse(fs.readFileSync(file,'utf8')))!==JSON.stringify(owner)) throw Error('LOCK_OWNER_CHANGED');
+  fs.unlinkSync(file);fs.rmdirSync(directory);
+}
+
 async function main() {
   const argv=process.argv.slice(2);
   const opt={};for(let i=0;i<argv.length;i+=2) {if(!argv[i]?.startsWith('--') || argv[i+1]===undefined) throw new Error('ARGUMENTS_INVALID');opt[argv[i].slice(2)]=argv[i+1];}
+  if(opt['recover-run']) {
+    if(Object.keys(opt).length!==1) throw new Error('ARGUMENTS_INVALID');
+    const directory=outsidePackage(opt['recover-run']);
+    if(!fs.existsSync(directory)) throw Error('RUN_NOT_FOUND');
+    preparePrivateDirectory(directory);
+    console.log(JSON.stringify(recoverRunLock(directory)));return;
+  }
   if(opt['prepare-private-dir']) {
     if(Object.keys(opt).length!==1) throw new Error('ARGUMENTS_INVALID');
     preparePrivateDirectory(outsidePackage(opt['prepare-private-dir']));
@@ -108,7 +153,7 @@ async function main() {
   opt.calls=outsidePackage(opt.calls);
   preparePrivateDirectory(runDir);
   verifyPrivateFile(opt.calls);
-  const lock=path.join(runDir,'.lock');fs.mkdirSync(lock);
+  const lockOwner=acquireRunLock(runDir);
   const originalFetch=globalThis.fetch;
   let client;
   try {
@@ -145,6 +190,11 @@ async function main() {
       c.arguments={...c.arguments,after:body.after};
       } while(true);
     }
-  } finally {globalThis.fetch=originalFetch;await client?.close();await server.close();fs.rmdirSync(lock);}
+  } finally {
+    globalThis.fetch=originalFetch;
+    try {await client?.close();} finally {
+      try {await server.close();} finally {releaseRunLock(runDir,lockOwner);}
+    }
+  }
 }
 if (process.argv[1] && fs.realpathSync(process.argv[1])===fileURLToPath(import.meta.url)) main().catch(()=>{console.error('LIVEDUNE_RUN_STOPPED; inspect sanitized receipts, do not print raw errors');process.exitCode=1;});

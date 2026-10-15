@@ -9,7 +9,7 @@ description: "Снять каждую историю из доступного �
 
 Уточни archive source/month/year/timezone/authority. Полный source inventory/pagination/exhaustion, exact community/story ID/date/author/media до снимка и после. Quiet scroll alone не terminal. Полный список из network/archive и DOM подтверждается отдельно от captured count; manifest unknown не invented total.
 
-Авторизация сотрудника через own manual/native browser flow, explicit private profile либо approved loopback CDP. Source credentials/profile default outside package. Never copy an employee session, automatically expire other's ticket or close user's browser. Before manual login release own ticket; nested borrowed caller escalates to parent.
+Авторизация сотрудника через own manual/native browser flow, explicit private profile либо approved loopback CDP. Профиль хранится вне пакета. Пароль не запрашивается скриптом, не сохраняется в JSON и не читается из файла или переменных среды; команда credentials/--credentials удалена из CLI. Старые файлы пользователя не читать и не удалять автоматически. Never copy an employee session, automatically expire other's ticket or close user's browser. Before manual login release own ticket; nested borrowed caller escalates to parent.
 
 Light UI native75, media RGB unchanged, actual paused story identity/date/media and final PNG checked. Missing avatar exception только explicit owner approval exact full story ID; записать limitation, не общий обход. Unsupported UI/spec/source refusal stops capture; inspect evidence private only. Capture end cleanup/ticket finally; metadata/exit0 не visual/full-period proof.
 

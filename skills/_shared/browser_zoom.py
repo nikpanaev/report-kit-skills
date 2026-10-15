@@ -30,7 +30,7 @@ async def launch_browser(playwright, *, zoom=DEFAULT_ZOOM, headless=True, mobile
         default = Path(profile) / 'Default'
         default.mkdir()
         (default / 'Preferences').write_text(json.dumps({'partition': {
-            'default_zoom_level': {'x': math.log(zoom / 100) / math.log(1.2)}}}))
+            'default_zoom_level': {'x': math.log(zoom / 100) / math.log(1.2)}}}), encoding="utf-8")
         context = await playwright.chromium.launch_persistent_context(
             profile, channel='chromium', headless=headless)
         try:

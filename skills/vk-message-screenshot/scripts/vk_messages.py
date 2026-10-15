@@ -417,14 +417,12 @@ def main():
     parser.add_argument('--settle',type=positive,default=700)
     parser.add_argument('--timeout',type=positive,default=20000)
     parser.add_argument('--login-wait',type=positive,default=120)
-    parser.add_argument('--credentials',type=Path,default=shared.AUTH/'credentials.json')
     parser.add_argument('--auth-ui',type=Path,default=shared.AUTH/'vk-ui.json')
     add_zoom_argument(parser)
     args = parser.parse_args()
     if args.profile is None:
         args.cdp = args.cdp or os.environ.get('VK_CDP_URL') or shared.SHARED_CDP
     try:
-        outside_package(args.credentials)
         outside_package(args.auth_ui)
         if args.profile:
             outside_package(args.profile)

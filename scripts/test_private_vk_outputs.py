@@ -20,7 +20,7 @@ import ui_queue
 
 class PrivateOutputs(unittest.TestCase):
     def test_bootstrap_orders_and_existing_permissions(self):
-        for order in ('credentials-first', 'queue-first', 'existing-root'):
+        for order in ('capture-first', 'queue-first', 'existing-root'):
             with self.subTest(order=order), tempfile.TemporaryDirectory() as directory:
                 root = Path(directory)
                 state = root / 'state'
@@ -39,17 +39,11 @@ class PrivateOutputs(unittest.TestCase):
                         elif order == 'existing-root':
                             state.mkdir()
                             state.chmod(0o755)
-                        args = Namespace(command='credentials', credentials=state / 'vk/credentials.json')
-                        with patch.object(sys.stdin, 'isatty', return_value=True), \
-                             patch('builtins.input', return_value='fixture-login'), \
-                             patch.object(stories.getpass, 'getpass', return_value='fixture-secret'):
-                            self.assertEqual(stories.run(args), 0)
-                        self.assertEqual(stat.S_IMODE(state.stat().st_mode), 0o700)
-                        self.assertEqual(stat.S_IMODE(args.credentials.stat().st_mode), 0o600)
                         capture = Namespace(command='capture', url='https://vk.ru/fixture',
                             month='2026-08', timezone='Europe/Moscow', output=None,
                             ui=root / 'missing-ui.json')
                         self.assertEqual(stories.run(capture), 1)
+                        self.assertEqual(stat.S_IMODE(state.stat().st_mode), 0o700)
                         self.assertEqual(stat.S_IMODE(capture.output.stat().st_mode), 0o700)
                         browser.assert_not_called()
                         self.assertEqual(stat.S_IMODE(unrelated.stat().st_mode), 0o755)

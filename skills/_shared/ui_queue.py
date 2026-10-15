@@ -8,6 +8,7 @@ import os
 import secrets
 import select
 import signal
+import socket
 import sqlite3
 import sys
 import threading
@@ -23,7 +24,45 @@ TOKEN_ENV = 'PERSONAL_UI_QUEUE_TOKEN'
 CURRENT = ContextVar('personal_ui_lease', default=None)
 
 
-def operate(path, action, *, owner=None, token=None):
+def process_alive(pid):
+    """False only for a proven dead local process; denial/unknown is never stale."""
+    if type(pid) is not int or not 0 < pid <= 0xffffffff: return None
+    if os.name == 'nt':
+        import ctypes
+        from ctypes import wintypes
+        api = ctypes.WinDLL('kernel32', use_last_error=True)
+        api.OpenProcess.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
+        api.OpenProcess.restype = wintypes.HANDLE
+        api.WaitForSingleObject.argtypes = [wintypes.HANDLE, wintypes.DWORD]
+        api.WaitForSingleObject.restype = wintypes.DWORD
+        api.CloseHandle.argtypes = [wintypes.HANDLE]
+        handle = api.OpenProcess(0x00100000, False, pid)
+        if not handle: return False if ctypes.get_last_error() == 87 else None
+        try:
+            result = api.WaitForSingleObject(handle, 0)
+            return {0: False, 258: True}.get(result)
+        finally: api.CloseHandle(handle)
+    try:
+        os.kill(pid, 0)
+        return True
+    except ProcessLookupError: return False
+    except OSError: return None
+
+
+def reap_dead(db):
+    db.execute('DELETE FROM lease_owners WHERE token NOT IN (SELECT token FROM tickets)')
+    for row in db.execute('SELECT token FROM tickets WHERE managed=1').fetchall():
+        holders = db.execute('SELECT pid,host FROM lease_owners WHERE token=?', (row['token'],)).fetchall()
+        if not holders: continue  # Missing ownership is not evidence of process death.
+        for holder in holders:
+            if holder['host'] == socket.gethostname() and process_alive(holder['pid']) is False:
+                db.execute('DELETE FROM lease_owners WHERE token=? AND pid=? AND host=?',
+                           (row['token'], holder['pid'], holder['host']))
+        if not db.execute('SELECT 1 FROM lease_owners WHERE token=?', (row['token'],)).fetchone():
+            db.execute('DELETE FROM tickets WHERE token=?', (row['token'],))
+
+
+def operate(path, action, *, owner=None, token=None, managed=False):
     path = outside_package(path)
     path.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
     db = sqlite3.connect(path, timeout=10)
@@ -36,26 +75,41 @@ def operate(path, action, *, owner=None, token=None):
             token TEXT UNIQUE NOT NULL,
             owner TEXT NOT NULL,
             state TEXT NOT NULL DEFAULT 'waiting')''')
+        if 'managed' not in {row['name'] for row in db.execute('PRAGMA table_info(tickets)')}:
+            db.execute('ALTER TABLE tickets ADD COLUMN managed INTEGER NOT NULL DEFAULT 0')
+        db.execute('CREATE TABLE IF NOT EXISTS lease_owners (token TEXT, pid INTEGER, host TEXT, PRIMARY KEY(token,pid,host))')
+        if action in ('enqueue', 'claim', 'check'): reap_dead(db)
         if action == 'enqueue':
             if not owner or not owner.strip():
                 raise ValueError('Нужен владелец задачи')
             token = secrets.token_hex(16)
-            row = db.execute('INSERT INTO tickets(token, owner) VALUES (?, ?)', (token, owner.strip()))
+            row = db.execute('INSERT INTO tickets(token, owner,managed) VALUES (?, ?, ?)', (token, owner.strip(), int(managed)))
+            if managed:
+                db.execute('INSERT INTO lease_owners VALUES (?,?,?)', (token, os.getpid(), socket.gethostname()))
             result = dict(ok=True, id=row.lastrowid, token=token, state='waiting')
         elif action == 'status':
             result = dict(ok=True, tickets=[dict(row) for row in db.execute(
                 'SELECT id, owner, state FROM tickets ORDER BY id')])
-        elif action in ('claim', 'check', 'release'):
+        elif action in ('claim', 'check', 'release', 'detach'):
             ticket = db.execute('SELECT * FROM tickets WHERE token = ?', (token,)).fetchone()
             if ticket is None:
                 raise ValueError('Билет не найден; чужая очередь не изменена')
-            if action == 'release':
-                db.execute('DELETE FROM tickets WHERE token = ?', (token,))
+            if action in ('release', 'detach'):
+                if managed:
+                    removed = db.execute('DELETE FROM lease_owners WHERE token=? AND pid=? AND host=?', (token, os.getpid(), socket.gethostname())).rowcount
+                    if removed and ticket['managed'] and not db.execute('SELECT 1 FROM lease_owners WHERE token=?', (token,)).fetchone():
+                        db.execute('DELETE FROM tickets WHERE token=?', (token,))
+                    reap_dead(db)
+                else:
+                    db.execute('DELETE FROM tickets WHERE token = ?', (token,))
+                    db.execute('DELETE FROM lease_owners WHERE token = ?', (token,))
                 result = dict(ok=True, id=ticket['id'], state='released')
             else:
                 position = db.execute('SELECT COUNT(*) FROM tickets WHERE id <= ?', (ticket['id'],)).fetchone()[0]
                 if action == 'check' and (position != 1 or ticket['state'] != 'active'):
                     raise ValueError('Унаследованный билет не активен; управление UI запрещено')
+                if action == 'check' and managed and ticket['managed']:
+                    db.execute('INSERT OR IGNORE INTO lease_owners VALUES (?,?,?)', (token, os.getpid(), socket.gethostname()))
                 if action == 'claim' and position == 1:
                     db.execute("UPDATE tickets SET state = 'active' WHERE token = ?", (token,))
                 result = dict(ok=True, id=ticket['id'], position=position,
@@ -78,9 +132,9 @@ class Lease:
 
     def acquire(self):
         if self.borrowed:
-            operate(self.database, 'check', token=self.token)
+            operate(self.database, 'check', token=self.token, managed=True)
         else:
-            self.token = operate(self.database, 'enqueue', owner=self.owner)['token']
+            self.token = operate(self.database, 'enqueue', owner=self.owner, managed=True)['token']
             waiting = False
             while operate(self.database, 'claim', token=self.token)['state'] != 'active':
                 if not waiting:
@@ -90,8 +144,8 @@ class Lease:
         os.environ[TOKEN_ENV] = self.token
 
     def release(self):
-        if self.token and not self.borrowed:
-            operate(self.database, 'release', token=self.token)
+        if self.token:
+            operate(self.database, 'detach' if self.borrowed else 'release', token=self.token, managed=True)
             self.token = None
             os.environ.pop(TOKEN_ENV, None)
 

@@ -7,26 +7,31 @@
       "sourceRelative": "_shared/ui_queue.py",
       "sourceSHA256": "4c7ddc542e6eb4b36e43ed06b2fbcbe5d9e4abd92cdf5f1a84b40b2094b9194a",
       "destination": "skills/_shared/ui_queue.py",
-      "outputSHA256": "1253ac0ed30c130e2f902af89ccfcde3b6a905acaeca5f7290f1e389d8501c90",
+      "outputSHA256": "d334475a5e92d91d89c48cf70427b81e47b73e2753a14184f9a5504df4d439d3",
       "changes": [
         "Relocate sole UI store outside package; existing installed queue untouched",
-        "Relocate default runtime outputs and reject explicit in-package state paths; no capture/metrics oracle weakened"
+        "Relocate default runtime outputs and reject explicit in-package state paths; no capture/metrics oracle weakened",
+        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged",
+        "Final audit regression update; original source snapshot retained"
       ]
     },
     {
       "sourceRelative": "_shared/browser_zoom.py",
       "sourceSHA256": "db62f38dc83e7c93efb2f37e7672f234f046b0798b469e632c9c55b8469258f7",
       "destination": "skills/_shared/browser_zoom.py",
-      "outputSHA256": "db62f38dc83e7c93efb2f37e7672f234f046b0798b469e632c9c55b8469258f7",
-      "changes": []
+      "outputSHA256": "8cfe8db46cf682b9ab295a589a48fac162b09b7a689cd10e881003b5550427c2",
+      "changes": [
+        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged"
+      ]
     },
     {
       "sourceRelative": "_shared/test_ui_queue.py",
       "sourceSHA256": "9496146624f6c1f51833a1b37b0b3c4cd0d72afdc78c1133695fe183ebc65063",
       "destination": "skills/_shared/test_ui_queue.py",
-      "outputSHA256": "157c6908a2de27c0e99af3f1aec8c57fde220c5c32d7a5bd0f3b6dab23af093f",
+      "outputSHA256": "5a4e66ea01998e373ce8712ffc1b583517ba562878154552d381b25519f76ebd",
       "changes": [
-        "Exclude old installed Telegram wrapper check only: wrapper not part of new package; FIFO/schema assertions retained"
+        "Exclude old installed Telegram wrapper check only: wrapper not part of new package; FIFO/schema assertions retained",
+        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged"
       ]
     },
     {
@@ -40,11 +45,12 @@
       "sourceRelative": "livedune/scripts/mcp-run.mjs",
       "sourceSHA256": "7c1cc821660741e0724435ce759b2dfcb0c527a323570ff6a348a02d725d5859",
       "destination": "skills/livedune/scripts/mcp-run.mjs",
-      "outputSHA256": "d8e50335bf4294bd5eae9d644cc36d956630a70a565df0e06426fd8021bc71c0",
+      "outputSHA256": "f1926751bad829d64413cc901a629bb866f0f81d6b3e5f009b325c80fe9371ec",
       "changes": [
         "Reject run-dir/calls inside package or its ancestor, including resolved symlink targets, before writing data/reading credentials",
         "MCP client identity reads new package VERSION; list-only still returns before state/credentials",
-        "Windows preparation: platform credential/private-directory helper; existing macOS route/GET/cap guards preserved"
+        "Windows preparation: platform credential/private-directory helper; existing macOS route/GET/cap guards preserved",
+        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged"
       ]
     },
     {
@@ -104,11 +110,12 @@
       "sourceRelative": "vk-message-screenshot/scripts/vk_messages.py",
       "sourceSHA256": "74e2cc497f16c38526724a4b2d911db042b2ebd27d6c47f85150d905b2a53959",
       "destination": "skills/vk-message-screenshot/scripts/vk_messages.py",
-      "outputSHA256": "a45a74d54e57ba3c91cee2e7b0517af70ca0ae7804fdbf03834037a3ae5d68c9",
+      "outputSHA256": "7013ea03bbd8891186d99f282f5282b1fb9d91108c5d93f8a0a001a8cc9b9fb6",
       "changes": [
         "Use shared external private state instead of package credential path",
         "Default working UI map relocated to external private state; public recipe never trusted as employee observation",
-        "Relocate default runtime outputs and reject explicit in-package state paths; no capture/metrics oracle weakened"
+        "Relocate default runtime outputs and reject explicit in-package state paths; no capture/metrics oracle weakened",
+        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged"
       ]
     },
     {
@@ -124,23 +131,26 @@
       "sourceRelative": "vk-stories-screenshot/scripts/vk_stories.py",
       "sourceSHA256": "e87b8f9812dd1ff5896cac98e56525f71e5dc403d5c91eb223dc5df00ada4d16",
       "destination": "skills/vk-stories-screenshot/scripts/vk_stories.py",
-      "outputSHA256": "f60044cdf90aebc117320a25488a0f94f147fa18b5023e682b46ad4b2e5583e4",
+      "outputSHA256": "75854640a4ee1a7fe08f613610c87340e30b7153d6e7071dd5ac5f62f20be7d4",
       "changes": [
         "Move credential/profile default outside package; no credential copied or read",
         "Default working UI map relocated to external private state; public recipe never trusted as employee observation",
         "Relocate default runtime outputs and reject explicit in-package state paths; no capture/metrics oracle weakened",
-        "Harden designated private state before enrollment/queue; close capture output leaf and set PNG0600; no capture/auth/identity/oracle changes"
+        "Harden designated private state before enrollment/queue; close capture output leaf and set PNG0600; no capture/auth/identity/oracle changes",
+        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged"
       ]
     },
     {
       "sourceRelative": "vk-stories-screenshot/scripts/test_vk_stories.py",
       "sourceSHA256": "a803854e5608d4cf5108cd1c34ab903df157531648ac8e49b50435dbaac1d01f",
       "destination": "skills/vk-stories-screenshot/scripts/test_vk_stories.py",
-      "outputSHA256": "922af1f43d27640b0c521f484d3db6647d8d9b4fb55c24c9c61f133de90e63ab",
+      "outputSHA256": "7f77339b3a4ba22336370a778b57cd1f1f738bea894018fcebb752bddcdd8c7f",
       "changes": [
         "Replace source community aliases/IDs with synthetic fixture103; same owner checks",
         "Default working UI map relocated to external private state; public recipe never trusted as employee observation",
-        "Offline pause recipe reads public JSON without declaring live evidence; new assertion retains load_ui rejection of unobserved recipe"
+        "Offline pause recipe reads public JSON without declaring live evidence; new assertion retains load_ui rejection of unobserved recipe",
+        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged",
+        "Final audit regression update; original source snapshot retained"
       ]
     },
     {
@@ -202,9 +212,10 @@
       "sourceRelative": "threads-post-screenshot/SKILL.md",
       "sourceSHA256": "48aedc470949e377a3c2f842df5b21f5f1359d98a21d4e46ff8d976f67eee612",
       "destination": "skills/threads-post-screenshot/SKILL.md",
-      "outputSHA256": "264ba71a1abd867d52eb41594f77d25ce03f03541f1be6c69a58a0364d3f7fa8",
+      "outputSHA256": "b0a0a06ac77b2bc553582cd2f1d7a09d2dd950763f72aff8857231e18e9c8c79",
       "changes": [
-        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained"
+        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
+        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged"
       ]
     },
     {
@@ -227,9 +238,10 @@
       "sourceRelative": "threads-post-screenshot/scripts/threads_post_screenshot.py",
       "sourceSHA256": "d019e5381a1dc3a8e19433d4727f6c82486ec5a6a641e84b5b5aac3fe82ddd5c",
       "destination": "skills/threads-post-screenshot/scripts/threads_post_screenshot.py",
-      "outputSHA256": "ef426cbf476f421639de500f922318d4589ff0e5abcab7f2b40e0d55c5f51df3",
+      "outputSHA256": "f99590f47d4bdd14c8f82deade125febe4b951c8e11b95321bf3bca3558365c5",
       "changes": [
-        "Reject package/ancestor/symlink runtime output/state paths with existing shared guard; external defaults; capture algorithm unchanged"
+        "Reject package/ancestor/symlink runtime output/state paths with existing shared guard; external defaults; capture algorithm unchanged",
+        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged"
       ]
     },
     {
@@ -386,5 +398,6 @@
         "Russian office-user display text only; stable skill ID and invocation policy preserved"
       ]
     }
-  ]
+  ],
+  "portable_revision_date": "2026-10-15"
 }

@@ -12,7 +12,7 @@ Candidate0.1.0-dev.1 добавляет единый [порядок сопро�
 
 [Scope/платформенные ограничения](CHANGE-SPEC.md), [provenance](SOURCE-PROVENANCE.json), [проверки](EVIDENCE-INDEX.md). Наличие SKILL.md не доказывает installation/invocation/live readiness. Employee data находится вне package: REPORT_SKILLS_STATE_DIR; каждый task output в его private run. Явные in-package data paths отвергаются.
 
-OpenAPI сохраняется как source/hash в dependencies/livedune/recipe.json; schema и готовый backend не vendored. Сохранён frozen npm lock; установка разрешается отдельно, во внешнем runtime. CLI Keychain adapter macOS only, Windows/другой runtime не подтверждены. Playwright1.63.0/Chromium и Codeх-connected tooling также требуют выбора и проверки, без включения binaries/session.
+OpenAPI сохраняется как source/hash в dependencies/livedune/recipe.json; schema и готовый backend не vendored. Сохранён frozen npm lock; установка разрешается отдельно, во внешнем runtime. CLI использует Keychain на macOS; вариант Windows Credential Manager подготовлен для проверки пользователем (USER_CHECK_REQUIRED). Иные ОС этим CLI не поддерживаются. Playwright1.63.0/Chromium и Codeх-connected tooling также требуют выбора и проверки, без включения binaries/session.
 
 Public historical VK UI recipe не live evidence. Working observed map private; default CLI требует его после actual observation, см. skills/vk-stories-screenshot/references/ui.md. Не добавлять фиктивные evidence locators ради PASS.
 

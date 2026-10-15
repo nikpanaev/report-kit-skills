@@ -13,3 +13,7 @@ Original spec1.0.10 hash checked by SPEC_HASH; mapping of selected post endpoint
 Paginate posts/history/stories/videos/audience with original after; terminate empty/0, fail repeated cursor/schema/provider error. Unknown body/HTML/scalar fails. FAILED_OR_UNCERTAIN is not retry authorization; inspect local ledger/outcome, then explicit decision. On cap no extra info request, report local STARTED/budget and ask for exact change; no bypass/new directory.
 
 Offline check: node scripts/check.mjs, optionally approved runtime arg for actual backend with synthetic transport and denied Keychain/network. This is not live account proof. Actual provider responses must be checked against requested account/network/period/population; source hash alone doesn't establish truth.
+
+## Восстановление после аварии
+
+В .lock/owner.json сохраняется только PID, host и случайная identity, без ключа. Если прежний процесс аварийно закрыт, агент отдельно выполняет `node <skill>/scripts/mcp-run.mjs --recover-run <тот-же-run-dir>`. Команда не читает ключ, не загружает backend и не делает HTTP: снимает только блокировку подтверждённо завершённого локального процесса. Живой/неизвестный/чужой владелец, старый lock без identity или дополнительные файлы останавливают восстановление. Папка, requests.jsonl и счётчик STARTED сохраняются. После снятия сначала разобрать журнал и неизвестный исход запроса; не запускать все calls повторно и не создавать новый журнал для обхода лимита.

@@ -95,17 +95,15 @@ def check():
                             ui=root/'nonexistent.json')
         with contextlib.redirect_stdout(io.StringIO()):
             assert v.run(missing) == 1
-        failed_manifest = json.loads(next(missing.output.glob('manifest-*.json')).read_text())
+        failed_manifest = json.loads(next(missing.output.glob('manifest-*.json')).read_text(encoding="utf-8"))
         assert failed_manifest['source'] == missing.url and failed_manifest['errors']
         assert not failed_manifest['complete'] and not failed_manifest['stories']
-        creds = root / 'credentials.json'
-        v.save_json(creds, {'login':'fixture-login','password':'fixture-secret'}, private=True)
-        assert creds.stat().st_mode & 0o777 == 0o600
-        assert v.credentials(creds)['password'] == 'fixture-secret'
-        os.chmod(creds, 0o644)
+        marker = root / 'private-marker.json'
+        v.save_json(marker, {'synthetic': True}, private=True)
+        assert marker.stat().st_mode & 0o777 == 0o600
         try:
-            v.credentials(creds)
-            assert False
+            v.run(Namespace(command='credentials'))
+            assert False, 'Plaintext password enrollment must be refused'
         except v.Failure:
             pass
         with sync_playwright() as p:
@@ -138,7 +136,7 @@ def check():
             page.set_content('<body>Shared session fixture</body>')
             page.evaluate("setTimeout(()=>document.body.insertAdjacentHTML('beforeend',"
                           "'<span id=shared-auth>Authenticated</span>'),200)")
-            with patch.object(v, 'credentials', side_effect=AssertionError('Unexpected login')):
+            with patch.object(sys.stdin, 'isatty', side_effect=AssertionError('Unexpected manual login')):
                 v.authenticate(page, Namespace(timeout=1500), {'auth':{'ready':'#shared-auth'}})
             # VK starts in playing=false while mounting/loading. An optional
             # playing=true selector skips Space and mistakes startup for pause.
@@ -150,7 +148,7 @@ def check():
                 pass
             else:
                 raise AssertionError('Unobserved public recipe accepted as live UI evidence')
-            pause_step=json.loads(example.read_text())['viewer']['pause'][0]
+            pause_step=json.loads(example.read_text(encoding="utf-8"))['viewer']['pause'][0]
             for resume in (False,True):
                 page.goto('https://vk.ru/fixture')
                 page.locator('.card').first.click()
@@ -293,20 +291,24 @@ def check():
                 except v.Failure:
                     pass
                 assert not (root/'invalid-approval.png').exists()
-            # Automatic credential filling is exercised on a routed local fixture,
-            # not on VK: no real credentials or requests are sent.
+            # Password recipes are refused. Simulate manual input only on this routed fixture.
             page.route('https://vk.ru/login-fixture', lambda route: route.fulfill(
                 body="<input id=l><input id=p type=password><button id=go onclick=\"this.id='ready'\">Login</button>",
                 content_type='text/html'))
             page.goto('https://vk.ru/login-fixture')
-            v.actions(page,[{'action':'fill','selector':'#l','credential':'login'},
-                            {'action':'fill','selector':'#p','credential':'password'},
-                            {'action':'click','selector':'#go'}],
-                      {'login':'fixture-login','password':'fixture-secret'})
+            try:
+                v.actions(page,[{'action':'fill','selector':'#p','credential':'password'}])
+                assert False, 'Password recipe must not execute'
+            except v.Failure:
+                pass
+            assert page.locator('#p').input_value() == ''
+            page.locator('#l').fill('fixture-login')
+            page.locator('#p').fill('fixture-secret')
+            v.actions(page,[{'action':'click','selector':'#go'}])
             assert v.visible(page,'#ready')
             browser.close()
     print('PASS: month boundaries, same-day stories, delayed loading, denied access, '
-          'auto-transition rejection, partial preservation, credential permissions, login recipe '
+          'auto-transition rejection, partial preservation, private file permissions, password recipe refusal '
           'CDP disconnect without closing the external browser, inherited left preview dates '
           'month boundary without older-history scrolling, verified owner avatar, '
           'delayed autoplay startup and rejection of resumed autoplay, '
