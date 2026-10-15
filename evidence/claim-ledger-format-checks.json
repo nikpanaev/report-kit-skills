@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "package": "report-kit-skills",
+  "version": "0.1.0-dev.12",
+  "scope": "Metadata-only correction of direct_support C-016/C-017 and method C-017; existing19claims/observations/results/limits and reviewer decisions unchanged",
+  "checker_sha256": "b49a2a98baae797637faa38ba7203164320d47a5492ddb5327a9553c3562c6e8",
+  "before": {
+    "exit_code": 1,
+    "stdout": "AI claim gate: FAIL; rows=19; material=19; errors=23\nrecord=2 category=E_MATERIAL_NOT_ACCEPTED\nrecord=3 category=E_MATERIAL_NOT_ACCEPTED\nrecord=4 category=E_MATERIAL_NOT_ACCEPTED\nrecord=5 category=E_MATERIAL_NOT_ACCEPTED\nrecord=6 category=E_MATERIAL_NOT_ACCEPTED\nrecord=7 category=E_MATERIAL_NOT_ACCEPTED\nrecord=8 category=E_MATERIAL_NOT_ACCEPTED\nrecord=9 category=E_MATERIAL_NOT_ACCEPTED\nrecord=10 category=E_MATERIAL_NOT_ACCEPTED\nrecord=11 category=E_MATERIAL_NOT_ACCEPTED\nrecord=12 category=E_MATERIAL_NOT_ACCEPTED\nrecord=13 category=E_MATERIAL_NOT_ACCEPTED\nrecord=14 category=E_MATERIAL_NOT_ACCEPTED\nrecord=15 category=E_MATERIAL_NOT_ACCEPTED\nrecord=16 category=E_MATERIAL_NOT_ACCEPTED\nrecord=17 category=E_DIRECT_SUPPORT\nrecord=17 category=E_DIRECT_SUPPORT_FAILED\nrecord=17 category=E_MATERIAL_NOT_ACCEPTED\nrecord=18 category=E_DIRECT_SUPPORT\nrecord=18 category=E_DIRECT_SUPPORT_FAILED\nrecord=18 category=E_MATERIAL_NOT_ACCEPTED\nrecord=19 category=E_MATERIAL_NOT_ACCEPTED\nrecord=20 category=E_MATERIAL_NOT_ACCEPTED\n",
+    "stderr": "",
+    "checker_sha256": "b49a2a98baae797637faa38ba7203164320d47a5492ddb5327a9553c3562c6e8",
+    "ledger_sha256": "4d93e05c05ccf88beb3836dea4817e0d30ec78c7b645f8a5894dd3c4fddd4ace"
+  },
+  "after": {
+    "exit_code": 1,
+    "stdout": "AI claim gate: FAIL; rows=19; material=19; errors=19\nrecord=2 category=E_MATERIAL_NOT_ACCEPTED\nrecord=3 category=E_MATERIAL_NOT_ACCEPTED\nrecord=4 category=E_MATERIAL_NOT_ACCEPTED\nrecord=5 category=E_MATERIAL_NOT_ACCEPTED\nrecord=6 category=E_MATERIAL_NOT_ACCEPTED\nrecord=7 category=E_MATERIAL_NOT_ACCEPTED\nrecord=8 category=E_MATERIAL_NOT_ACCEPTED\nrecord=9 category=E_MATERIAL_NOT_ACCEPTED\nrecord=10 category=E_MATERIAL_NOT_ACCEPTED\nrecord=11 category=E_MATERIAL_NOT_ACCEPTED\nrecord=12 category=E_MATERIAL_NOT_ACCEPTED\nrecord=13 category=E_MATERIAL_NOT_ACCEPTED\nrecord=14 category=E_MATERIAL_NOT_ACCEPTED\nrecord=15 category=E_MATERIAL_NOT_ACCEPTED\nrecord=16 category=E_MATERIAL_NOT_ACCEPTED\nrecord=17 category=E_MATERIAL_NOT_ACCEPTED\nrecord=18 category=E_MATERIAL_NOT_ACCEPTED\nrecord=19 category=E_MATERIAL_NOT_ACCEPTED\nrecord=20 category=E_MATERIAL_NOT_ACCEPTED\n",
+    "stderr": "",
+    "checker_sha256": "b49a2a98baae797637faa38ba7203164320d47a5492ddb5327a9553c3562c6e8",
+    "ledger_sha256": "98e58f37e567753a666d68deac690a86cd48c9faece79da055ee9b062eb5f55e"
+  },
+  "protected_sources": "All executable files, source skill instructions and tests unchanged; exact private preservation receipt retained",
+  "primary_readback": {
+    "rate_outputs": 7,
+    "PyPI_replies": 2,
+    "historical_source_exports": 44
+  },
+  "installation": false,
+  "publication": false,
+  "client_changes": false,
+  "unchanged_csv_lines_preserved": 18
+}

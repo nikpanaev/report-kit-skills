@@ -1,6 +1,6 @@
 # Evidence Index — report-skills
 
-Current state2026-10-15: VERSION0.1.0-dev.11, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
+Current state2026-10-15: VERSION0.1.0-dev.12, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
 
 Process Profile and authority: [CHANGE-SPEC](CHANGE-SPEC.md). Baseline and scoped branch actual Git; package content identity/private exact run records retained locally. [Offline checks](evidence/offline-checks.json) contain only sanitized source/test identities, no donor paths or private data. [Source provenance](SOURCE-PROVENANCE.json), [selection](OPEN-SOURCE-SELECTION.md) and [license status](LICENSE-STATUS.md).
 
@@ -102,3 +102,7 @@ A preceding current-source technical audit reviewed98 tracked dev.9 files and fo
 Owner clarified that the skill was updated after the old failure and works in its current version. The old failure is retained as historical evidence, not a current blocker or a requirement for repeated diagnosis. Reopen only on new reproduction against an identified current version. No old FAIL was rewritten as PASS and the private test proposal was not applied.
 
 [Read-only source comparison](evidence/current-source-checks.json): all42 recorded origin hashes match both canonical and installed sources; all42 adapted outputs match provenance. Twelve SKILL entrypoints and eight existing YAML metadata files match canonical/installed copies; four YAML files are absent in both originals. This identifies the selected sources, not a new live test of the portable copy or employee acceptance. No installed/client/source donor file changed.
+
+## Исправление журнала без изменения скиллов
+
+C-016/C-017: direct_support приведён к PASS после сверки семи исходных выводов, двух ответов PyPI и44 исторических хешей. Метод C-017 описывает инвентаризацию библиотек, не браузерный тест. Claims/results/risks/limitations и reviewer decisions сохранены; старые FAIL не переписаны. См. evidence/claim-ledger-format-checks.json. Новых запусков браузера или сервисов нет.
