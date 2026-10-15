@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "package": "report-kit-skills",
-  "package_version": "0.1.0-dev.23",
+  "package_version": "0.1.0-dev.24",
   "interfaces": {
     "source:livedune": 1,
     "source:vk-post-screenshot": 1,

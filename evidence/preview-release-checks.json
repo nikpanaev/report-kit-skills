@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "scope": "Documentation, release metadata and conditional preview decision; executable source unchanged",
+  "local_tests": {
+    "discovered": 183,
+    "passed": 182,
+    "skipped_native_powershell": 1
+  },
+  "source_checks": {
+    "local_links": 256,
+    "syntax_files": 66,
+    "provenance_records": 46,
+    "old_evidence_files_unchanged": true,
+    "parent_dirty_files_unchanged": 8
+  },
+  "runtime_id": "python312-20261013-v3",
+  "runtime_bytes_changed": false,
+  "installation": false,
+  "native_windows": "NOT_RUN",
+  "publication": "Requires actual GitHub release/asset readback; this local record does not assert success",
+  "limits": "No native Windows, employee install/update/rollback or independent legal opinion; original critical controls preserved"
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "decision": "ACCEPT_CONDITIONAL_WINDOWS_REDISTRIBUTION_FOR_PREVIEW",
+  "owner_reply": "Принять основание для тестового выпуска",
+  "scope": "Unchanged supplied Python, original licences/notices and separate recipient agreement; test release only",
+  "not_asserted": [
+    "Independent legal opinion",
+    "Exact upstream builder Visual Studio licence verification",
+    "Native Windows operation",
+    "Installation or existing client changes"
+  ],
+  "runtime_id": "python312-20261013-v3",
+  "runtime_bytes_changed": false,
+  "prior_controls": "Historical results and other applicable release/host controls retain their original scope"
+}
