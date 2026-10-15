@@ -1,6 +1,6 @@
 # Evidence Index — report-skills
 
-Current state2026-10-15: VERSION0.1.0-dev.12, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
+Current state2026-10-15: VERSION0.1.0-dev.13, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
 
 Process Profile and authority: [CHANGE-SPEC](CHANGE-SPEC.md). Baseline and scoped branch actual Git; package content identity/private exact run records retained locally. [Offline checks](evidence/offline-checks.json) contain only sanitized source/test identities, no donor paths or private data. [Source provenance](SOURCE-PROVENANCE.json), [selection](OPEN-SOURCE-SELECTION.md) and [license status](LICENSE-STATUS.md).
 
@@ -106,3 +106,11 @@ Owner clarified that the skill was updated after the old failure and works in it
 ## Исправление журнала без изменения скиллов
 
 C-016/C-017: direct_support приведён к PASS после сверки семи исходных выводов, двух ответов PyPI и44 исторических хешей. Метод C-017 описывает инвентаризацию библиотек, не браузерный тест. Claims/results/risks/limitations и reviewer decisions сохранены; старые FAIL не переписаны. См. evidence/claim-ledger-format-checks.json. Новых запусков браузера или сервисов нет.
+
+## Windows preparation; user native verification
+
+Current slice prepares Windows LiveDune credential/private-folder handling and user instructions. Existing macOS transport and request guards retained; no new dependency/runtime installed. Native Windows, Credential Manager, filesystem ACL, browser/API/restart are USER_CHECK_REQUIRED. Existing accepted local snapshots and raw failures preserved. This is not support certification or installation/publication authority.
+
+Windows native verification is assigned to the user, not a missing developer-machine task. Source preparation can finish with USER_CHECK_REQUIRED while actual device support/release remains unapproved. Official skill validation failed only because both existing Python environments lack PyYAML; its unchanged header and references are checked by the package validator. No dependency installed to conceal this environment limitation.
+
+[Windows offline checks](evidence/windows-preparation-checks.json): existing19 ledger rows preserved; two new scoped test observations remain pending review. The real Windows user follows skills/livedune/references/WINDOWS.md.

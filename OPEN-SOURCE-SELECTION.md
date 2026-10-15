@@ -6,7 +6,7 @@
 | Browser automation | Existing Playwright1.63.0 | Actual installed Playwright1.63.0 metadata: Apache-2.0, Python>=3.10; runtime/browser not shipped; complete distribution notices review pending | Reuse approved version, no new engine |
 | Source capture/session/zoom/FIFO | Owner-maintained exported code, SOURCE-PROVENANCE.json | Own-code MIT selected, copyright Report Kit; third-party review pending; no historical private evidence/author metadata | Adapt only portable paths/privacy and synthetic fixtures |
 | Persistence/path validation | Python SQLite/pathlib and Node fs/path | Standard library, no third-party dependency added | One external private store; scoped local checks |
-| Secret storage | Existing macOS Keychain adapter | No key/cookie/session shipped; other OS mechanism not selected | Keep bounded adapter; not portable secret-store success |
+| Secret storage | macOS Keychain; Windows native Credential Manager via built-in Windows PowerShell5.1/.NET | No new library/key/cookie/session shipped; Windows native verification assigned to user | Preserve macOS route; Windows candidate only, fail closed on access/policy/ACL failure |
 | Installation/update | Native host plugin mechanism | No hook/server/global config changes in this slice | Prepare source manifests; actual device install deferred |
 
 Canonical references: https://registry.npmjs.org/mcp-openapi/0.3.0 ; https://github.com/Docat0209/mcp-openapi ; https://api.livedune.com/docs/openapi.json . Recipe and lock provide identities, not permission to download or execute. Source cache is not a new verified installation.
@@ -16,3 +16,7 @@ No standalone runtime, package manager wrapper, browser launcher or API bridge i
 ## Current dependency observation
 
 [Metadata inventory](dependencies/REVIEW.json) covers134 npm exact versions and four observed Python distributions. [Findings/limits](THIRD-PARTY-DEPENDENCIES.md): effective Node>=20 for frozen LiveDune chain; Python transitive resolver not frozen; esbuild postinstall needs approved runtime validation. Source origins18/18 across the two packages match their recorded hashes. These results do not close ownership/license/security/host acceptance. No dependency installed, version changed or third-party code vendored.
+
+## Windows credential preparation
+
+Owner assigned Windows runtime verification to the user. Reuse native WinCred/DirectorySecurity rather than installing a secret-store package or creating encryption. A narrow local wrapper retrieves only the selected credential through a captured pipe and creates/checks private directories; no installer, environment-token fallback, policy changes, service or HTTP client. Other programs of the same OS user/admin are outside the isolation claim. Actual Windows/Powershell/ACL/browser checks remain USER_CHECK_REQUIRED.

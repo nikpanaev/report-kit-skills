@@ -16,5 +16,5 @@
     "onDrift": "STOP_REVIEW_REQUIRED"
   },
   "installPolicy": "Explicit permission; external isolated runtime; frozen lock/ignore-scripts; do not install during offline preparation",
-  "platformCredential": "macOS Keychain only; other OS pending"
+  "platformCredential": "macOS Keychain preserved; Windows Credential Manager/PowerShell5.1 candidate with per-user ACL checks; native Windows USER_CHECK_REQUIRED; no other OS"
 }

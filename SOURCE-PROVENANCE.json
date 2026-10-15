@@ -40,19 +40,21 @@
       "sourceRelative": "livedune/scripts/mcp-run.mjs",
       "sourceSHA256": "7c1cc821660741e0724435ce759b2dfcb0c527a323570ff6a348a02d725d5859",
       "destination": "skills/livedune/scripts/mcp-run.mjs",
-      "outputSHA256": "cffaa5ec49eaf77e5d7f92237acbf1d206e3fab9625bd1b8ce9a52725ae2cb0c",
+      "outputSHA256": "d8e50335bf4294bd5eae9d644cc36d956630a70a565df0e06426fd8021bc71c0",
       "changes": [
         "Reject run-dir/calls inside package or its ancestor, including resolved symlink targets, before writing data/reading credentials",
-        "MCP client identity reads new package VERSION; list-only still returns before state/credentials"
+        "MCP client identity reads new package VERSION; list-only still returns before state/credentials",
+        "Windows preparation: platform credential/private-directory helper; existing macOS route/GET/cap guards preserved"
       ]
     },
     {
       "sourceRelative": "livedune/scripts/check.mjs",
       "sourceSHA256": "5125ce8f3e43abfdc644bd84a3f642e9d9deb528518bacdcdcad05e130acd811",
       "destination": "skills/livedune/scripts/check.mjs",
-      "outputSHA256": "c8889b75aa7716eb826bca8b58e15539ad24f60c7e5178920c8cf00c5d2db2cc",
+      "outputSHA256": "1f88aa492298edd6205ac38cc054e19b995085ddf744cddd4f6f0083bc8b5820",
       "changes": [
-        "Replace real provider account/post fixture IDs with synthetic valid shapes"
+        "Replace real provider account/post fixture IDs with synthetic valid shapes",
+        "CLI relocation fixtures include the new adjacent platform helper and PowerShell resource; original assertions unchanged"
       ]
     },
     {

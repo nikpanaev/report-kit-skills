@@ -7,7 +7,7 @@ description: "Получить статистику LiveDune, штатные в�
 
 Прочитай [data boundary](../_shared/DATA-BOUNDARY.md) и [API](references/API.md) для запросов; [metrics](references/METRICS.md) для расчётов. Источник/period/timezone/network/account и approved budget подтвердить перед collection. Сначала внутренний браузер, если доступен; UI screenshot — [SCREENSHOTS](../_shared/SCREENSHOTS.md) и единая [queue](../_shared/UI-QUEUE.md). Native exports не скриншоты UI.
 
-API: только ready backend mcp-openapi0.3.0 через scripts/mcp-run.mjs, exact spec hash, GET allowlist, no redirects/retries, cap1–200 и append-only STARTED ledger. Список tools без Keychain/HTTP. Actual credentials не являются package input; текущий CLI adapter macOS Keychain, иной OS NOT_SUPPORTED до проверки безопасного механизма. Не принимать token от модели и не печатать raw errors/key.
+API: только ready backend mcp-openapi0.3.0 через scripts/mcp-run.mjs, exact spec hash, GET allowlist, no redirects/retries, cap1–200 и append-only STARTED ledger. Список tools без Keychain/HTTP. Actual credentials не являются package input; macOS использует прежний Keychain. Для Windows подготовлен отдельный адаптер Credential Manager/приватных папок, настоящая проверка выполняется пользователем по [Windows](references/WINDOWS.md); статус USER_CHECK_REQUIRED до её результата. Иные ОС не поддерживаются этим API CLI. Не принимать token от модели и не печатать raw errors/key.
 
 Все cursors до окончания; raw replies/private hashes до preview/расчётов. HTTP/provider/schema/timeout/uncertain failures ненулевой exit; no blind retry/new run-dir bypass. Provider restriction/access error не0. Budget учитывает STARTED и сохраняется при restart; изменять только по отдельному разрешению внутри max200.
 

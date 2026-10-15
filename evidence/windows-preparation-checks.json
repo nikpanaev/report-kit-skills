@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "package": "report-kit-skills",
+  "version": "0.1.0-dev.13",
+  "status": "OFFLINE_CHECKS_PASS_NATIVE_WINDOWS_USER_CHECK_REQUIRED",
+  "platform_tests": {
+    "exit_code": 0,
+    "scope": "Mocked Windows credential/ACL transport, real macOS directory and CLI, strict responses and sanitized failures; no Windows execution",
+    "result_sha256": "42874bede8b47e6dbadfc121c9bb68318e94443c569565bb1d1dcea832da9762"
+  },
+  "ready_backend_checks": {
+    "exit_code": 0,
+    "mcp_openapi": "0.3.0",
+    "openapi": "1.0.10",
+    "network": "OS denied; HTTP and credential results synthetic",
+    "result_sha256": "4e2b6e5fb6d25876cbf6dd184608252131903ce065f9208e4cdaa0203fc012bc",
+    "scope": "Existing selected endpoint, cap100/200/restart, no hidden retry, full raw archive, path dispatch and CLI failure cases passed"
+  },
+  "source_hashes": {
+    "mcp-run.mjs": "d8e50335bf4294bd5eae9d644cc36d956630a70a565df0e06426fd8021bc71c0",
+    "platform-access.mjs": "80627c7a25585c4fb33b0b94f79c81e229fc646024c7d6fdecf6ce2faa60a91d",
+    "windows-access.ps1": "f1933ef712183c3666d193f2e5b44b23f655b763d11a641c279e83a821461eb6",
+    "check.mjs": "1f88aa492298edd6205ac38cc054e19b995085ddf744cddd4f6f0083bc8b5820",
+    "test-platform-access.mjs": "6e9f724d15fb66bde86664bae1824d047c0d19b89cce1191301c3eb1b8ad7c79",
+    "check-windows.mjs": "9f2a00b18362ac3e3c70af74ce62f1fdfcef8b83120c4eef2e55ee871446d96b"
+  },
+  "skill_header_preserved": true,
+  "official_skill_validator": "Environment missing PyYAML in system and bundled Python; no installation or validator change; package validator checks unchanged entrypoint and local references",
+  "windows_native": "NOT_RUN; user assigned Credential Manager/ACL/API/browser/Excel/restart verification",
+  "powershell_dotnet_compilation": "NOT_RUN: no Windows PowerShell/.NET compiler available",
+  "installation": false,
+  "publication": false,
+  "client_changes": false,
+  "powershell_policy": "AllSigned or mandatory Restricted stops; no policy changes; actual policy behavior USER_CHECK_REQUIRED"
+}

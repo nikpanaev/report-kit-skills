@@ -3,8 +3,8 @@ import { createRequire } from 'node:module';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import fs from 'node:fs';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
+import {readCredential,preparePrivateDirectory,verifyPrivateFile} from './platform-access.mjs';
 
 export const SPEC_HASH = '3998516d4bcf19f5299763257e76b44830905066c61638e77f4e94e51ffc6b47';
 export function normalizePostMapping(tools) {
@@ -83,6 +83,16 @@ export function outsidePackage(value) {
 async function main() {
   const argv=process.argv.slice(2);
   const opt={};for(let i=0;i<argv.length;i+=2) {if(!argv[i]?.startsWith('--') || argv[i+1]===undefined) throw new Error('ARGUMENTS_INVALID');opt[argv[i].slice(2)]=argv[i+1];}
+  if(opt['prepare-private-dir']) {
+    if(Object.keys(opt).length!==1) throw new Error('ARGUMENTS_INVALID');
+    preparePrivateDirectory(outsidePackage(opt['prepare-private-dir']));
+    console.log(JSON.stringify({private_directory_ready:true}));return;
+  }
+  if(opt['check-credential']==='true') {
+    if(Object.keys(opt).some(k=>!['check-credential','credential-service'].includes(k))) throw new Error('ARGUMENTS_INVALID');
+    const credential=readCredential({service:opt['credential-service']});credential.fill(0);
+    console.log(JSON.stringify({credential_available:true}));return;
+  }
   const runtime=path.resolve(opt.runtime);
   const require=createRequire(path.join(runtime,'package.json'));
   const entry=require.resolve('mcp-openapi');
@@ -96,18 +106,15 @@ async function main() {
   if(opt.list === 'true'){console.log(JSON.stringify(tools.map(t=>({name:t.name,method:t.endpointRef.method,path:t.endpointRef.path,schema:t.inputSchema}))));return;}
   const runDir=outsidePackage(opt['run-dir']);
   opt.calls=outsidePackage(opt.calls);
-  fs.mkdirSync(runDir,{recursive:true,mode:0o700});
-  fs.chmodSync(runDir,0o700);
+  preparePrivateDirectory(runDir);
+  verifyPrivateFile(opt.calls);
   const lock=path.join(runDir,'.lock');fs.mkdirSync(lock);
   const originalFetch=globalThis.fetch;
   let client;
   try {
     const calls=JSON.parse(fs.readFileSync(opt.calls,'utf8'));
     const cap=Number(opt.cap ?? 200);
-    const guard=makeGuard({runDir,cap,credential:()=>{
-      try{return execFileSync('/usr/bin/security',['find-generic-password','-s',opt['credential-service'] ?? 'livedune-api-key','-a',process.env.USER,'-w'],{stdio:['ignore','pipe','pipe'],timeout:10000});}
-      catch{throw new Error('CREDENTIAL_UNAVAILABLE');}
-    }});
+    const guard=makeGuard({runDir,cap,credential:()=>readCredential({service:opt['credential-service']})});
     // Only the ready backend performs HTTP; no endpoint-specific HTTP client here.
     globalThis.fetch=guard.fetch;
     const sdkRequire=createRequire(entry);

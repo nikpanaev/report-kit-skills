@@ -89,6 +89,7 @@ try {
       const cli=path.join(entryDir,'mcp-run.mjs');
       const adapter=fileURLToPath(new URL('./mcp-run.mjs',import.meta.url));
       if(name==='symlink') fs.symlinkSync(adapter,cli);else fs.copyFileSync(adapter,cli);
+      for(const file of ['platform-access.mjs','windows-access.ps1']) fs.copyFileSync(new URL(file,import.meta.url),path.join(entryDir,file));
       const listed=spawnSync(process.execPath,['--require',listPreload,cli,'--runtime',path.resolve(process.argv[2]),'--list','true'],{encoding:'utf8',timeout:10000});
       assert.equal(listed.status,0,name+': CLI exit');assert.match(listed.stdout,/\S/,name+': CLI dispatched');
       assert.equal(JSON.parse(listed.stdout).length,13,name+': tool inventory');
