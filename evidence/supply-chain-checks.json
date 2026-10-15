@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "agent_version": "0.1.0-dev.28",
+  "skills_version": "0.1.0-dev.19",
+  "runtime_id": "python312-20261013-v2",
+  "source_security": {
+    "agent_commit": "578dd1758115180c9bc0a5d9f4fd30b6e4ffb1e0",
+    "agent_files_reviewed": 107,
+    "skills_commit": "dc5a7c3b574b12af055b439866cce617fd261479",
+    "skills_files_reviewed": 124,
+    "reportable_findings": 0,
+    "method": "Offline AI source review; exact clean tracked snapshots, independent baseline and architecture mapping. New notice code reviewed separately; not non-AI acceptance."
+  },
+  "license_review": {
+    "original_notice_paths_verified": 416,
+    "canonical_texts_reviewed": 120,
+    "raw_variants_verified": 212,
+    "supplemental_texts_reviewed": 21,
+    "full_legal_acceptance": false,
+    "distribution_blockers": [
+      "Microsoft redistribution authority and protective downstream/end-user terms",
+      "NumPy libquadmath applicability and conditional source/relink route; no absence inferred from filename inventory"
+    ]
+  },
+  "notice_package": {
+    "filename": "report-kit-runtime-notices-v2.zip",
+    "sha256": "9eb7fca9eb00d0ebbf182bd11e1119f21a4d14f42cdfb2af2194df630aed56f8",
+    "size": 420386,
+    "url": null
+  },
+  "local_tests": {
+    "exit_code": 0,
+    "summary": [
+      "Ran 171 tests in 13.205s",
+      "OK"
+    ],
+    "raw_log_sha256": "738a553491931815af414128fcf5e31b912f1c7fbfd6ea233424157128719453",
+    "limitations": "Local synthetic Python tests; not native Windows, installation or publication."
+  },
+  "runtime_inert_checks": [
+    {
+      "platform": "macos-arm64",
+      "status": "INERT_FULL_INVENTORY_PASS",
+      "files": 8446,
+      "receipt_sha256": "6a9141a9c4b7a544a248e4ddfd873ead05528f68bd5f03db2b9aac72d9f2d4dc",
+      "execution_performed": false
+    },
+    {
+      "platform": "windows-x64",
+      "status": "INERT_FULL_INVENTORY_PASS",
+      "files": 7324,
+      "receipt_sha256": "7feabf49301827be1f9f2ae466e90ccda37449eb25e11e1ce35a3a268fe2d79f",
+      "execution_performed": false
+    }
+  ],
+  "macos_probe": {
+    "status": "LOCAL_RUNTIME_PROBE_PASS",
+    "python": "3.12.15",
+    "modules": [
+      "PIL",
+      "greenlet",
+      "numpy",
+      "playwright",
+      "pyee",
+      "typing_extensions",
+      "tzdata"
+    ],
+    "versions": {
+      "Pillow": "12.3.0",
+      "greenlet": "3.5.6",
+      "numpy": "2.3.5",
+      "playwright": "1.63.0",
+      "pyee": "13.0.1",
+      "typing_extensions": "4.16.0",
+      "tzdata": "2026.5"
+    },
+    "node": "24.21.0",
+    "native_windows": false
+  },
+  "installation_performed": false,
+  "publication_performed": false,
+  "native_windows": "NOT_RUN",
+  "limitations": [
+    "No official native plugin-schema validator run; narrow package metadata checks only.",
+    "No current advisory-database or third-party binary behavior/signature verification asserted.",
+    "Employee GitHub retrieval, clean setup, installation, update and rollback remain a later authorized test.",
+    "No secrets, sessions, personal settings or client data added; upstream copyright notices retain their original legal attribution."
+  ],
+  "claim_ledger_gate": {
+    "status": "FAIL",
+    "reason": "E_MATERIAL_NOT_ACCEPTED: reviewer acceptance remains pending; no source/test failure inferred. Historical rows and pending owner controls retained.",
+    "agent_rows": 19,
+    "skills_rows": 23
+  }
+}
