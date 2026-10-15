@@ -1,0 +1,62 @@
+{
+  "status": "FIXES_VERIFIED_LOCALLY_NATIVE_WINDOWS_PENDING",
+  "pair": {
+    "report-kit-agent": "0.1.0-dev.31",
+    "report-kit-skills": "0.1.0-dev.22"
+  },
+  "runtime_id": "python312-20261013-v3",
+  "binary_runtime_assets_changed": false,
+  "employee_response": "Plain affirmative yes after the full terms and an unambiguous setup question; native executor verifies the original human response",
+  "findings": {
+    "1": {
+      "result": "PASS_SYNTHETIC",
+      "before": "FAIL runtime_windows_terms_consent",
+      "after": "PASS",
+      "preserved_legacy_reader_commit": "90bba992f1b72ef503905d6655303111cba27308",
+      "actual_legacy_reader_replay": "PASS",
+      "old_single_record_bytes_unchanged": true,
+      "new_and_old_hash_records_retained": true,
+      "note": "No actual installation/activation; uses actual preflight, activation_result and protected baseline reader with synthetic files"
+    },
+    "2": {
+      "result": "PASS_STATIC_NATIVE_TEST_PREPARED",
+      "allowlisted_codes": [
+        "RUNTIME_PERMISSION_REQUIRED",
+        "RUNTIME_WINDOWS_TERMS_CONSENT_REQUIRED",
+        "RUNTIME_HASH_INVALID",
+        "RUNTIME_CHECKSUM_FAILED",
+        "RUNTIME_BOOTSTRAP_FAILED"
+      ],
+      "unknown_exception_output": "Fixed generic code/message only",
+      "powershell_5_source_encoding": "UTF-8 with BOM",
+      "native_test": "SKIPPED_NO_POWERSHELL"
+    }
+  },
+  "local_suite": {
+    "discovered": 183,
+    "passed": 182,
+    "skipped": 1,
+    "skipped_case": "Native PowerShell/bootstrap execution; executable unavailable on this host",
+    "raw_output_sha256": "9d7ddc97cf3860d7c5b7fdd8c2307311d3e0af7ab9f6b2a14e145700d6f49514"
+  },
+  "regression_cases": [
+    "New terms accepted then modeled update failure; old execution plan still available",
+    "Original dev.30 reader can still read its unchanged legacy receipt",
+    "Modern history works without a legacy file",
+    "Exact digest selection; declined/corrupt record not replaced by old acceptance",
+    "Malformed directory, symlink directory/file, traversal digest rejected",
+    "Allowlisted native diagnostic contract; real native test prepared separately"
+  ],
+  "windows_terms": {
+    "path": "references/windows-terms.md",
+    "sha256": "15263b7437f41cb301385bd1b8b85d5ea48efa96bc787a7d29d46c217937a135",
+    "python_license_sha256": "886a0ead2d89030ee62dbff52b04e47ab91998341295bb9c56fb952b4e081c7a"
+  },
+  "primary_source_for_encoding": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-5.1",
+  "limits": [
+    "Synthetic macOS tests and source checks; no native Windows or actual rollback",
+    "No new legal opinion or independent non-AI release approval",
+    "Current prepared v3 runtime retained; original licenses unchanged",
+    "No installation, publication or changes to installed skills/existing client agents"
+  ]
+}
