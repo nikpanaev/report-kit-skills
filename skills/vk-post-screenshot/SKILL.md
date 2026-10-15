@@ -5,6 +5,8 @@ description: "Снять конкретные публикации VK по wall-
 
 # VK posts
 
+Перед запуском проверь [подготовленную среду](../_shared/RUNTIME.md). Компоненты готовит агент после разрешения; сотрудник не устанавливает Python, библиотеки или Node.js и не вводит команды.
+
 Прочитай [SCREENSHOTS](../_shared/SCREENSHOTS.md), [queue](../_shared/UI-QUEUE.md) и [data boundary](../_shared/DATA-BOUNDARY.md). Используй scripts/vk_post_screenshoter.py и pinned Playwright dependency, не новую реализацию. Output только в private run вне пакета.
 
 Validate exact wall URL/post ID. По умолчанию full text; collapsed/visual-only/all-visuals только по задаче. All materials из настоящих attachment roots, не avatar/emoji/linkpreview/comments; проверить expected/obtained/order/identity. Comments separately own skill.

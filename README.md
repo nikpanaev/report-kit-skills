@@ -1,46 +1,37 @@
-# report-kit-skills
+# Report Kit — скиллы источников
 
-Candidate0.1.0-dev.1 добавляет единый [порядок сопровождения](skills/_shared/MAINTENANCE.md). Адреса/разрешения выбирает сотрудник в private workspace; общий source packet не содержит личных чатов. Правила capture/transport не заменены; actual messaging/install/origin replay не проверены на устройстве сотрудника.
+Это второй пакет Report Kit: получение статистики и снимков для отчётов. **Сотруднику не нужно устанавливать его отдельно или выбирать версию.** Начальная точка — report-kit-agent; он использует точную совместимую зависимость и ведёт настройку. Пользовательские руководство и справка находятся в выбранном пакете агента.
 
-Локальная подготовка переносимого комплекта для будущих отчётов. Версия: [VERSION](VERSION). Maturity: prototype; channel: development; stable release отсутствует.
+Текущая версия — [VERSION](VERSION); проверяемые копии номера — plugin.json, contracts.json и capabilities.json. Состав — [каталог](capabilities.json): LiveDune; посты, комментарии, сообщения и истории VK; посты Instagram, Threads и TikTok; посты и комментарии Telegram и MAX. Комментарии VK используют код постов, сообщения VK — код историй; зависимости также указаны в каталоге.
 
-Публикация, установка и подключение аккаунтов не разрешены этим этапом. Существующие клиентские агенты и материалы не включены. Git remote: no remote. Собственный код: [MIT](LICENSE), правообладатель Report Kit; проверка сторонних лицензий и уведомлений остаётся отдельной. Публикация этим решением не разрешена.
+## Готовность и ограничения
 
-## Начальный набор
+- **Проверено локально:** переносимые пути, ограничения доступа к файлам, защитные проверки и искусственные примеры. Совместная среда Python/библиотек и часть существующих сценариев проверены на macOS; результаты со своими версиями — в [журнале](EVIDENCE-INDEX.md).
+- **Подготовлено к проверке:** подключение через приложение, входы и работа с настоящими источниками на устройстве сотрудника. Адаптер LiveDune для Windows Credential Manager и приватных папок подготовлен, но настоящая Windows ещё не проверена: USER_CHECK_REQUIRED. [Порядок](skills/livedune/references/WINDOWS.md).
+- **Не заявлена поддержка:** Linux, macOS Intel, Windows ARM и Windows Server для переносимой среды. Первые тестовые профили — macOS 14+ arm64 и Windows 11+ x64. Наличие кода, wheels или названия площадки не доказывает доступ к аккаунту или успешный снимок.
 
-Двенадцать source skills: LiveDune; VK posts/comments/messages/stories; Instagram, Threads и TikTok posts; Telegram и MAX posts/comments. [Каталог](capabilities.json) фиксирует все включённые capabilities, внешние инструменты и transitive skills. Comments reuse posts; messages reuse stories. Общие очередь/zoom/private path guard — skills/_shared, не отдельный capture engine.
+## Среда, доступ и хранение
 
-[Scope/платформенные ограничения](CHANGE-SPEC.md), [provenance](SOURCE-PROVENANCE.json), [проверки](EVIDENCE-INDEX.md). Наличие SKILL.md не доказывает installation/invocation/live readiness. Employee data находится вне package: REPORT_SKILLS_STATE_DIR; каждый task output в его private run. Явные in-package data paths отвергаются.
+Python, библиотеки и Node.js вручную сотрудник не устанавливает. Их подготовкой занимается агент по [общему порядку среды](skills/_shared/RUNTIME.md). Рецепт и отдельные большие архивы среды сопровождаются в report-kit-agent; исходный Git этого репозитория их не содержит. Chrome используется после проверки конкретного скилла; нужный браузер Playwright подготавливается только после предложения и согласия. Браузеры в текущей подготовке не устанавливались.
 
-OpenAPI сохраняется как source/hash в dependencies/livedune/recipe.json; schema и готовый backend не vendored. Сохранён frozen npm lock; установка разрешается отдельно, во внешнем runtime. CLI использует Keychain на macOS; вариант Windows Credential Manager подготовлен для проверки пользователем (USER_CHECK_REQUIRED). Иные ОС этим CLI не поддерживаются. Playwright1.63.0/Chromium и Codeх-connected tooling также требуют выбора и проверки, без включения binaries/session.
+Для API LiveDune дополнительно нужен готовый backend mcp-openapi 0.3.0. В [рецепте](dependencies/livedune/recipe.json) закреплены источник и hash OpenAPI; в пакете есть frozen lock, но нет backend/node_modules и самой схемы. Node из переносимой среды сам по себе backend не создаёт. Его подготовку и проверку выполняет агент после разрешения; затем подключаются ключ и аккаунт. macOS использует Keychain; Windows — подготовленный адаптер Credential Manager. Другие ОС этим API CLI не поддерживаются.
 
-Public historical VK UI recipe не live evidence. Working observed map private; default CLI требует его после actual observation, см. skills/vk-stories-screenshot/references/ui.md. Не добавлять фиктивные evidence locators ради PASS.
+Данные, ключи, сессии, браузерные профили и результаты — вне пакета. Все процессы используют один выбранный REPORT_SKILLS_STATE_DIR и [общую очередь](skills/_shared/UI-QUEUE.md); новую конкурирующую очередь не создавать. Пути внутри пакета отклоняются. Историческая UI-карта VK — только пример; агент проверяет текущий интерфейс и сохраняет рабочую карту приватно.
 
-Локальные тесты: `python3 scripts/test_runtime_paths.py`, `node scripts/test_runtime_paths.mjs`, `node skills/livedune/scripts/check.mjs`. Полные VK/zoom fixture checks требуют заранее разрешённого Playwright1.63.0/browser runtime; такие checks могут использовать task-owned окна только synthetic fixture, не user session. Общий read-only package checker хранится в report-kit-agent/scripts/check_package.py и может проверять этот репозиторий без исполнения его файлов.
+[Правила данных](skills/_shared/DATA-BOUNDARY.md), [сопровождение](skills/_shared/MAINTENANCE.md), [архив поддержки](skills/_shared/SUPPORT.md). В поддержку передаются только заранее разрешённые служебные поля, а не исходные журналы. Отправка архива остаётся за пользователем.
 
-Никаких keys/session/profile/account/client data в public files/Git. License и independent review pending. Known cold rate-limit fixture failure сохранён в evidence и не скрыт isolated pass.
+## Для сопровождающего
 
-## Product Versioning + Maturity/Channel Contract
+[Происхождение исходников](SOURCE-PROVENANCE.json), [зависимости и лицензии](THIRD-PARTY-DEPENDENCIES.md), [границы изменений](CHANGE-SPEC.md), [история версий](CHANGELOG.md). Исторический сбой VK сохраняется для своего старого снимка; он не является доказательством ошибки текущей версии. Текущую неисправность нужно воспроизвести на явно выбранной версии. [Правило обновления документации](skills/_shared/MAINTENANCE.md#документация-при-изменении-скилла) действует в каждой задаче сопровождения.
 
-- **Maturity phase:** prototype
-- **Release channel:** development
-- **Public compatibility promise:** none; no employee-device/account/runtime support validated yet
-- **1.0.0 entry criteria:** actual supported-device/account install and control report; reviewed license/dependencies; independent QA/security; packaged acceptance and separate owner G6
-- **Rebaseline policy:** only explicit owner decision before external distribution; never rename old artifacts or silently migrate private workspaces
-- **Release destination:** local-only
-- **External AI/model API:** not applicable; no new model API client or SDK/key provisioning; employee Codex provider/data-use terms must be checked before live work
+Команды сопровождающего в проверенной среде, не задания сотруднику:
 
-VERSION is the sole development-version source; plugin manifest is a checked mirror. Package content identity and private workspace schema are separate. Public GitHub release/URLs require later explicit authority.
+```sh
+python3 scripts/test_runtime_paths.py
+node scripts/test_runtime_paths.mjs
+node skills/livedune/scripts/check.mjs
+```
 
-Candidate dev.2 adds [versioned compatibility declarations](contracts.json), checked with the agent's update preflight. Source behaviour is unchanged; declarations and synthetic checks are not a new-device support promise. Employee user guidance/help ships in report-kit-agent, keeping one source of truth.
+Проверка всего состава выполняется check_package.py выбранного report-kit-agent с этим корнем. Браузерные проверки требуют отдельно разрешённой среды; локальные тесты не доказывают доступ к живым сервисам.
 
-
-## Report Kit naming and legacy compatibility
-
-New client chat: `Report Kit / <client name>`; new portable reporting agent identifier: `report-kit-<client_id>`. Workflow IDs also use report-kit-. Package IDs are report-kit-agent/report-kit-skills; workspace schema2 is required. Legacy configurations and installed copies are not silently switched by a display rename. VK/LiveDune source skill IDs, REPORT_SKILLS_STATE_DIR and existing queue/state path names remain stable; their old report-skills label does not identify a second package or store. Setup must check the actual selected bytes and one UI queue before installation.
-
-При доступном разрешённом Playwright SDK `python3 scripts/test_retry_diagnostics.py` проверяет только диагностические строки на макетах: браузер, сеть и снимки не создаются. Полная проверка Chromium остаётся отдельной.
-
-Обезличенные [события поддержки](skills/_shared/SUPPORT.md) — проекция существующих этапов UI/API/retry. Отдельный safe collector/allowlist зеркалируются в агент для автономного сбора ZIP. Это не новый request journal, не внешняя телеметрия и не разрешение пересылать raw outputs. Реальная Windows проверка остаётся за пользователем.
-
-Подготовленная среда, выбор Chrome и предложение браузеров Playwright — [runtime](skills/_shared/RUNTIME.md). Не поручать сотруднику ручную установку Python или библиотек.
+Стадия — prototype, канал разработки — development; stable release отсутствует, Git remote не задан. 1.0.0 требует проверки устройства/аккаунта и контрольного отчёта, лицензий, независимых QA/security, поставки и отдельного решения о выпуске. [MIT](LICENSE) относится к собственному коду, [сторонние условия](LICENSE-STATUS.md) проверяются отдельно. Данные и настройки не мигрируются по одному изменению номера. Отдельный API-клиент модели не реализован; условия обработки данных выбранного Codex проверяются до работы. Установка и публикация сейчас не выполняются; существующие клиентские агенты не включены.

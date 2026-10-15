@@ -26,6 +26,7 @@
     "evidence/audit-fix-checks.json",
     "evidence/claim-ledger-format-checks.json",
     "evidence/current-source-checks.json",
+    "evidence/documentation-checks.json",
     "evidence/interface-checks.json",
     "evidence/license-decision.json",
     "evidence/maintenance-checks.json",

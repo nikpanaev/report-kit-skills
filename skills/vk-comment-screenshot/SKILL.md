@@ -5,6 +5,8 @@ description: "Снять только комментарии и вложенны
 
 # VK comments
 
+Перед запуском проверь [подготовленную среду](../_shared/RUNTIME.md). Компоненты готовит агент после разрешения; сотрудник не устанавливает Python, библиотеки или Node.js и не вводит команды.
+
 Прочитай [SCREENSHOTS](../_shared/SCREENSHOTS.md), [queue](../_shared/UI-QUEUE.md) и [data boundary](../_shared/DATA-BOUNDARY.md). scripts/vk_comment_screenshoter.py импортирует sibling vk-post-screenshot/scripts; оба обязательны. Не отправлять задачу в message/post maintainer по сходству названия.
 
 Снять только загруженную ветку exact post/reply со всеми requested visible nested replies. SPA target wall_comments_layout_root; исключить форму/кнопки загрузки, но не общий контейнер, содержащий сами комментарии. Пустой список — failure, не blank PNG. Loaded visible subset не доказательство всех комментариев сервера.

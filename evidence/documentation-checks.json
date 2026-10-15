@@ -1,0 +1,27 @@
+{
+  "status": "LOCAL_DOCUMENTATION_REVIEW_PASS_LIMITED",
+  "versions": {
+    "report-kit-agent": "0.1.0-dev.26",
+    "report-kit-skills": "0.1.0-dev.17"
+  },
+  "reviewed_markdown": 61,
+  "reviewed_skill_entrypoints": 20,
+  "reviewed_ui_descriptors": 20,
+  "local_links_and_anchors": 241,
+  "official_upstream_links_http_200": 30,
+  "api_origin_example_not_requested": true,
+  "behavior_files_unchanged": 73,
+  "baseline_commits": {
+    "report-kit-agent": "64fe6ead7a15fc197a36398d8104161c55b743d8",
+    "report-kit-skills": "070f68db7dfcce2cb5de226acc6170dc4b6939a3"
+  },
+  "runtime_build_evidence": "evidence/runtime-checks.json; original dev.25/dev.16 only, binaries unchanged",
+  "independent_review": false,
+  "native_employee_setup": "NOT_RUN",
+  "installation_performed": false,
+  "publication_performed": false,
+  "known_delivery_gap": "logo/composerIcon absent; native installer validation required before release",
+  "limits": "Author semantic review plus local reference/hash checks. Not employee comprehension, native install/update/rollback, Windows support or independent security/licensing approval.",
+  "official_skill_validator": "NOT_RUN: startup failed with missing PyYAML in available development interpreters; no installation performed",
+  "skill_frontmatter_checks": "Existing package checker passed its limited name/description/reference checks; not a substitute for full YAML/host validation"
+}

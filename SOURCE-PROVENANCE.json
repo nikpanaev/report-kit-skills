@@ -172,9 +172,10 @@
       "sourceRelative": "instagram-post-screenshot/SKILL.md",
       "sourceSHA256": "19525da09d4181f214cb959dfb0f862e9500cb36e584589c4da097eae9f905f1",
       "destination": "skills/instagram-post-screenshot/SKILL.md",
-      "outputSHA256": "296252c38ec5760212c3fb683bed895870f1b157004edc715b8afe4dfc01c876",
+      "outputSHA256": "6fafa861174700b76fd388cd5108433e29ebce09160f6fce0f01fc4d3f7202f7",
       "changes": [
-        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained"
+        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
       ]
     },
     {
@@ -217,10 +218,11 @@
       "sourceRelative": "threads-post-screenshot/SKILL.md",
       "sourceSHA256": "48aedc470949e377a3c2f842df5b21f5f1359d98a21d4e46ff8d976f67eee612",
       "destination": "skills/threads-post-screenshot/SKILL.md",
-      "outputSHA256": "b0a0a06ac77b2bc553582cd2f1d7a09d2dd950763f72aff8857231e18e9c8c79",
+      "outputSHA256": "22382f9452de2cfb08551252a3aae7c0734e2f8f246786569f4c35517b30c987",
       "changes": [
         "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
-        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged"
+        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged",
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
       ]
     },
     {
@@ -253,9 +255,10 @@
       "sourceRelative": "tiktok-post-screenshot/SKILL.md",
       "sourceSHA256": "557c5dd26f9f7ea34c5b30149bf77bcc822666834a3b4dd3080cebaaa7e23e0e",
       "destination": "skills/tiktok-post-screenshot/SKILL.md",
-      "outputSHA256": "d1fe1eec16329b083744c7b0ed546c37345031f3c7ba0dfe894986fb0726060f",
+      "outputSHA256": "21e3320c31a8f5a91795ab731537fc06f975c01bc06d3db941f9f66f3f65cbc3",
       "changes": [
-        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained"
+        "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
       ]
     },
     {
@@ -287,10 +290,11 @@
       "sourceRelative": "telegram-post-screenshot/SKILL.md",
       "sourceSHA256": "a8bd4658b3a1e0ad0dd6a3a0d2e4d26af9f3bf14eaf5a13f53480719891c606e",
       "destination": "skills/telegram-post-screenshot/SKILL.md",
-      "outputSHA256": "92c2b0ad1157a1de223997003fb161ae99c6db14ef7e00950911ccdf84ce7e27",
+      "outputSHA256": "00b46f8140ba679e26cc532892677dec19f73fb28d999008de758815e3733e72",
       "changes": [
         "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
-        "Describe rendered image path without a fake local link placeholder"
+        "Describe rendered image path without a fake local link placeholder",
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
       ]
     },
     {
@@ -307,10 +311,11 @@
       "sourceRelative": "telegram-post-screenshot/references/queue.md",
       "sourceSHA256": "f37fe8414a7d657e07a0f2d184ba3bd94f99d230b00e04941d6325835780fb7f",
       "destination": "skills/telegram-post-screenshot/references/queue.md",
-      "outputSHA256": "3e7370f2187111038bc0fcab8464981ee59d14731442fd71cb75fcfdd074277c",
+      "outputSHA256": "261a17841a235c684ff298fb9e01cedccb12ec5a0afc36899d51ac3a15ebc0b7",
       "changes": [
         "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
-        "Resolve maintenance link from references directory"
+        "Resolve maintenance link from references directory",
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
       ]
     },
     {
@@ -331,10 +336,11 @@
       "sourceRelative": "telegram-comment-screenshot/SKILL.md",
       "sourceSHA256": "2a2df083448ceef3faf0333f56af76876756ba3fe29ce1b31269b7e4e5712b41",
       "destination": "skills/telegram-comment-screenshot/SKILL.md",
-      "outputSHA256": "e4200e545cf0a3f49015f9d37ec234a47f8c1c634d55974a665c481abb233854",
+      "outputSHA256": "d88e3bb9944d8e3e5c0b1076a0fbafdea1a1ec90bf96346c81055663c35860f0",
       "changes": [
         "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
-        "Describe rendered image path without a fake local link placeholder"
+        "Describe rendered image path without a fake local link placeholder",
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
       ]
     },
     {
@@ -351,10 +357,11 @@
       "sourceRelative": "max-post-screenshot/SKILL.md",
       "sourceSHA256": "28ac176c3c9a796dce944ed2c566e15be65deec3e86e561a858a5a601ec2166c",
       "destination": "skills/max-post-screenshot/SKILL.md",
-      "outputSHA256": "daa63d396b711ecd37932034e016e74999f2ac3ff33e7befdadd4e834e6ebe30",
+      "outputSHA256": "577754d88f101b152050a4f3d28d78c71188275cf844ec291f9deb0a82eefdce",
       "changes": [
         "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
-        "Describe rendered image path without a fake local link placeholder"
+        "Describe rendered image path without a fake local link placeholder",
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
       ]
     },
     {
@@ -387,10 +394,11 @@
       "sourceRelative": "max-comment-screenshot/SKILL.md",
       "sourceSHA256": "c8f3f563e257e2dff6b98899b00a2134b5b3215298f0bbd836c2348ad3c7135e",
       "destination": "skills/max-comment-screenshot/SKILL.md",
-      "outputSHA256": "315e190a2ed126aa8aab440c86f5d9a99a283d0b57ab0687dc2a0a7200f2c012",
+      "outputSHA256": "fc5059da3302c3f41129caef3e5703203abfa761c9dae138297a297d2d824a42",
       "changes": [
         "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
-        "Describe rendered image path without a fake local link placeholder"
+        "Describe rendered image path without a fake local link placeholder",
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
       ]
     },
     {

@@ -5,6 +5,8 @@ description: "Снять доступные администратору пер�
 
 # VK messages
 
+Перед запуском проверь [подготовленную среду](../_shared/RUNTIME.md). Компоненты готовит агент после разрешения; сотрудник не устанавливает Python, библиотеки или Node.js и не вводит команды.
+
 Прочитай [SCREENSHOTS](../_shared/SCREENSHOTS.md), [queue](../_shared/UI-QUEUE.md) и [data boundary](../_shared/DATA-BOUNDARY.md). scripts/vk_messages.py использует sibling vk-stories-screenshot/scripts/vk_stories.py для session/auth; dependency required, no copied sessions. Output private external run.
 
 Уточни community source/access, explicit peers или all, year/date range/timezone. list-only даёт candidates, не capture/полный месяц. Право читать DM должно быть подтверждено; display-name не identity. Не отправлять сообщения или менять переписку.

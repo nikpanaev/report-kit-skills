@@ -5,6 +5,8 @@ description: "Снять каждую историю из доступного �
 
 # VK stories
 
+Перед запуском проверь [подготовленную среду](../_shared/RUNTIME.md). Компоненты готовит агент после разрешения; сотрудник не устанавливает Python, библиотеки или Node.js и не вводит команды.
+
 Прочитай [SCREENSHOTS](../_shared/SCREENSHOTS.md), [queue](../_shared/UI-QUEUE.md) и [data boundary](../_shared/DATA-BOUNDARY.md). scripts/vk_stories.py — existing implementation, references/vk-ui.example.json historical selector recipe, not a live UI map; actual UI must be verified before capture, no live evidence bundled.
 
 Уточни archive source/month/year/timezone/authority. Полный source inventory/pagination/exhaustion, exact community/story ID/date/author/media до снимка и после. Quiet scroll alone не terminal. Полный список из network/archive и DOM подтверждается отдельно от captured count; manifest unknown не invented total.

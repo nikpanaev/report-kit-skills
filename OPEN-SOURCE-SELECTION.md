@@ -3,7 +3,7 @@
 | Capability | Source / exact identity | License / distribution | Decision |
 |---|---|---|---|
 | LiveDune transport | Ready mcp-openapi0.3.0, original spec1.0.10 hash in recipe | Backend declares MIT in actual installed metadata; binary/node_modules not shipped; transitive license review pending | Reuse; preserve GET guard/raw archive/cap, no own HTTP client |
-| Browser automation | Existing Playwright1.63.0 | Actual installed Playwright1.63.0 metadata: Apache-2.0, Python>=3.10; runtime/browser not shipped; complete distribution notices review pending | Reuse approved version, no new engine |
+| Browser automation | Existing Playwright1.63.0 | Actual installed Playwright1.63.0 metadata: Apache-2.0, Python>=3.10; runtime prepared as separate agent release assets, browser not installed; complete distribution notices review pending | Reuse approved version, no new engine |
 | Source capture/session/zoom/FIFO | Owner-maintained exported code, SOURCE-PROVENANCE.json | Own-code MIT selected, copyright Report Kit; third-party review pending; no historical private evidence/author metadata | Adapt only portable paths/privacy and synthetic fixtures |
 | Persistence/path validation | Python SQLite/pathlib and Node fs/path | Standard library, no third-party dependency added | One external private store; scoped local checks |
 | Secret storage | macOS Keychain; Windows native Credential Manager via built-in Windows PowerShell5.1/.NET | No new library/key/cookie/session shipped; Windows native verification assigned to user | Preserve macOS route; Windows candidate only, fail closed on access/policy/ACL failure |
@@ -11,9 +11,9 @@
 
 Canonical references: https://registry.npmjs.org/mcp-openapi/0.3.0 ; https://github.com/Docat0209/mcp-openapi ; https://api.livedune.com/docs/openapi.json . Recipe and lock provide identities, not permission to download or execute. Source cache is not a new verified installation.
 
-No standalone runtime, package manager wrapper, browser launcher or API bridge is implemented. Missing capabilities stop the relevant source step. Complete license/supply-chain review and independent security remain release requirements.
+The agent package now prepares a separate pinned portable runtime and native inert bootstrap; no second installer daemon or new API transport is added. Missing/unverified components stop the affected source step. Complete license/supply-chain review and independent security remain release requirements; binaries are separate release assets, not source Git files.
 
-## Current dependency observation
+## Historical dependency observation — 14 October 2026
 
 [Metadata inventory](dependencies/REVIEW.json) covers134 npm exact versions and four observed Python distributions. [Findings/limits](THIRD-PARTY-DEPENDENCIES.md): effective Node>=20 for frozen LiveDune chain; Python transitive resolver not frozen; esbuild postinstall needs approved runtime validation. Source origins18/18 across the two packages match their recorded hashes. These results do not close ownership/license/security/host acceptance. No dependency installed, version changed or third-party code vendored.
 
