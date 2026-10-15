@@ -41,6 +41,7 @@
     "evidence/retry-diagnostics.json",
     "evidence/review-fix-checks.json",
     "evidence/runtime-checks.json",
+    "evidence/source-publication-checks.json",
     "evidence/supply-chain-checks.json",
     "evidence/support-checks.json",
     "evidence/windows-preparation-checks.json",

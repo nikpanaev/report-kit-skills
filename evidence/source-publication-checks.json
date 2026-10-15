@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "pair": {
+    "report-kit-agent": "0.1.0-dev.32",
+    "report-kit-skills": "0.1.0-dev.23"
+  },
+  "scope": "Public source preparation; binary runtime assets not published; no installation",
+  "repositories": [
+    "https://github.com/nikpanaev/report-kit-agent",
+    "https://github.com/nikpanaev/report-kit-skills"
+  ],
+  "baseline_history_checks": {
+    "report-kit-agent": {
+      "commits": 38,
+      "gitleaks_candidates": 0
+    },
+    "report-kit-skills": {
+      "commits": 26,
+      "gitleaks_candidates": 3,
+      "triage": "All three values are SHA256 source checksums, verified against original files in the exact historical commit; no credential finding"
+    }
+  },
+  "gitleaks_version": "8.30.1",
+  "local_tests": {
+    "discovered": 183,
+    "passed": 182,
+    "skipped": 1,
+    "skipped_reason": "Native PowerShell unavailable on this Mac"
+  },
+  "runtime_id": "python312-20261013-v3",
+  "runtime_changed": false,
+  "executable_source_changed": false,
+  "native_windows": "NOT_RUN",
+  "installation": false,
+  "binary_publication": false,
+  "existing_clients_changed": false,
+  "limits": "Deterministic source hygiene and local regression observations; not complete secret detection, independent legal approval, host installation or Windows execution"
+}
