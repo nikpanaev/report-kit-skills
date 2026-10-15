@@ -9,9 +9,9 @@
   "scope": "Prepared source and isolated image/runtime checks; no publication, installation, native Windows or new client work. Original recorded real frames reused read-only.",
   "tests": {
     "agent-tests": {
-      "count": 171,
+      "count": 173,
       "result": "PASS",
-      "log_sha256": "d8cdf816bf354a48394ff0a9e39cb74b1f3e4dfa4e8e9a14eb71c5aa3f587536"
+      "log_sha256": "97426594c462c65d2d56c20a54da0b14b1170bcdaccb5860e4fd8ee7e6c009b6"
     },
     "skills-synthetic-suite": {
       "count": 22,
@@ -108,5 +108,11 @@
     "Actual Windows and host installation/update/rollback after separate permission",
     "GitHub release download after publication permission",
     "Existing reviewer/release controls retain their original scope"
-  ]
+  ],
+  "notice_validation": {
+    "index_references_exist_and_hashes_match": true,
+    "missing_changed_and_duplicate_texts_rejected": "PASS",
+    "old_notice_pin_with_same_runtime_versions_rejected": "PASS",
+    "independent_legal_acceptance": false
+  }
 }
