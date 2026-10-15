@@ -1,0 +1,18 @@
+{
+  "observation_date": "2026-10-15",
+  "status": "PASS_LIMITED",
+  "export_count": 42,
+  "canonical_matches_recorded_origin": 42,
+  "installed_matches_recorded_origin": 42,
+  "portable_matches_recorded_adapted_output": 42,
+  "capabilities": 12,
+  "skill_entrypoints_canonical_installed_match": 12,
+  "existing_yaml_canonical_installed_match": 8,
+  "entrypoints_missing_in_both_sources": 4,
+  "owner_resolution": {
+    "historical_vk_failure": "Historical only; owner confirms updated skill works. Reopen only on new reproduction against an identified current version.",
+    "old_records_preserved": true,
+    "historical_test_patch_applied": false
+  },
+  "limits": "Read-only file identity comparison, not new live capture, employee support, complete secret detection, independent review or release approval."
+}

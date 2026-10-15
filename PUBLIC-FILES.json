@@ -23,6 +23,7 @@
     "dependencies/livedune/pnpm-lock.yaml",
     "dependencies/livedune/recipe.json",
     "dependencies/runtime-review.json",
+    "evidence/current-source-checks.json",
     "evidence/interface-checks.json",
     "evidence/license-decision.json",
     "evidence/maintenance-checks.json",

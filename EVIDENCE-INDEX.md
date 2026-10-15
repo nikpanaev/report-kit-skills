@@ -1,6 +1,6 @@
 # Evidence Index — report-skills
 
-Current state2026-10-14: VERSION0.1.0-dev.10, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
+Current state2026-10-15: VERSION0.1.0-dev.11, prototype/development, no stable release, no remote. Authorized result: device-independent local source preparation only. Existing client agents/installed skills unchanged by this task; preservation receipt outside public package. Publication/installation/service access not performed.
 
 Process Profile and authority: [CHANGE-SPEC](CHANGE-SPEC.md). Baseline and scoped branch actual Git; package content identity/private exact run records retained locally. [Offline checks](evidence/offline-checks.json) contain only sanitized source/test identities, no donor paths or private data. [Source provenance](SOURCE-PROVENANCE.json), [selection](OPEN-SOURCE-SELECTION.md) and [license status](LICENSE-STATUS.md).
 
@@ -18,7 +18,7 @@ Process Profile and authority: [CHANGE-SPEC](CHANGE-SPEC.md). Baseline and scope
 |---|---|---|
 | Local preparation scope, two repositories | Authorized | Direct owner decision14Oct2026; not G6 |
 | Source/package/unit/regression observations | PASS_LIMITED | Exact run scope; recorded cold rate-limit failure still retained |
-| Rate-limit fixture stability | OPEN | Diagnose first cold failure before release; no assertion/timeout relaxation |
+| Historical VK fixture failure | HISTORICAL | Owner15Oct confirms updated skill works; reopen only on new current-version reproduction; old results retained |
 | Whole independent QA/security review | PENDING | Named separate reviewer; no self-approval |
 | Own code / third-party notices | MIT / PENDING | Own rights and Report Kit holder selected; independent third-party review remains |
 | Host plugin install/update/rollback | NOT_RUN | Chosen employee runtime and approved install scope |
@@ -27,7 +27,7 @@ Process Profile and authority: [CHANGE-SPEC](CHANGE-SPEC.md). Baseline and scope
 
 AI claim ledger uses legacy default; pending human acceptance is intentionally preserved, not a product pass. No prospective policy or automatic claim acceptance activated. Framework v3.4.0/63f4faee40598bd3d6e75d49777fa00982c20811 exact-tag checkers used privately; mutable framework working HEAD is not authority.
 
-Next authorized action within this slice: finish local identity/provenance/relocation checks and commits. Next product work: license/source review and rate-limit fixture diagnosis, then target-device installation and new-client control report after inputs/permission. No existing client migration or publication.
+Next authorized action within this slice: finish local identity/provenance/relocation checks and commits. Next product work: license/source review and current connector limitations, then target-device installation and new-client control report after inputs/permission. No existing client migration or publication.
 
 Actual exact-tag lifecycle: IN_DEVELOPMENT, exit0/issues[]. Initial VERSION_POLICY_BLOCKED preserved privately; canonical existing version contract fields corrected, no criteria weakened. Legacy claim gate remains FAIL only material human acceptance; source observations not accepted product release.
 
@@ -95,3 +95,10 @@ Exact existing Pillow12.3.0/NumPy2.3.5 primary metadata and five local license f
 [Recorded checks](evidence/private-output-checks.json): two new test methods/four privacy scenarios failed before the fix and passed after it; unchanged original story fixture passed with13 PNGs0600; unchanged messages checks/browser_checks passed separately with8 PNGs0600. Three protected fixture hashes and25 other production definitions preserved. Selected state/output directories0700 and PNG0600; no recursive change of unrelated folders.
 
 A preceding current-source technical audit reviewed98 tracked dev.9 files and found the conditional local privacy issue. Its exact pre-fix report remains immutable privately; this scoped repair does not reclassify that report or prove an independent full audit of every new candidate byte. Separate AI fix review reported no blocking source finding. No real accounts, employeeOS ACL, installation, publication or independent non-AI acceptance inferred. Original cold failure remains OPEN_NOT_REPRODUCED.
+
+
+## Current sources and historical VK finding — 2026-10-15
+
+Owner clarified that the skill was updated after the old failure and works in its current version. The old failure is retained as historical evidence, not a current blocker or a requirement for repeated diagnosis. Reopen only on new reproduction against an identified current version. No old FAIL was rewritten as PASS and the private test proposal was not applied.
+
+[Read-only source comparison](evidence/current-source-checks.json): all42 recorded origin hashes match both canonical and installed sources; all42 adapted outputs match provenance. Twelve SKILL entrypoints and eight existing YAML metadata files match canonical/installed copies; four YAML files are absent in both originals. This identifies the selected sources, not a new live test of the portable copy or employee acceptance. No installed/client/source donor file changed.
