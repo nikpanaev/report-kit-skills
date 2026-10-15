@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "package_version": "0.1.0-dev.19",
+  "package_version": "0.1.0-dev.20",
   "status": "LOCAL_PREPARATION_NOT_INSTALLED",
   "capabilities": [
     {
@@ -101,8 +101,7 @@
       "requires": [],
       "external": [
         "native-computer-use",
-        "Pillow",
-        "NumPy"
+        "Pillow"
       ],
       "live_status": "NOT_RUN"
     },
@@ -127,5 +126,5 @@
   ],
   "not_included": [],
   "permissions": "API read-only; screenshots through employee-authorized local browser; no post/message sending",
-  "compatibility": "Target OS/account/runtime not yet selected; no cross-device support claim"
+  "compatibility": "Prepared macOS14+ arm64 / Windows11+ x64 runtime profiles; native Windows/account/host installation still require employee verification"
 }

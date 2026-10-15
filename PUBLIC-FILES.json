@@ -34,6 +34,7 @@
     "evidence/maintenance-checks.json",
     "evidence/material-rate-checks.json",
     "evidence/offline-checks.json",
+    "evidence/pillow-runtime-checks.json",
     "evidence/private-output-checks.json",
     "evidence/rate-limit-diagnostic.json",
     "evidence/report-kit-checks.json",

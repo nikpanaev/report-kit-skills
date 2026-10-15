@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "pair": {
+    "report-kit-agent": "0.1.0-dev.29",
+    "report-kit-skills": "0.1.0-dev.20"
+  },
+  "runtime_id": "python312-20261013-v3",
+  "status": "LOCAL_CHECKS_ONLY_NOT_RELEASE_APPROVAL",
+  "scope": "Prepared source and isolated image/runtime checks; no publication, installation, native Windows or new client work. Original recorded real frames reused read-only.",
+  "tests": {
+    "agent-tests": {
+      "count": 171,
+      "result": "PASS",
+      "log_sha256": "d8cdf816bf354a48394ff0a9e39cb74b1f3e4dfa4e8e9a14eb71c5aa3f587536"
+    },
+    "skills-synthetic-suite": {
+      "count": 22,
+      "result": "PASS",
+      "log_sha256": "51c1f62b338639255959960a69df56df37bc94b287791e8e0b94146305ebb5c1"
+    }
+  },
+  "synthetic_image_equivalence": {
+    "cases": 24,
+    "refusal_cases": 4,
+    "same_pixels_size_joins_or_error": true,
+    "old_seconds": 4.15780604101019,
+    "new_seconds": 4.600731167069171,
+    "sampling_grid_probe_cases": 1323
+  },
+  "real_recorded_image_equivalence": {
+    "public_fixtures_included": false,
+    "reason": "Client materials remain private",
+    "successful_cases": 8,
+    "correct_refusals": 3,
+    "same_original_pixels_and_saved_outputs": true,
+    "same_joins": true,
+    "visual_review": {
+      "reviewed_outputs": 8,
+      "new_text_breaks_duplicates_or_clipped_endings_observed": false
+    },
+    "live_capture_or_current_account_check": false
+  },
+  "memory_probe": {
+    "frame_count": 5,
+    "frame_size": [
+      1000,
+      1340
+    ],
+    "baseline_peak_rss_bytes": 135430144,
+    "pillow_peak_rss_bytes": 123797504,
+    "threshold": "baseline+20MiB",
+    "result": "PASS"
+  },
+  "runtime": {
+    "platforms_inventoried": [
+      "macos-arm64",
+      "windows-x64"
+    ],
+    "macos_probe": {
+      "status": "LOCAL_RUNTIME_PROBE_PASS",
+      "python": "3.12.15",
+      "modules": [
+        "PIL",
+        "greenlet",
+        "playwright",
+        "pyee",
+        "typing_extensions",
+        "tzdata"
+      ],
+      "versions": {
+        "Pillow": "12.3.0",
+        "greenlet": "3.5.6",
+        "playwright": "1.63.0",
+        "pyee": "13.0.1",
+        "typing_extensions": "4.16.0",
+        "tzdata": "2026.5"
+      },
+      "native_windows": false
+    },
+    "no_numpy_installed_or_imported": true,
+    "remaining_original_program_bytes_unchanged": true,
+    "image_assets": [
+      {
+        "platform": "macos-arm64",
+        "layer": "images",
+        "old_size": 16749514,
+        "size": 4729409,
+        "removed_files": 898,
+        "removed_paths_sha256": "542eea03a6edc017eec1cdfa6d5fbc5f1660059109314f45e95aa45ba53bb8bc",
+        "remaining_original_program_bytes_unchanged": true,
+        "no_numpy_paths": true
+      },
+      {
+        "platform": "windows-x64",
+        "layer": "images",
+        "old_size": 19461704,
+        "size": 7025572,
+        "removed_files": 919,
+        "removed_paths_sha256": "de78958add8ba2646383ac2ea5a70d58678493a4d8c310f592e44981c2348079",
+        "remaining_original_program_bytes_unchanged": true,
+        "no_numpy_paths": true
+      }
+    ]
+  },
+  "microsoft": "Original Windows Python terms and source packaging chain verified; applicability/recipient agreement require independent review; generic install/use EULA is not a redistribution grant.",
+  "remaining": [
+    "Independent Windows redistribution/recipient terms confirmation",
+    "Actual Windows and host installation/update/rollback after separate permission",
+    "GitHub release download after publication permission",
+    "Existing reviewer/release controls retain their original scope"
+  ]
+}

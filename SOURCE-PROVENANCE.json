@@ -173,10 +173,11 @@
       "sourceRelative": "instagram-post-screenshot/SKILL.md",
       "sourceSHA256": "19525da09d4181f214cb959dfb0f862e9500cb36e584589c4da097eae9f905f1",
       "destination": "skills/instagram-post-screenshot/SKILL.md",
-      "outputSHA256": "6fafa861174700b76fd388cd5108433e29ebce09160f6fce0f01fc4d3f7202f7",
+      "outputSHA256": "3aa6cc25bc11c0ce26b3cba298f932de7a09fb318615f8851782c1d149be1691",
       "changes": [
         "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
-        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged",
+        "Portable runtime v3: use existing Pillow instead of NumPy; source donor and installed skills unchanged"
       ]
     },
     {
@@ -219,11 +220,12 @@
       "sourceRelative": "threads-post-screenshot/SKILL.md",
       "sourceSHA256": "48aedc470949e377a3c2f842df5b21f5f1359d98a21d4e46ff8d976f67eee612",
       "destination": "skills/threads-post-screenshot/SKILL.md",
-      "outputSHA256": "22382f9452de2cfb08551252a3aae7c0734e2f8f246786569f4c35517b30c987",
+      "outputSHA256": "749c8bb45754cd1bfbc48e59c7e82340d8d5110480d1c3ad73047adfefc73b74",
       "changes": [
         "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
         "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged",
-        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged",
+        "Portable runtime v3: use existing Pillow instead of NumPy; source donor and installed skills unchanged"
       ]
     },
     {
@@ -256,10 +258,11 @@
       "sourceRelative": "tiktok-post-screenshot/SKILL.md",
       "sourceSHA256": "557c5dd26f9f7ea34c5b30149bf77bcc822666834a3b4dd3080cebaaa7e23e0e",
       "destination": "skills/tiktok-post-screenshot/SKILL.md",
-      "outputSHA256": "21e3320c31a8f5a91795ab731537fc06f975c01bc06d3db941f9f66f3f65cbc3",
+      "outputSHA256": "e14d49a19cc1de81c2aa290904f0f27199b05795b4132f73f8d35bacd0940d73",
       "changes": [
         "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
-        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged",
+        "Portable runtime v3: use existing Pillow instead of NumPy; source donor and installed skills unchanged"
       ]
     },
     {
@@ -291,11 +294,12 @@
       "sourceRelative": "telegram-post-screenshot/SKILL.md",
       "sourceSHA256": "a8bd4658b3a1e0ad0dd6a3a0d2e4d26af9f3bf14eaf5a13f53480719891c606e",
       "destination": "skills/telegram-post-screenshot/SKILL.md",
-      "outputSHA256": "00b46f8140ba679e26cc532892677dec19f73fb28d999008de758815e3733e72",
+      "outputSHA256": "c2c05b9c2d6c4f287bd262fd252de4c5d1fec76a7674d14c44661e2ccbebd8eb",
       "changes": [
         "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
         "Describe rendered image path without a fake local link placeholder",
-        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged",
+        "Portable runtime v3: use existing Pillow instead of NumPy; source donor and installed skills unchanged"
       ]
     },
     {
@@ -337,11 +341,12 @@
       "sourceRelative": "telegram-comment-screenshot/SKILL.md",
       "sourceSHA256": "2a2df083448ceef3faf0333f56af76876756ba3fe29ce1b31269b7e4e5712b41",
       "destination": "skills/telegram-comment-screenshot/SKILL.md",
-      "outputSHA256": "d88e3bb9944d8e3e5c0b1076a0fbafdea1a1ec90bf96346c81055663c35860f0",
+      "outputSHA256": "4932f2ea4d9e5e13a30082eaa3895bc43eff4e9c9bc7b4ad36c0cb102c34869f",
       "changes": [
         "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
         "Describe rendered image path without a fake local link placeholder",
-        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged",
+        "Portable runtime v3: use existing Pillow instead of NumPy; source donor and installed skills unchanged"
       ]
     },
     {
@@ -358,11 +363,12 @@
       "sourceRelative": "max-post-screenshot/SKILL.md",
       "sourceSHA256": "28ac176c3c9a796dce944ed2c566e15be65deec3e86e561a858a5a601ec2166c",
       "destination": "skills/max-post-screenshot/SKILL.md",
-      "outputSHA256": "577754d88f101b152050a4f3d28d78c71188275cf844ec291f9deb0a82eefdce",
+      "outputSHA256": "9bfb38a3a99e265c0bbe6eb974883722ad0eb85096ba97abdc7bea7ee32e4bc7",
       "changes": [
         "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
         "Describe rendered image path without a fake local link placeholder",
-        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged",
+        "Portable runtime v3: use existing Pillow instead of NumPy; source donor and installed skills unchanged"
       ]
     },
     {
@@ -379,27 +385,31 @@
       "sourceRelative": "max-post-screenshot/scripts/stitch_post_screenshots.py",
       "sourceSHA256": "28f6fd46633c2dd404c710886d382a34c54108358733d54e951dcbe2486b4948",
       "destination": "skills/max-post-screenshot/scripts/stitch_post_screenshots.py",
-      "outputSHA256": "758e3938a0ff8c29e1939733aabbf88b39c58ee406df935a91d91bcdac189ff9",
+      "outputSHA256": "a6f1c849260bb62f95e890a6dfb7374ad8d47651b55b93fd83aa77b66d72dfe6",
       "changes": [
-        "Reject package/ancestor/symlink runtime output/state paths with existing shared guard; external defaults; capture algorithm unchanged"
+        "Reject package/ancestor/symlink runtime output/state paths with existing shared guard; external defaults; capture algorithm unchanged",
+        "Portable runtime v3: use existing Pillow instead of NumPy; source donor and installed skills unchanged"
       ]
     },
     {
       "sourceRelative": "max-post-screenshot/scripts/test_stitch_post_screenshots.py",
       "sourceSHA256": "f69d5c60451fba30c9b87c2189393fae7a3a08695a3a728c775a796d91102dbc",
       "destination": "skills/max-post-screenshot/scripts/test_stitch_post_screenshots.py",
-      "outputSHA256": "f69d5c60451fba30c9b87c2189393fae7a3a08695a3a728c775a796d91102dbc",
-      "changes": []
+      "outputSHA256": "75b21c00e0d57d0730e90dc53088d6dd722bb621a28ad760a9b8c8e874786c8e",
+      "changes": [
+        "Portable runtime v3: use existing Pillow instead of NumPy; source donor and installed skills unchanged"
+      ]
     },
     {
       "sourceRelative": "max-comment-screenshot/SKILL.md",
       "sourceSHA256": "c8f3f563e257e2dff6b98899b00a2134b5b3215298f0bbd836c2348ad3c7135e",
       "destination": "skills/max-comment-screenshot/SKILL.md",
-      "outputSHA256": "fc5059da3302c3f41129caef3e5703203abfa761c9dae138297a297d2d824a42",
+      "outputSHA256": "f95ef58631c018dd259c45df46c7f18dd0914d0f8e4f9cf33912ebe9d58fafc3",
       "changes": [
         "Portable relative runtime/queue links; remove personal paths and donor pilot/example history; generic command examples; external state and native scope retained",
         "Describe rendered image path without a fake local link placeholder",
-        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged"
+        "Documentation alignment with prepared runtime; original donor bytes and historical checks unchanged",
+        "Portable runtime v3: use existing Pillow instead of NumPy; source donor and installed skills unchanged"
       ]
     },
     {
