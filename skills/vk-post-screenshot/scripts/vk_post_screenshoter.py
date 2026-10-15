@@ -13,6 +13,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / '_shared'))
 from ui_queue import queued, wait_for_enter
+from support_events import emit as support_event, error_code
 from private_paths import outside_package
 from browser_zoom import add_zoom_argument, launch_browser, verify_zoom, screenshot
 from urllib.parse import parse_qs, urlsplit
@@ -456,14 +457,17 @@ async def run(args) -> int:
                 emit(ok=True, state=str(args.state.resolve()))
 
             for original, url, post_id in requests:
+                component = 'vk-comment' if args.comments_only else 'vk-post'
                 counts = dict(expected_count=None, obtained_count=0, materials=[]) if args.all_visuals else {}
                 if rate_limited:
+                    support_event(component,'preflight','check','failure','RATE_LIMIT')
                     emit(url=original, post_id=post_id, ok=False, rate_limited=True,
                          error=RATE_LIMIT_MESSAGE, **counts)
                     failed = True
                     continue
                 prefix = "vk_comments" if args.comments_only else "vk_visual" if args.visual_only else "vk"
                 destination = args.output / f"{prefix}_{post_id}.png"
+                diagnostic = support_event(component,'preflight','started')
                 for attempt in range(args.retries):
                     stage = "preflight"
                     try:
@@ -494,6 +498,8 @@ async def run(args) -> int:
                                  zoom_fallback=zoom_fallback, theme=getattr(page, '_vk_screenshot_theme', None),
                                  **result, **limit_info)
                             failed = failed or not result['ok'] or rate_limited
+                            support_event(component,stage,'finished','failure' if not result['ok'] or rate_limited else 'success',
+                                          'RATE_LIMIT' if rate_limited else 'UNKNOWN' if not result['ok'] else 'NONE',operation=diagnostic)
                             break
                         path = await capture_post(page, post_id, destination, args.timeout,
                                                   expand_text=not args.collapsed_text,
@@ -504,19 +510,24 @@ async def run(args) -> int:
                              browser_zoom=actual_zoom, zoom_fallback=zoom_fallback,
                              theme=page._vk_screenshot_theme, **limit_info)
                         failed = failed or rate_limited
+                        support_event(component,stage,'finished','failure' if rate_limited else 'success',
+                                      'RATE_LIMIT' if rate_limited else 'NONE',operation=diagnostic)
                         break
                     except (Error, RuntimeError, OSError) as error:
                         if await limit_detected():
+                            support_event(component,stage,'finished','failure','RATE_LIMIT',operation=diagnostic)
                             emit(url=original, post_id=post_id, ok=False, rate_limited=True,
                                  error=RATE_LIMIT_MESSAGE, **counts)
                             failed = True
                             break
                         if attempt + 1 < args.retries:
+                            support_event(component,stage,'retry','failure',error_code(error),operation=diagnostic)
                             print(f"{post_id}: повтор {attempt + 2}/{args.retries} "
                                   f"(stage={stage}, error_type={type(error).__name__})",
                                   file=sys.stderr, flush=True)
                             await asyncio.sleep(2)
                         else:
+                            support_event(component,stage,'finished','failure',error_code(error),operation=diagnostic)
                             message = (f"Таймаут при съёмке {post_id}: {error}"
                                        if isinstance(error, PWTimeoutError) else str(error))
                             emit(url=original, post_id=post_id, ok=False, error=message, **counts)

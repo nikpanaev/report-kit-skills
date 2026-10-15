@@ -11,3 +11,5 @@ Private state находится вне package. Setup выбирает папк
 Cleanup: сохранить exact path/hash/result receipt перед удалением известных task temporaries. Не удалять originals/finals/accepted histories/needed recovery evidence или чужую папку целиком. Auth/state не временный PNG; удаление/отзыв отдельно согласовать с владельцем. No source/package writes during report work.
 
 VK stories initialization closes the selected owned state root before enrollment/queue, and capture closes the selected output leaf before artifacts; final PNG is0600. These are designated private runtime directories, not shared document folders. Unrelated ancestors/siblings are not recursively chmodded; POSIX observations do not establish WindowsACL or target employee permissions.
+
+Отдельные [события поддержки](SUPPORT.md) сохраняются в том же внешнем state root, в support-v1. Это только фиксированные обезличенные поля, не копия request ledger или output. Очистка support-v1 не разрешает трогать queue.sqlite3, credentials, sessions, вызовы API или материалы восстановления.

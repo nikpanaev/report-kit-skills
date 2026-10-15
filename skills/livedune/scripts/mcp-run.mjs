@@ -6,6 +6,7 @@ import path from 'node:path';
 import os from 'node:os';
 import { createHash, randomUUID } from 'node:crypto';
 import {readCredential,preparePrivateDirectory,verifyPrivateFile} from './platform-access.mjs';
+import {supportEvent,supportErrorCode} from '../../_shared/support-events.mjs';
 
 export const SPEC_HASH = '3998516d4bcf19f5299763257e76b44830905066c61638e77f4e94e51ffc6b47';
 export function normalizePostMapping(tools) {
@@ -49,6 +50,7 @@ export function makeGuard({runDir,cap,credential,fetcher=fetch}) {
     const id=String(++used).padStart(3,'0');
     const rec={id,path:u.pathname,params:Object.fromEntries(u.searchParams),at:new Date().toISOString()};
     append({...rec,status:'STARTED'});
+    const diagnostic=supportEvent('api','started');
     let secret;
     try {
       secret=credential();
@@ -62,9 +64,13 @@ export function makeGuard({runDir,cap,credential,fetcher=fetch}) {
       let b;try{b=JSON.parse(raw);}catch{}
       last={...rec,status:'RECEIVED',http:res.status,artifact,bytes:raw.length,sha256:createHash('sha256').update(raw).digest('hex'),count:b?.count,rows:Array.isArray(b?.response)?b.response.length:null,after:b?.after ?? null,providerError:b?.error ?? null,schemaError:!b || typeof b!=='object' || Array.isArray(b)};
       append(last);
+      supportEvent('api','finished',res.status===200&&!last.providerError&&!last.schemaError?'success':'failure',
+        res.status===429?'RATE_LIMIT':last.providerError?'PROVIDER_ERROR':last.schemaError?'CORRUPT_DATA':res.status===200?'NONE':'PROVIDER_ERROR',
+        {operation:diagnostic,http:res.status});
       return res;
     } catch {
       last={...rec,status:'FAILED_OR_UNCERTAIN'};append(last);
+      supportEvent('api','finished','unknown','ACTION_UNCERTAIN',{operation:diagnostic});
       throw new Error('REQUEST_FAILED_OR_UNCERTAIN; inspect sanitized ledger before retry');
     } finally {secret?.fill(0);u.searchParams.delete('access_token');}
   }};
@@ -109,6 +115,7 @@ export function recoverRunLock(runDir) {
     fs.unlinkSync(file);recovered=true;
   } finally {fs.unlinkSync(marker);}
   if(recovered) fs.rmdirSync(directory);
+  supportEvent('recovery','recovery','success');
   return {recovered:true,requests_replayed:false,review_ledger_before_resume:true};
 }
 
@@ -143,6 +150,7 @@ async function main() {
   const entry=require.resolve('mcp-openapi');
   const pkg=JSON.parse(fs.readFileSync(path.resolve(path.dirname(entry),'../../package.json')));
   if (pkg.version !== '0.3.0') throw new Error('MCP_VERSION_MISMATCH');
+  supportEvent('setup','check','success','NONE',{programVersions:{'mcp-openapi':pkg.version}});
   const spec=path.join(runtime,'openapi.json');
   if(createHash('sha256').update(fs.readFileSync(spec)).digest('hex') !== SPEC_HASH) throw new Error('SPEC_CHANGED_REVIEW_REQUIRED');
   const {createServer}=await import(pathToFileURL(path.join(path.dirname(entry),'server.js')));
@@ -197,4 +205,11 @@ async function main() {
     }
   }
 }
-if (process.argv[1] && fs.realpathSync(process.argv[1])===fileURLToPath(import.meta.url)) main().catch(()=>{console.error('LIVEDUNE_RUN_STOPPED; inspect sanitized receipts, do not print raw errors');process.exitCode=1;});
+if (process.argv[1] && fs.realpathSync(process.argv[1])===fileURLToPath(import.meta.url)) {
+  const diagnostic=supportEvent('setup','started');
+  main().then(()=>supportEvent('setup','finished','success','NONE',{operation:diagnostic})).catch(error=>{
+    const code=supportErrorCode(error);
+    supportEvent('setup','finished','failure',code,{operation:diagnostic});
+    console.error('LIVEDUNE_RUN_STOPPED; inspect sanitized receipts, do not print raw errors');process.exitCode=1;
+  });
+}

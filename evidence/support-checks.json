@@ -1,0 +1,53 @@
+{
+  "status": "LOCAL_SYNTHETIC_CHECKS_PASS_LIMITED",
+  "agent_version": "0.1.0-dev.24",
+  "skills_version": "0.1.0-dev.15",
+  "support_events_schema": 1,
+  "unit_tests": 141,
+  "optimized_tests": 49,
+  "support_cases": 21,
+  "source_retry_cases": 5,
+  "scenarios": [
+    "allowlisted_export",
+    "no_raw_log_ingestion",
+    "private_canaries_in_provider_errors_excluded",
+    "API_budget_unchanged",
+    "abrupt_process_exit_retains_events",
+    "partial_corrupt_oversized_records",
+    "concurrent_writers",
+    "event_age_count_bytes_limits",
+    "bundle_age_count_size_limits",
+    "no_agent_no_network_fallback",
+    "custom_state_path",
+    "same_workspace_sibling_support_store",
+    "existing_archive_collision_preserved",
+    "foreign_store_symlink_refusal",
+    "missing_permissions_do_not_replace_business_failure",
+    "missing_product_metadata",
+    "package_mirror_drift_blocked",
+    "mixed_timestamp_precision_order",
+    "native_mac_shell_wrapper_with_isolated_folder_opener"
+  ],
+  "windows_launcher": "PREPARED_NOT_RUN_ON_WINDOWS",
+  "windows_acl": "USER_CHECK_REQUIRED",
+  "native_installation": "NOT_RUN",
+  "automatic_sending": false,
+  "retention": {
+    "days": 14,
+    "events": 2000,
+    "bytes": 4194304,
+    "bundle_days": 7,
+    "bundles": 3,
+    "bundle_bytes": 1048576
+  },
+  "static": {
+    "tool": "semgrep1.176.0",
+    "production_files": 10,
+    "findings": 0,
+    "errors": 0
+  },
+  "original_audit_fixes": "PRESERVED; original test files unchanged, protected business/ledger logic checked separately",
+  "publication_authorized": false,
+  "installation_authorized": false,
+  "limitations": "Synthetic errors/HTTP/browser fixtures on macOS and isolated subprocesses; not actual Windows, employee setup, power-loss durability, independent privacy approval or real installation/publication."
+}

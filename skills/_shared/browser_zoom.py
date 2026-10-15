@@ -2,6 +2,7 @@
 import json
 import math
 import tempfile
+from support_events import emit as support_event
 from contextlib import asynccontextmanager, contextmanager
 from pathlib import Path
 
@@ -20,6 +21,7 @@ async def launch_browser(playwright, *, zoom=DEFAULT_ZOOM, headless=True, mobile
     if mobile or headless:
         # Full headless Chromium doubled fixture RSS; retain the existing shell at 100%.
         browser = await playwright.chromium.launch(headless=headless)
+        support_event('ui','browser_setup','check','success',program_versions={'chromium':getattr(browser,'version','')})
         try:
             yield browser
         finally:
@@ -36,6 +38,7 @@ async def launch_browser(playwright, *, zoom=DEFAULT_ZOOM, headless=True, mobile
         try:
             for page in context.pages:
                 await page.close()
+            support_event('ui','browser_setup','check','success',program_versions={'chromium':getattr(context.browser,'version','')})
             yield context.browser
         finally:
             await context.close()

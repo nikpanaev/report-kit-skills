@@ -7,21 +7,23 @@
       "sourceRelative": "_shared/ui_queue.py",
       "sourceSHA256": "4c7ddc542e6eb4b36e43ed06b2fbcbe5d9e4abd92cdf5f1a84b40b2094b9194a",
       "destination": "skills/_shared/ui_queue.py",
-      "outputSHA256": "d334475a5e92d91d89c48cf70427b81e47b73e2753a14184f9a5504df4d439d3",
+      "outputSHA256": "5cc8f27cca605370a9db6b4a482e968c6b1bd0e1794b43c4ede93680384c8d9c",
       "changes": [
         "Relocate sole UI store outside package; existing installed queue untouched",
         "Relocate default runtime outputs and reject explicit in-package state paths; no capture/metrics oracle weakened",
         "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged",
-        "Final audit regression update; original source snapshot retained"
+        "Final audit regression update; original source snapshot retained",
+        "Add only allowlisted support projection of existing lifecycle; source donor and installed copies unchanged"
       ]
     },
     {
       "sourceRelative": "_shared/browser_zoom.py",
       "sourceSHA256": "db62f38dc83e7c93efb2f37e7672f234f046b0798b469e632c9c55b8469258f7",
       "destination": "skills/_shared/browser_zoom.py",
-      "outputSHA256": "8cfe8db46cf682b9ab295a589a48fac162b09b7a689cd10e881003b5550427c2",
+      "outputSHA256": "b09666361fce073108419a7a4d2217362a56271a73f636b65f651a3ed852e519",
       "changes": [
-        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged"
+        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged",
+        "Add only allowlisted support projection of existing lifecycle; source donor and installed copies unchanged"
       ]
     },
     {
@@ -45,12 +47,13 @@
       "sourceRelative": "livedune/scripts/mcp-run.mjs",
       "sourceSHA256": "7c1cc821660741e0724435ce759b2dfcb0c527a323570ff6a348a02d725d5859",
       "destination": "skills/livedune/scripts/mcp-run.mjs",
-      "outputSHA256": "f1926751bad829d64413cc901a629bb866f0f81d6b3e5f009b325c80fe9371ec",
+      "outputSHA256": "139141bf8a6294a45000875438ad173cb02102097b392f3a3e0178170fcdcfe7",
       "changes": [
         "Reject run-dir/calls inside package or its ancestor, including resolved symlink targets, before writing data/reading credentials",
         "MCP client identity reads new package VERSION; list-only still returns before state/credentials",
         "Windows preparation: platform credential/private-directory helper; existing macOS route/GET/cap guards preserved",
-        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged"
+        "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged",
+        "Add only allowlisted support projection of existing lifecycle; source donor and installed copies unchanged"
       ]
     },
     {
@@ -67,12 +70,13 @@
       "sourceRelative": "vk-post-screenshot/scripts/vk_post_screenshoter.py",
       "sourceSHA256": "4505aa02ee8ad001abbecf980e726bc23510e905285d2ed45c6e4af23fc82257",
       "destination": "skills/vk-post-screenshot/scripts/vk_post_screenshoter.py",
-      "outputSHA256": "3a2b3c6755f63a8bcec9be594fc2af81ba89ea713a0f192753b291cbd4c13122",
+      "outputSHA256": "966d574b044278986b154f27896fa112891f0f223d254aa0abf94e18d0f760eb",
       "changes": [
         "Default session path outside package; illustrative ID replaced",
         "Relocate default runtime outputs and reject explicit in-package state paths; no capture/metrics oracle weakened",
         "Retry stderr includes bounded phase/type only; no exception message, stdout schema, timing, capture or rate-limit guard change",
-        "Use existing batch limit detector before each all-visuals material; preserve earlier PNGs and positional callers"
+        "Use existing batch limit detector before each all-visuals material; preserve earlier PNGs and positional callers",
+        "Add only allowlisted support projection of existing lifecycle; source donor and installed copies unchanged"
       ]
     },
     {

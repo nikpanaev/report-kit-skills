@@ -20,3 +20,7 @@ No standalone runtime, package manager wrapper, browser launcher or API bridge i
 ## Windows credential preparation
 
 Owner assigned Windows runtime verification to the user. Reuse native WinCred/DirectorySecurity rather than installing a secret-store package or creating encryption. A narrow local wrapper retrieves only the selected credential through a captured pipe and creates/checks private directories; no installer, environment-token fallback, policy changes, service or HTTP client. Other programs of the same OS user/admin are outside the isolation claim. Actual Windows/Powershell/ACL/browser checks remain USER_CHECK_REQUIRED.
+
+## Обезличенные сведения для поддержки
+
+Использовать стандартные json/uuid/zipfile/fs/crypto и existing diagnostic transitions. Не вводить telemetry SDK, отдельный API journal или remote sender. Один Python collector и policy зеркалируются agent package для независимого offline fallback; Node имеет только writer по той же policy. Подтверждение privacy требует проверок реального архива, а не слова sanitized у прежних raw logs.

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "package_version": "0.1.0-dev.14",
+  "package_version": "0.1.0-dev.15",
   "status": "LOCAL_PREPARATION_NOT_INSTALLED",
   "capabilities": [
     {
@@ -120,7 +120,10 @@
   "shared": [
     "skills/_shared/ui_queue.py",
     "skills/_shared/browser_zoom.py",
-    "skills/_shared/private_paths.py"
+    "skills/_shared/private_paths.py",
+    "skills/_shared/support_events.py",
+    "skills/_shared/support-events.mjs",
+    "skills/_shared/support-policy.json"
   ],
   "not_included": [],
   "permissions": "API read-only; screenshots through employee-authorized local browser; no post/message sending",

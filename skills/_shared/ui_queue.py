@@ -17,6 +17,7 @@ from contextlib import contextmanager
 from contextvars import ContextVar
 from pathlib import Path
 from private_paths import outside_package
+from support_events import emit as support_event, error_code
 
 # One per-user store outside every package; do not migrate an existing UI queue without review.
 DATABASE = Path(os.environ.get("REPORT_SKILLS_STATE_DIR", Path.home() / ".local/state/report-skills")) / "queue.sqlite3"
@@ -197,13 +198,23 @@ def access(owner=None, *, token=None, database=None):
             raise KeyboardInterrupt('UI task cancelled')
         signal.signal(signal.SIGTERM, cancel)
     marker = CURRENT.set(lease)
+    diagnostic = support_event('ui','queue','started')
+    outcome, code = 'unknown', 'NONE'
     try:
         lease.acquire()
         yield lease
+        outcome = 'success'
+    except BaseException as error:
+        outcome, code = 'failure', error_code(error)
+        raise
     finally:
         try:
             lease.release()
+        except BaseException as error:
+            outcome, code = 'failure', error_code(error)
+            raise
         finally:
+            support_event('ui','queue','finished',outcome,code,operation=diagnostic)
             CURRENT.reset(marker)
             if previous_signal is not None:
                 signal.signal(signal.SIGTERM, previous_signal)
