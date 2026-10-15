@@ -20,10 +20,11 @@
       "sourceRelative": "_shared/browser_zoom.py",
       "sourceSHA256": "db62f38dc83e7c93efb2f37e7672f234f046b0798b469e632c9c55b8469258f7",
       "destination": "skills/_shared/browser_zoom.py",
-      "outputSHA256": "b09666361fce073108419a7a4d2217362a56271a73f636b65f651a3ed852e519",
+      "outputSHA256": "005f50b6ef8dfb21e5d53efa84badc183654ddf591fcd3f20f6c234f089c64d0",
       "changes": [
         "Portable audit fixes: explicit UTF-8 and affected source/recovery/auth tests; donor snapshot unchanged",
-        "Add only allowlisted support projection of existing lifecycle; source donor and installed copies unchanged"
+        "Add only allowlisted support projection of existing lifecycle; source donor and installed copies unchanged",
+        "Opt-in reviewed Chrome channel; unset retains existing capture/zoom branch"
       ]
     },
     {

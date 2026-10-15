@@ -247,7 +247,7 @@ def bundle(state_dir=None, now=None):
     return path
 
 
-def prepare_fallback(destination, state_dir):
+def prepare_fallback(destination, state_dir, python=None):
     """A new chosen private folder only; never install a plugin or overwrite another file."""
     destination = Path(destination).expanduser().resolve()
     root = store(state_dir)
@@ -261,6 +261,11 @@ def prepare_fallback(destination, state_dir):
         'КАК ПЕРЕДАТЬ.txt':('Дважды нажмите файл «Подготовить файл поддержки». Откроется папка с ZIP.\n'
                            'Перешлите только этот ZIP сопровождающему Report Kit. Другие файлы из этой папки не отправляйте.\n'
                            'Вход в аккаунты, работающий агент и интернет для сбора не нужны. Нужен установленный Python.\n').encode('utf-8')}
+    if python is not None:
+        python = Path(python).resolve()
+        if not python.is_file() or any(c in str(python) for c in '\r\n\"%!'): raise ValueError('FALLBACK_RUNTIME_INVALID')
+        payloads['runtime-python.txt'] = (str(python)+'\n').encode('utf-8')
+        payloads['КАК ПЕРЕДАТЬ.txt'] = payloads['КАК ПЕРЕДАТЬ.txt'].decode('utf-8').replace('Нужен установленный Python.', 'Используется заранее подготовленный компонент Report Kit; устанавливать Python вручную не нужно.').encode('utf-8')
     if sys.platform == 'win32':
         payloads['Подготовить файл поддержки.cmd'] = WINDOWS_LAUNCHER.encode('utf-8')
     else:
@@ -276,6 +281,11 @@ def prepare_fallback(destination, state_dir):
 WINDOWS_LAUNCHER = '''@echo off
 chcp 65001 >nul
 cd /d "%~dp0"
+if not exist "%~dp0runtime-python.txt" goto system
+set /p RK_SUPPORT_PYTHON=<"%~dp0runtime-python.txt"
+"%RK_SUPPORT_PYTHON%" -B "%~dp0scripts\\support_bundle.py" --saved-state --open-folder
+goto end
+:system
 where py >nul 2>nul
 if errorlevel 1 goto python
 py -3 "%~dp0scripts\\support_bundle.py" --saved-state --open-folder
@@ -292,7 +302,10 @@ pause
 '''
 MAC_LAUNCHER = '''#!/bin/sh
 cd -- "$(dirname -- "$0")" || exit 1
-if command -v python3 >/dev/null 2>&1; then
+if [ -f ./runtime-python.txt ]; then
+  IFS= read -r rk_support_python < ./runtime-python.txt
+  "$rk_support_python" -B ./scripts/support_bundle.py --saved-state --open-folder
+elif command -v python3 >/dev/null 2>&1; then
   python3 ./scripts/support_bundle.py --saved-state --open-folder
 else
   printf '%s\\n' 'Не найден компонент для сбора файла. Сообщите поддержке код SUPPORT_PYTHON_MISSING. Ничего не отправлено.'
@@ -306,6 +319,7 @@ def main():
     parser.add_argument('--open-folder',action='store_true')
     parser.add_argument('--saved-state',action='store_true')
     parser.add_argument('--prepare-fallback',type=Path)
+    parser.add_argument('--python',type=Path,help='Проверенный компонент Report Kit для запасного запуска')
     sub = parser.add_subparsers(dest='action')
     event = sub.add_parser('record')
     for name,options in [('component',POLICY['components']),('stage',POLICY['stages']),('kind',POLICY['kinds']),('result',POLICY['results']),('error',POLICY['errors'])]:
@@ -321,7 +335,7 @@ def main():
                 if not isinstance(value,dict) or set(value) != {'state_dir'} or not isinstance(value['state_dir'],str): raise ValueError('SUPPORT_LOCATION_INVALID')
                 args.state_dir = value['state_dir']
         if args.prepare_fallback:
-            print('Запасной способ подготовки файла сохранён: '+str(prepare_fallback(args.prepare_fallback,args.state_dir))); return 0
+            print('Запасной способ подготовки файла сохранён: '+str(prepare_fallback(args.prepare_fallback,args.state_dir,args.python))); return 0
         if args.action == 'record':
             print(emit(args.component,args.stage,args.kind,args.result,args.error,operation=args.operation,state_dir=args.state_dir)); return 0
         path = bundle(args.state_dir)

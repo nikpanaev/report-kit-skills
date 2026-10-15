@@ -1,0 +1,36 @@
+{
+  "status": "LOCAL_BUILD_AND_SYNTHETIC_CHECKS_PASS_LIMITED",
+  "versions": {
+    "agent": "0.1.0-dev.25",
+    "skills": "0.1.0-dev.16"
+  },
+  "runtime_id": "python312-20261013-v1",
+  "python": "3.12.15",
+  "node": "24.21.0",
+  "unit_tests": 161,
+  "optimized_tests": 69,
+  "new_runtime_cases": 20,
+  "browser_selection_cases": 2,
+  "combined_existing_source_fixtures": 10,
+  "prepared_platforms": [
+    "macos-arm64",
+    "windows-x64"
+  ],
+  "runtime_asset_layers": [
+    "core",
+    "capture",
+    "images",
+    "livedune-node"
+  ],
+  "macos_runtime": "Isolated exact interpreter/modules/Playwright-driver/Node and no-system-tzdata probes passed",
+  "native_bootstrap": "macOS core extraction without system Python passed; Windows NOT_RUN",
+  "prepared_interpreter_fallback": "One ZIP from copied standalone collector using prepared Python3.12.15; folder opener isolated",
+  "windows": "Only inert files/inventory verified; actual Windows/ACL/launch by employee",
+  "browsers_installed": false,
+  "new_runtime_activated": false,
+  "installation_performed": false,
+  "publication_performed": false,
+  "client_agents_changed": false,
+  "license_review": "Complete notice filename/hash inventory preserved in assets; independent semantic/legal/release decision pending",
+  "limits": "Local isolated build/synthetic observations only, not native app onboarding/install/update/rollback, Windows or independent security/privacy approval."
+}

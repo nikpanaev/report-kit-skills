@@ -1,6 +1,7 @@
 """Native Chromium zoom; no CSS zoom, pinch or PNG resizing."""
 import json
 import math
+import os
 import tempfile
 from support_events import emit as support_event
 from contextlib import asynccontextmanager, contextmanager
@@ -18,9 +19,12 @@ def add_zoom_argument(parser):
 async def launch_browser(playwright, *, zoom=DEFAULT_ZOOM, headless=True, mobile=False):
     if zoom not in (75, 100):
         raise ValueError('Native zoom must be 75 or 100')
+    channel = os.environ.get('REPORT_KIT_BROWSER_CHANNEL')
+    if channel not in (None, 'chrome', 'chromium'):
+        raise ValueError('Unsupported Report Kit browser channel')
     if mobile or headless:
         # Full headless Chromium doubled fixture RSS; retain the existing shell at 100%.
-        browser = await playwright.chromium.launch(headless=headless)
+        browser = await playwright.chromium.launch(headless=headless, **({'channel': channel} if channel else {}))
         support_event('ui','browser_setup','check','success',program_versions={'chromium':getattr(browser,'version','')})
         try:
             yield browser
@@ -34,7 +38,7 @@ async def launch_browser(playwright, *, zoom=DEFAULT_ZOOM, headless=True, mobile
         (default / 'Preferences').write_text(json.dumps({'partition': {
             'default_zoom_level': {'x': math.log(zoom / 100) / math.log(1.2)}}}), encoding="utf-8")
         context = await playwright.chromium.launch_persistent_context(
-            profile, channel='chromium', headless=headless)
+            profile, channel=channel or 'chromium', headless=headless)
         try:
             for page in context.pages:
                 await page.close()

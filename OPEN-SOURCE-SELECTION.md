@@ -24,3 +24,7 @@ Owner assigned Windows runtime verification to the user. Reuse native WinCred/Di
 ## Обезличенные сведения для поддержки
 
 Использовать стандартные json/uuid/zipfile/fs/crypto и existing diagnostic transitions. Не вводить telemetry SDK, отдельный API journal или remote sender. Один Python collector и policy зеркалируются agent package для независимого offline fallback; Node имеет только writer по той же policy. Подтверждение privacy требует проверок реального архива, а не слова sanitized у прежних raw logs.
+
+## Переносимая среда — принято 15.10.2026
+
+Используется готовая CPython3.12.15 python-build-standalone20261013, exact wheels и официальный Node24.21.0. Recipe/платформенные assets сопровождаются report-kit-agent; нового package manager/daemon/второго установщика нет. Для первой подготовки без Python — нативные shell/PowerShell helper, только проверенная inert распаковка. Зависимости собираются без pip/lifecycle execution, internal vendor links нормализуются в обычные файлы и проходят прежнюю archive path/collision проверку. Source archives по умолчанию остаются strict UTF-8; отдельный binary mode только для проверенного runtime. Native browser installation оставлена штатному Playwright после отдельного согласия. Полный license/NOTICE inventory в agent/assets/runtime-notices.json и самих runtime assets; независимое решение о распространении не подменяется сборкой.

@@ -42,3 +42,5 @@ New client chat: `Report Kit / <client name>`; new portable reporting agent iden
 При доступном разрешённом Playwright SDK `python3 scripts/test_retry_diagnostics.py` проверяет только диагностические строки на макетах: браузер, сеть и снимки не создаются. Полная проверка Chromium остаётся отдельной.
 
 Обезличенные [события поддержки](skills/_shared/SUPPORT.md) — проекция существующих этапов UI/API/retry. Отдельный safe collector/allowlist зеркалируются в агент для автономного сбора ZIP. Это не новый request journal, не внешняя телеметрия и не разрешение пересылать raw outputs. Реальная Windows проверка остаётся за пользователем.
+
+Подготовленная среда, выбор Chrome и предложение браузеров Playwright — [runtime](skills/_shared/RUNTIME.md). Не поручать сотруднику ручную установку Python или библиотек.

@@ -1,3 +1,7 @@
+# Текущий срез: переносимая среда dev.25 / dev.16
+
+[Локальные проверки](evidence/runtime-checks.json). Готовые exact runtime assets для macOS arm64/Windows x64; native/resumable setup и предложение необходимого Playwright browser после согласия. Реальная установка, публикация, запуск мастера в приложении, Windows/ACL и independent release/license/security acceptance не выполнялись. Все старые записи ниже исторические и относятся к своим exact версиям.
+
 # Evidence Index — report-skills
 
 ## Текущий срез: архив поддержки

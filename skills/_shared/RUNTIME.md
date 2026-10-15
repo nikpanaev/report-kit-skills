@@ -1,0 +1,7 @@
+# Среда источников Report Kit
+
+Сотрудник не устанавливает Python/библиотеки/Node вручную. Setup выбранного report-kit-agent готовит exact private runtime, проверяет нужные capability modules и выдаёт argv через runtime.execution_plan. Не искать произвольный interpreter или менять user/global environment. Старые low-level ошибки о pip являются диагностикой для агента, не заданием сотруднику.
+
+При выбранном проверенном Chrome shared browser_zoom принимает REPORT_KIT_BROWSER_CHANNEL=chrome; unset сохраняет прежний Chromium. Stories/messages используют свой --channel. Не менять масштаб, светлую тему, retries, FIFO, capture/video/privacy guards. Если скиллу нужен Playwright Chromium, агент сначала предлагает подготовку и получает согласие. Запрет организации не обходить другим каналом. Отдельный профиль, без импорта повседневного профиля Chrome.
+
+Версии runtime проверяются вместе с выбранной парой source/agent и всеми клиентами. Новый runtime не активировать во время отчёта; предыдущий сохранять для возврата и fallback. Данные/сессии/ключи находятся отдельно. Windows подтверждается только настоящей проверкой сотрудником; наличие wheels и Node asset не поддержка устройства.

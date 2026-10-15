@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "package": "report-kit-skills",
-  "package_version": "0.1.0-dev.15",
+  "package_version": "0.1.0-dev.16",
   "interfaces": {
     "source:livedune": 1,
     "source:vk-post-screenshot": 1,
@@ -18,7 +18,8 @@
     "source:telegram-comment-screenshot": 1,
     "source:max-post-screenshot": 1,
     "source:max-comment-screenshot": 1,
-    "support_events": 1
+    "support_events": 1,
+    "runtime_environment": 1
   },
   "host_capabilities": [],
   "permissions": {
