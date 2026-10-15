@@ -1,0 +1,57 @@
+{
+  "status": "PASS_LIMITED_NOT_LEGAL_OR_NATIVE_WINDOWS_APPROVAL",
+  "pair": {
+    "report-kit-agent": "0.1.0-dev.30",
+    "report-kit-skills": "0.1.0-dev.21"
+  },
+  "runtime_id": "python312-20261013-v3",
+  "runtime_payload_bytes_changed": false,
+  "windows_terms": {
+    "path": "references/windows-terms.md",
+    "sha256": "92d20ac36344d09331b67d00b8214fbc5fba34dadd91899a33cbe03ca58c6ccf",
+    "python_license_sha256": "886a0ead2d89030ee62dbff52b04e47ab91998341295bb9c56fb952b4e081c7a"
+  },
+  "primary_sources": [
+    {
+      "url": "https://visualstudio.microsoft.com/wp-content/uploads/2021/11/Visual-Studio-2022-Community-License-EN.docx",
+      "sha256": "41a207b10c8ab91d0d2f10a854715f73dca54509581692d2fe179aa3ffcb8540",
+      "review_scope": "Distributable Code / Third Party Distribution and distribution requirements; Build Tools use permission distinguished from downstream grant"
+    },
+    {
+      "url": "https://visualstudio.microsoft.com/wp-content/uploads/2024/03/Visual-Studio-2022-Diagnostic-Build-Tools-Agent-License_Update-March-2024_EN.docx",
+      "sha256": "2f66b86a00e8d9833789897ce23d05a4a2dbea370cf39c8c1098dbc17d0e7bdc",
+      "review_scope": "Distributable Code / Third Party Distribution and distribution requirements; Build Tools use permission distinguished from downstream grant"
+    }
+  ],
+  "python_terms_source": {
+    "url": "https://github.com/python/cpython/blob/v3.12.15/PC/crtlicense.txt",
+    "sha256": "3c71b3ae243121f6f227374cd1ef7c59ed07b1969b330d0e947f91a3a1b3fd73",
+    "original_text_in_recipient_page": true
+  },
+  "local_tests": {
+    "agent_tests": 178,
+    "result": "PASS",
+    "raw_output_sha256": "fa66ada98c441bfba92cebbbaa2848fc7e656fb416a90768f6d5cc7582fbb308",
+    "added_cases": [
+      "Exact explicit consent, missing/declined/stale/blank/extra-field receipt",
+      "Changed terms document blocks execution",
+      "Probe and execution plan refuse before subprocess",
+      "Candidate client update requires current consent and preserves current selection",
+      "Original Python LICENSE pin and native bootstrap static contract",
+      "Release builder refuses changed terms before file copy"
+    ]
+  },
+  "legal_route": "Unchanged upstream Python conditional onward redistribution, VS2022 third-party distribution clause, retained original notices and explicit recipient acceptance; not a direct Microsoft installer EULA grant",
+  "acceptance_pending": [
+    "Owner decision on exact downstream licensing basis; upstream builder VS licence edition/rights not independently established from public build.py",
+    "Independent human/release acceptance in its applicable scope",
+    "Native Windows PowerShell, recipient interaction, install/update/rollback",
+    "Real published GitHub asset download and employee device"
+  ],
+  "actions_not_performed": [
+    "Installation",
+    "Publication",
+    "Editing installed skills or existing client agents"
+  ],
+  "limits": "Author verification and synthetic Windows branches only; native human reply/authority remains external, JSON does not prove agreement. Prior real-frame/macOS results retained only for unchanged v3 binary bytes."
+}

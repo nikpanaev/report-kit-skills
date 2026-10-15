@@ -43,6 +43,7 @@
     "evidence/supply-chain-checks.json",
     "evidence/support-checks.json",
     "evidence/windows-preparation-checks.json",
+    "evidence/windows-terms-checks.json",
     "plugin.json",
     "scripts/test_audit_regressions.py",
     "scripts/test_browser_selection.py",
